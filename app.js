@@ -48,7 +48,9 @@
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
       var value = lang === "ar" ? el.getAttribute("data-ar") : el.getAttribute("data-en");
-      if (value !== null) el.innerHTML = value;
+      if (value === null) continue;
+      if (el.tagName === "IMG") { el.setAttribute("src", value); continue; }
+      el.innerHTML = value;
     }
     root.setAttribute("lang", lang);
     root.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
@@ -130,6 +132,29 @@
       });
     }, { rootMargin: "-40% 0px -55% 0px" });
     spyPairs.forEach(function (o) { spy.observe(o.sec); });
+  }
+
+  /* ---------- Certification filters ---------- */
+  var certChips = document.querySelectorAll(".cert-chip");
+  if (certChips.length) {
+    var certCards = document.querySelectorAll(".cert-card");
+    var recentHead = document.querySelector("[data-cert-recent-head]");
+    certChips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        certChips.forEach(function (c) {
+          c.classList.remove("is-active");
+          c.setAttribute("aria-pressed", "false");
+        });
+        chip.classList.add("is-active");
+        chip.setAttribute("aria-pressed", "true");
+        var f = chip.getAttribute("data-filter");
+        certCards.forEach(function (card) {
+          var show = f === "all" || card.getAttribute("data-group") === f;
+          card.style.display = show ? "" : "none";
+        });
+        if (recentHead) recentHead.style.display = f === "all" ? "" : "none";
+      });
+    });
   }
 
   /* ---------- Copy email + toast ---------- */

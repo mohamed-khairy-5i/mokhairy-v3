@@ -10,6 +10,8 @@ Personal portfolio of **Mohamed Khairy** — freelance frontend developer from C
 | **TossInbox** | Disposable email inboxes for humans and AI agents — spawn, wait for the OTP, toss. No sign-up. | [Docs](https://tossinbox.pages.dev) · [npm](https://www.npmjs.com/package/tossinbox) |
 | **trigger-doctor** | Behavioral testing for AI agent skill triggers — diagnose, prescribe, regression-test. 79 agents supported. | [skills.sh](https://www.skills.sh/mohamed-khairy-5i/trigger-doctor/trigger-doctor) |
 
+Plus **client & product builds** (Dhikra, Milano, Yasmona, Water Jeddah, Hesasy), a **design & identity** gallery, and a filterable archive of **28 verified certifications** (Cisco, Microsoft Egypt, LinkedIn Learning, Dubai AI Centre, Edraak, HP LIFE…).
+
 ## Stack
 
 Vanilla **HTML / CSS / JavaScript** — zero build step, zero dependencies, one page.
