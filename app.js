@@ -1,4 +1,4 @@
-/* MoKhairy 3.1 — multi-page · theme · language · reveal · filters · brief */
+/* MoKhairy 3.2 — multi-page · theme · language · reveal · filters · brief */
 (function () {
   "use strict";
 
@@ -47,8 +47,13 @@
     work: { en: "Work — Mohamed Khairy · 20 shipped projects", ar: "الأعمال — محمد خيري · 20 مشروع منشور" },
     certificates: { en: "Certifications — Mohamed Khairy · 28 verified certificates", ar: "الشهادات — محمد خيري · 28 شهادة موثقة" },
     about: { en: "About — Mohamed Khairy · Frontend Developer from Cairo", ar: "عني — محمد خيري · مطور واجهات من القاهرة" },
+    testimonials: { en: "Testimonials — Mohamed Khairy · Client voices", ar: "آراء العملاء — محمد خيري · كلام من اشتغلوا معي" },
     contact: { en: "Contact — Mohamed Khairy · Frontend Developer in Cairo", ar: "تواصل — محمد خيري · مطور واجهات في القاهرة" }
   };
+
+  var bodyEn = document.body.getAttribute("data-title-en");
+  var bodyAr = document.body.getAttribute("data-title-ar");
+  if (bodyEn && bodyAr) titles.project = { en: bodyEn, ar: bodyAr };
 
   var countLabels = {
     all: { en: "20 projects", ar: "٢٠ مشروع" },
@@ -101,7 +106,7 @@
   }
 
   /* ---------- Nav active state (per page) ---------- */
-  var pageHrefs = { home: "index.html", work: "work.html", certificates: "certificates.html", about: "about.html", contact: "contact.html" };
+  var pageHrefs = { home: "index.html", work: "work.html", certificates: "certificates.html", about: "about.html", contact: "contact.html", testimonials: "testimonials.html", project: "work.html" };
   var currentHref = pageHrefs[page];
   document.querySelectorAll(".nav-links a, .mobile-menu a").forEach(function (a) {
     if (a.getAttribute("href") === currentHref) a.classList.add("active");
