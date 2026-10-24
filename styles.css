@@ -16,7 +16,15 @@
   --accent: #55a1ff;
   --accent-deep: #2f6df0;
   --on-accent: #06122a;
-  --glow: rgba(74, 140, 255, 0.15);
+  --glow: rgba(74, 140, 255, 0.17);
+  --glow-2: rgba(139, 109, 255, 0.16);
+  --accent-2: #a78bfa;
+  --accent-2-deep: #7c5cff;
+  --accent-3: #e0b566;
+  --nav-glass: color-mix(in srgb, var(--bg-soft) 70%, transparent);
+  --nav-glass-solid: color-mix(in srgb, var(--bg-soft) 92%, transparent);
+  --glass-edge: rgba(170, 200, 255, 0.16);
+  --nav-shadow: 0 18px 50px -18px rgba(0, 0, 0, 0.75);
   --grid-line: rgba(255, 255, 255, 0.032);
   --code-bg: #070c16;
   --shadow-card: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
@@ -43,6 +51,14 @@
   --accent-deep: #174fb0;
   --on-accent: #ffffff;
   --glow: rgba(29, 99, 216, 0.10);
+  --glow-2: rgba(122, 79, 240, 0.10);
+  --accent-2: #7a4ff0;
+  --accent-2-deep: #5f35d6;
+  --accent-3: #b97d0a;
+  --nav-glass: color-mix(in srgb, #ffffff 60%, transparent);
+  --nav-glass-solid: color-mix(in srgb, #ffffff 88%, transparent);
+  --glass-edge: rgba(255, 255, 255, 0.9);
+  --nav-shadow: 0 18px 44px -20px rgba(15, 40, 90, 0.28);
   --grid-line: rgba(15, 45, 95, 0.05);
   --code-bg: #0a1120;
   --shadow-card: 0 24px 50px -30px rgba(15, 40, 90, 0.35);
@@ -64,7 +80,7 @@ body {
   transition: background 0.35s ease, color 0.35s ease;
 }
 
-::selection { background: var(--accent); color: var(--on-accent); }
+::selection { background: var(--accent-2); color: var(--on-accent); }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -108,7 +124,7 @@ a { color: inherit; text-decoration: none; }
 .glow-b {
   width: 520px; height: 520px;
   bottom: -200px; inset-inline-end: -140px;
-  background: radial-gradient(circle, var(--glow), transparent 65%);
+  background: radial-gradient(circle, var(--glow-2), transparent 65%);
 }
 
 body::before {
@@ -145,11 +161,11 @@ main { position: relative; z-index: 1; }
   z-index: 50;
   width: min(100% - 28px, var(--wrap));
   margin: 12px auto 0;
-  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  background: var(--nav-glass);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border-radius: 18px;
-  box-shadow: 0 14px 44px -18px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 0 var(--glass-edge), var(--nav-shadow);
 }
 .nav-inner {
   display: flex;
@@ -163,7 +179,7 @@ main { position: relative; z-index: 1; }
   place-items: center;
   width: 34px; height: 34px;
   border-radius: 9px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  background: linear-gradient(135deg, var(--accent), var(--accent-2-deep));
   color: var(--on-accent);
   font-family: var(--font-head);
   font-weight: 700;
@@ -233,11 +249,11 @@ main { position: relative; z-index: 1; }
   gap: 2px;
   width: min(260px, 100%);
   padding: 10px;
-  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  background: var(--nav-glass-solid);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border-radius: 16px;
-  box-shadow: 0 18px 50px -20px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0 1px 0 var(--glass-edge), var(--nav-shadow);
 }
 .mobile-menu.open { display: flex; }
 @keyframes menu-pop {
@@ -302,11 +318,11 @@ main { position: relative; z-index: 1; }
 }
 .hero-title em {
   font-style: normal;
-  background: linear-gradient(120deg, var(--accent), #a5c8ff 60%, var(--accent-deep));
+  background: linear-gradient(120deg, var(--accent) 8%, var(--accent-2) 58%, var(--accent-2-deep) 105%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 22px var(--glow));
+  filter: drop-shadow(0 0 22px var(--glow-2));
 }
 .hero-sub {
   color: var(--muted);
@@ -374,9 +390,10 @@ main { position: relative; z-index: 1; }
 .terminal-body p { white-space: nowrap; overflow: hidden; }
 /* terminal keeps a dark canvas in BOTH themes — lock its text colors */
 .terminal, .mini-terminal { color: #e7eefb; }
-.terminal .t-out, .mini-terminal .t-out, .mini-terminal .mt-title { color: #90a0ba; }
+.terminal .t-out, .mini-terminal .t-out { color: #dfb878; }
+.mini-terminal .mt-title { color: #90a0ba; }
 .t-prompt { color: var(--accent); font-weight: 600; }
-.t-pkg { color: #9cc4ff; }
+.t-pkg { color: #b6a3ff; }
 .t-cursor {
   display: inline-block;
   width: 9px; height: 17px;
@@ -401,7 +418,7 @@ main { position: relative; z-index: 1; }
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, background 0.2s;
 }
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  background: linear-gradient(135deg, var(--accent), var(--accent-2-deep));
   color: var(--on-accent);
   box-shadow: 0 10px 30px -10px var(--glow), inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
