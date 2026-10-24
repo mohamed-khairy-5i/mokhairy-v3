@@ -20,11 +20,16 @@
   --glow-2: rgba(139, 109, 255, 0.16);
   --accent-2: #a78bfa;
   --accent-2-deep: #7c5cff;
-  --accent-3: #e0b566;
-  --nav-glass: color-mix(in srgb, var(--bg-soft) 70%, transparent);
-  --nav-glass-solid: color-mix(in srgb, var(--bg-soft) 92%, transparent);
-  --glass-edge: rgba(170, 200, 255, 0.16);
-  --nav-shadow: 0 18px 50px -18px rgba(0, 0, 0, 0.75);
+  --accent-3: #f0919b;
+  --accent-3-deep: #e0656e;
+  --glow-3: rgba(240, 145, 155, 0.11);
+  /* island glass: LIFTED fill (lighter than the page bg — iOS elevation trick)
+     so the island reads on the dark hero, not only on light surfaces */
+  --nav-glass: color-mix(in srgb, #14203a 82%, transparent);
+  --nav-glass-solid: color-mix(in srgb, #14203a 93%, transparent);
+  --glass-edge: rgba(190, 215, 255, 0.28);
+  --glass-ring: rgba(170, 200, 255, 0.075);
+  --nav-shadow: 0 24px 60px -22px rgba(0, 0, 0, 0.9), 0 8px 28px -12px rgba(47, 109, 240, 0.2);
   --grid-line: rgba(255, 255, 255, 0.032);
   --code-bg: #070c16;
   --shadow-card: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
@@ -54,11 +59,14 @@
   --glow-2: rgba(122, 79, 240, 0.10);
   --accent-2: #7a4ff0;
   --accent-2-deep: #5f35d6;
-  --accent-3: #b97d0a;
-  --nav-glass: color-mix(in srgb, #ffffff 60%, transparent);
-  --nav-glass-solid: color-mix(in srgb, #ffffff 88%, transparent);
-  --glass-edge: rgba(255, 255, 255, 0.9);
-  --nav-shadow: 0 18px 44px -20px rgba(15, 40, 90, 0.28);
+  --accent-3: #c25660;
+  --accent-3-deep: #a83e48;
+  --glow-3: rgba(194, 86, 96, 0.10);
+  --nav-glass: color-mix(in srgb, #ffffff 84%, transparent);
+  --nav-glass-solid: color-mix(in srgb, #ffffff 94%, transparent);
+  --glass-edge: rgba(255, 255, 255, 0.95);
+  --glass-ring: rgba(20, 50, 110, 0.1);
+  --nav-shadow: 0 22px 50px -22px rgba(15, 40, 90, 0.45), 0 6px 20px -10px rgba(15, 40, 90, 0.15);
   --grid-line: rgba(15, 45, 95, 0.05);
   --code-bg: #0a1120;
   --shadow-card: 0 24px 50px -30px rgba(15, 40, 90, 0.35);
@@ -127,6 +135,20 @@ a { color: inherit; text-decoration: none; }
   background: radial-gradient(circle, var(--glow-2), transparent 65%);
 }
 
+/* third ambient glow — warm peach counterpoint (feralui-style mesh) */
+body::after {
+  content: "";
+  position: fixed;
+  width: 560px; height: 560px;
+  bottom: -270px; left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow-3), transparent 65%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -165,7 +187,7 @@ main { position: relative; z-index: 1; }
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border-radius: 18px;
-  box-shadow: inset 0 1px 0 var(--glass-edge), var(--nav-shadow);
+  box-shadow: inset 0 1px 0 var(--glass-edge), inset 0 0 0 1px var(--glass-ring), var(--nav-shadow);
 }
 .nav-inner {
   display: flex;
@@ -253,7 +275,7 @@ main { position: relative; z-index: 1; }
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border-radius: 16px;
-  box-shadow: inset 0 1px 0 var(--glass-edge), var(--nav-shadow);
+  box-shadow: inset 0 1px 0 var(--glass-edge), inset 0 0 0 1px var(--glass-ring), var(--nav-shadow);
 }
 .mobile-menu.open { display: flex; }
 @keyframes menu-pop {
@@ -318,7 +340,8 @@ main { position: relative; z-index: 1; }
 }
 .hero-title em {
   font-style: normal;
-  background: linear-gradient(120deg, var(--accent) 8%, var(--accent-2) 58%, var(--accent-2-deep) 105%);
+  /* feralui-style iridescent composition: blue → violet → peach */
+  background: linear-gradient(115deg, var(--accent) 5%, var(--accent-2) 48%, var(--accent-3) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -390,7 +413,7 @@ main { position: relative; z-index: 1; }
 .terminal-body p { white-space: nowrap; overflow: hidden; }
 /* terminal keeps a dark canvas in BOTH themes — lock its text colors */
 .terminal, .mini-terminal { color: #e7eefb; }
-.terminal .t-out, .mini-terminal .t-out { color: #dfb878; }
+.terminal .t-out, .mini-terminal .t-out { color: #f4a6ac; }
 .mini-terminal .mt-title { color: #90a0ba; }
 .t-prompt { color: var(--accent); font-weight: 600; }
 .t-pkg { color: #b6a3ff; }
@@ -521,6 +544,8 @@ main { position: relative; z-index: 1; }
   color: var(--accent);
   background: var(--surface);
 }
+/* alternating cards get violet tags — spreads accent-2 across the page */
+.feature-card.flip .tag { color: var(--accent-2); }
 .feature-body h3 {
   font-family: var(--font-head);
   font-weight: 700;
@@ -617,7 +642,7 @@ main { position: relative; z-index: 1; }
   gap: 8px;
 }
 .build-card h4 .arrow { color: var(--muted); transition: color 0.2s, transform 0.2s; }
-.build-card:hover h4 .arrow { color: var(--accent); transform: translate(2px, -2px); }
+.build-card:hover h4 .arrow { color: var(--accent-2); transform: translate(2px, -2px); }
 .build-card p { color: var(--muted); font-size: 0.88rem; flex: 1; }
 .mini-tag {
   font-family: var(--font-mono);
@@ -668,7 +693,7 @@ main { position: relative; z-index: 1; }
   font-size: 0.92rem;
   color: var(--text);
 }
-.feature-list .ok { color: var(--accent); flex: none; font-weight: 700; }
+.feature-list .ok { color: var(--accent-2); flex: none; font-weight: 700; }
 .next-proj {
   display: flex;
   flex-wrap: wrap;
@@ -747,7 +772,7 @@ main { position: relative; z-index: 1; }
 }
 .cert-meta h3 { font-size: 0.95rem; font-weight: 600; line-height: 1.45; flex: 1; }
 .cert-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 4px; }
-.cert-foot b { font-size: 0.78rem; color: var(--accent); font-weight: 600; }
+.cert-foot b { font-size: 0.78rem; color: var(--accent-3); font-weight: 600; }
 .cert-foot small { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
 .archive-note {
   margin-top: 22px;
@@ -849,7 +874,7 @@ main { position: relative; z-index: 1; }
 }
 .footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
 .footer-links a { transition: color 0.2s; }
-.footer-links a:hover { color: var(--accent); }
+.footer-links a:hover { color: var(--accent-3); }
 
 /* ---------- Arabic / RTL ---------- */
 [dir="rtl"] body,
