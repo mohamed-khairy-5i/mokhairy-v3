@@ -475,7 +475,11 @@ main { position: relative; z-index: 1; }
   overflow: hidden;
   background: var(--code-bg);
 }
-.feature-media img { width: 100%; }
+.feature-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 880 / 550; /* intrinsic waslfy-demo.gif — reserves space before load (no anchor-scroll drift) */
+}
 .media-panel { padding: 22px; display: grid; place-items: center; }
 
 .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
@@ -771,7 +775,11 @@ main { position: relative; z-index: 1; }
   background: var(--surface);
   box-shadow: var(--shadow-card), 0 0 40px -16px var(--glow);
 }
-.portrait-card img { width: 100%; }
+.portrait-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 896 / 1195; /* intrinsic portrait.webp — reserves space before load */
+}
 .portrait-card figcaption {
   padding: 10px 14px;
   font-family: var(--font-mono);
