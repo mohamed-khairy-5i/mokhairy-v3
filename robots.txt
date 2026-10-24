@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://mokhairy-v3.pages.dev/sitemap.xml
