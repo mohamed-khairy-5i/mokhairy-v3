@@ -1,6 +1,16 @@
-# MoKhairy 3.0 — Portfolio
+# MoKhairy 3.1 — Portfolio (multi-page)
 
 Personal portfolio of **Mohamed Khairy** — freelance frontend developer from Cairo, building Arabic-first products and developer tools.
+
+**5 real pages, every section in its place:**
+
+| Page | What's inside |
+|---|---|
+| `index.html` | Hero, featured builds (Waslfy · TossInbox · trigger-doctor), stats, stack, certificates preview, about brief, contact CTA |
+| `work.html` | All **20 projects** with filters — Web products (11) / Design & identity (9) — live links on every card |
+| `certificates.html` | Full filterable archive of **28 verified certificates** (AI · Data · Programming · Marketing) + "completed recently" section |
+| `about.html` | Portrait, story, stats, capabilities, **how I work** (4 steps), stack, client voices |
+| `contact.html` | WhatsApp / email / phone, copy-email, and a **project brief composer** (mailto + WhatsApp prefill, nothing stored) |
 
 ## Featured projects
 
@@ -14,13 +24,13 @@ Plus **client & product builds** (Dhikra, Milano, Yasmona, Water Jeddah, Hesasy,
 
 ## Stack
 
-Vanilla **HTML / CSS / JavaScript** — zero build step, zero dependencies, one page.
+Vanilla **HTML / CSS / JavaScript** — zero build step, zero dependencies, five static pages.
 
-- Bilingual **EN / AR** with full RTL layout (no framework, `data-en`/`data-ar` swap + `dir` toggle)
+- Bilingual **EN / AR** with full RTL layout (no framework, `data-en`/`data-ar` swap + `dir` toggle), language persists across pages
 - Dark emerald design system with light theme fallback
-- IntersectionObserver reveal motion, scrollspy nav, copy-to-clipboard with toast
+- Client-side filters on work & certificates, IntersectionObserver reveal, copy-to-clipboard with toast
 - Accessible: skip-link, focus-visible, aria states, `prefers-reduced-motion` respected
-- SEO: canonical, Open Graph image, Twitter card, JSON-LD Person schema
+- SEO: per-page canonical + Open Graph + Twitter card, JSON-LD Person schema, robots.txt, sitemap.xml
 
 ## Run locally
 

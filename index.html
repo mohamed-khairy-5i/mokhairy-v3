@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mohamed Khairy — Frontend Developer · Arabic-first products & dev tools</title>
-  <meta name="description" content="Mohamed Khairy — freelance frontend developer from Cairo. Builder of Waslfy, TossInbox and trigger-doctor. Arabic-first SaaS products and developer tools, shipped and open source.">
+  <meta name="description" content="Mohamed Khairy — freelance frontend developer from Cairo. 20 shipped projects, 2 npm packages, 28 verified certificates. Arabic-first SaaS products and developer tools, shipped and open source.">
   <meta property="og:title" content="Mohamed Khairy — Frontend Developer">
   <meta property="og:description" content="Arabic-first products & developer tools — shipped, not just designed. Waslfy · TossInbox · trigger-doctor.">
   <meta property="og:type" content="website">
-  <link rel="canonical" href="https://mokhairy-v3.pages.dev/">
   <meta property="og:url" content="https://mokhairy-v3.pages.dev/">
   <meta property="og:image" content="https://mokhairy-v3.pages.dev/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -18,8 +17,15 @@
   <meta property="og:locale:alternate" content="ar_EG">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Mohamed Khairy — Frontend Developer">
-  <meta name="twitter:description" content="Arabic-first products & developer tools — shipped, not just designed.">
+  <meta name="twitter:description" content="Arabic-first products & developer tools — shipped, not just designed. Waslfy · TossInbox · trigger-doctor.">
   <meta name="twitter:image" content="https://mokhairy-v3.pages.dev/og-image.png">
+  <link rel="canonical" href="https://mokhairy-v3.pages.dev/">
+  <meta name="theme-color" content="#060a08">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,38 +41,30 @@
       "https://www.linkedin.com/in/mohamed-khairy-5i/",
       "https://waslfy.pages.dev",
       "https://tossinbox.pages.dev"
-    ],
-    "knowsAbout": ["React", "TypeScript", "Next.js", "Arabic RTL UX", "CLI tools", "PWA", "ONNX", "WASM"]
+    ]
   }
   </script>
-  <meta name="theme-color" content="#060a08">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
-  <a class="skip-link" href="#main" data-en="Skip to content" data-ar="تخطّى للمحتوى">Skip to content</a>
+<body data-page="home">
 
   <!-- ambient glow -->
   <div class="glow glow-a" aria-hidden="true"></div>
   <div class="glow glow-b" aria-hidden="true"></div>
 
-  <!-- ===== NAV ===== -->
+  <a class="skip-link" href="#main" data-en="Skip to content" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
+
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="Mohamed Khairy — home">
+      <a class="brand" href="index.html" aria-label="Mohamed Khairy — home">
         <span class="brand-mark" aria-hidden="true">MK</span>
         <span class="brand-name" data-en="Mo Khairy" data-ar="مو خيري">Mo Khairy</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#work" data-en="Work" data-ar="الشغل">Work</a>
-        <a href="#stack" data-en="Stack" data-ar="الأدوات">Stack</a>
-        <a href="#certs" data-en="Certifications" data-ar="الشهادات">Certifications</a>
-        <a href="#about" data-en="About" data-ar="عني">About</a>
-        <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+        <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="work.html" data-en="Work" data-ar="الأعمال">Work</a>
+        <a href="certificates.html" data-en="Certificates" data-ar="الشهادات">Certificates</a>
+        <a href="about.html" data-en="About" data-ar="عني">About</a>
+        <a href="contact.html" data-en="Contact" data-ar="تواصل">Contact</a>
       </nav>
       <div class="nav-actions">
         <button id="langToggle" class="chip-btn" type="button" aria-label="Switch language">
@@ -83,18 +81,17 @@
     </div>
   </header>
 
-  <!-- ===== MOBILE MENU ===== -->
   <div id="mobileMenu" class="mobile-menu">
     <nav aria-label="Mobile">
-      <a href="#work" data-en="Work" data-ar="الشغل">Work</a>
-      <a href="#stack" data-en="Stack" data-ar="الأدوات">Stack</a>
-      <a href="#certs" data-en="Certifications" data-ar="الشهادات">Certifications</a>
-      <a href="#about" data-en="About" data-ar="عني">About</a>
-      <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+        <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="work.html" data-en="Work" data-ar="الأعمال">Work</a>
+        <a href="certificates.html" data-en="Certificates" data-ar="الشهادات">Certificates</a>
+        <a href="about.html" data-en="About" data-ar="عني">About</a>
+        <a href="contact.html" data-en="Contact" data-ar="تواصل">Contact</a>
     </nav>
   </div>
-
   <main id="main">
+
     <!-- ===== HERO ===== -->
     <section id="home" class="hero">
       <div class="container hero-grid">
@@ -110,7 +107,7 @@
             Freelance frontend developer building SaaS and CLI tools for the Arabic ecosystem — real users, real receipts, zero vaporware.
           </p>
           <div class="hero-cta" data-reveal>
-            <a class="btn btn-primary" href="#work">
+            <a class="btn btn-primary" href="work.html">
               <span data-en="See the work" data-ar="شوف الشغل">See the work</span>
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m-7-7 7 7 7-7"/></svg>
             </a>
@@ -144,7 +141,8 @@
       </div>
     </section>
 
-    <!-- ===== FEATURED WORK ===== -->
+    
+
     <section id="work" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -154,7 +152,7 @@
         </div>
 
         <!-- Waslfy -->
-        <article class="feature-card" data-reveal>
+<article class="feature-card" data-reveal>
           <div class="feature-media">
             <img src="assets/waslfy-demo.gif" alt="Waslfy demo — pasting a WhatsApp order and saving the extracted shipment" width="880" height="550" loading="lazy" decoding="async">
           </div>
@@ -178,8 +176,7 @@
           </div>
         </article>
 
-        <!-- TossInbox -->
-        <article class="feature-card flip" data-reveal>
+<article class="feature-card flip" data-reveal>
           <div class="feature-media media-panel">
             <div class="mini-terminal" dir="ltr">
               <p class="mt-title">tossinbox — MCP server</p>
@@ -211,8 +208,7 @@
           </div>
         </article>
 
-        <!-- trigger-doctor -->
-        <article class="feature-card" data-reveal>
+<article class="feature-card" data-reveal>
           <div class="feature-media media-panel">
             <div class="mini-terminal" dir="ltr">
               <p class="mt-title">trigger-doctor — audit</p>
@@ -242,8 +238,7 @@
           </div>
         </article>
 
-        <!-- More builds -->
-        <h3 class="more-title" data-reveal data-en="More builds" data-ar="مشاريع تانية">More builds</h3>
+<h3 class="more-title" data-reveal data-en="More builds" data-ar="مشاريع تانية">More builds</h3>
         <div class="grid-3">
           <a class="mini-card" href="https://github.com/mohamed-khairy-5i/TrimBG" target="_blank" rel="noopener" data-reveal>
             <h4>TrimBG</h4>
@@ -262,160 +257,24 @@
           </div>
         </div>
 
-        <!-- Client & product builds -->
-        <h3 class="more-title" data-reveal data-en="Client & product builds" data-ar="شغل عملاء ومنتجات">Client &amp; product builds</h3>
-        <div class="grid-3 thumb-grid">
-          <article class="thumb-card" data-reveal>
-            <a class="thumb-media" href="https://dhikra.netlify.app" target="_blank" rel="noopener" aria-label="Dhikra — live">
-              <img src="assets/work/dhikra.webp" alt="Dhikra" width="800" height="500" loading="lazy" decoding="async">
-            </a>
-            <div class="thumb-body">
-              <div class="thumb-top"><h4>Dhikra</h4><span class="thumb-year">2026</span></div>
-              <p data-en="A calm, offline-first adhkar companion with a digital tasbih." data-ar="رفيق أذكار هادئ يعمل دون إنترنت مع مسبحة رقمية.">A calm, offline-first adhkar companion with a digital tasbih.</p>
-              <div class="link-row">
-                <a class="btn btn-ghost btn-sm" href="https://dhikra.netlify.app" target="_blank" rel="noopener"><span data-en="Live" data-ar="زيارة">Live</span></a>
-                <span class="thumb-type">PWA / Product</span>
-              </div>
-            </div>
-          </article>
-          <article class="thumb-card" data-reveal>
-            <a class="thumb-media" href="https://milano2.netlify.app" target="_blank" rel="noopener" aria-label="Milano — live">
-              <img src="assets/work/milano.webp" alt="Milano" width="800" height="500" loading="lazy" decoding="async">
-            </a>
-            <div class="thumb-body">
-              <div class="thumb-top"><h4>Milano</h4><span class="thumb-year">2026</span></div>
-              <p data-en="A full sportswear online store for the Yemeni market on its own .com domain." data-ar="متجر رياضي إلكتروني متكامل للسوق اليمني على نطاق .com خاص.">A full sportswear online store for the Yemeni market on its own .com domain.</p>
-              <div class="link-row">
-                <a class="btn btn-ghost btn-sm" href="https://milano2.netlify.app" target="_blank" rel="noopener"><span data-en="Live" data-ar="زيارة">Live</span></a>
-                <span class="thumb-type">E-commerce / Custom domain</span>
-              </div>
-            </div>
-          </article>
-          <article class="thumb-card" data-reveal>
-            <a class="thumb-media" href="https://yasmona.netlify.app" target="_blank" rel="noopener" aria-label="Yasmona Store — live">
-              <img src="assets/work/yasmona.webp" alt="Yasmona Store" width="800" height="500" loading="lazy" decoding="async">
-            </a>
-            <div class="thumb-body">
-              <div class="thumb-top"><h4>Yasmona Store</h4><span class="thumb-year">2026</span></div>
-              <p data-en="An elegant branded link hub for a fashion label with one-tap WhatsApp ordering." data-ar="صفحة روابط أنيقة بهوية علامة أزياء مع طلب فوري عبر واتساب.">An elegant branded link hub for a fashion label with one-tap WhatsApp ordering.</p>
-              <div class="link-row">
-                <a class="btn btn-ghost btn-sm" href="https://yasmona.netlify.app" target="_blank" rel="noopener"><span data-en="Live" data-ar="زيارة">Live</span></a>
-                <span class="thumb-type">Landing / Link-in-bio</span>
-              </div>
-            </div>
-          </article>
-          <article class="thumb-card" data-reveal>
-            <a class="thumb-media" href="https://water-jeddah.netlify.app" target="_blank" rel="noopener" aria-label="Water Jeddah — live">
-              <img src="assets/work/water-jeddah.webp" alt="Water Jeddah" width="800" height="500" loading="lazy" decoding="async">
-            </a>
-            <div class="thumb-body">
-              <div class="thumb-top"><h4>Water Jeddah</h4><span class="thumb-year">2025</span></div>
-              <p data-en="An Arabic-first service website that directs Jeddah water-tanker enquiries into immediate phone and WhatsApp actions." data-ar="موقع خدمة عربي يوجّه طلبات صهاريج المياه في جدة إلى الاتصال وواتساب مباشرة.">An Arabic-first service website that directs Jeddah water-tanker enquiries into immediate phone and WhatsApp actions.</p>
-              <div class="link-row">
-                <a class="btn btn-ghost btn-sm" href="https://water-jeddah.netlify.app" target="_blank" rel="noopener"><span data-en="Live" data-ar="زيارة">Live</span></a>
-                <span class="thumb-type">Service Website / Arabic RTL</span>
-              </div>
-            </div>
-          </article>
-          <article class="thumb-card" data-reveal>
-            <a class="thumb-media" href="https://hesasy.netlify.app" target="_blank" rel="noopener" aria-label="Hesasy — live">
-              <img src="assets/work/hesasy.webp" alt="Hesasy" width="800" height="500" loading="lazy" decoding="async">
-            </a>
-            <div class="thumb-body">
-              <div class="thumb-top"><h4>Hesasy</h4><span class="thumb-year">2026</span></div>
-              <p data-en="An Arabic RTL digital lesson notebook that brings attendance, student points, and parent-ready progress reports into one lesson flow." data-ar="دفتر حصة رقمي بالعربي: حضور ونقاط وتقارير جاهزة لولي الأمر — كل حصة في شاشة واحدة.">An Arabic RTL digital lesson notebook that brings attendance, student points, and parent-ready progress reports into one lesson flow.</p>
-              <div class="link-row">
-                <a class="btn btn-ghost btn-sm" href="https://hesasy.netlify.app" target="_blank" rel="noopener"><span data-en="Live" data-ar="زيارة">Live</span></a>
-                <span class="thumb-type">EdTech web product / Arabic RTL</span>
-              </div>
-            </div>
-          </article>
-          <article class="thumb-card" data-reveal>
-            <a class="thumb-media" href="https://marketplace.visualstudio.com/items?itemName=mohamed-khairy-5i.codepixel" target="_blank" rel="noopener" aria-label="CodePixel — Marketplace listing">
-              <img src="assets/work/codepixel.webp" alt="CodePixel" width="800" height="500" loading="lazy" decoding="async">
-            </a>
-            <div class="thumb-body">
-              <div class="thumb-top"><h4>CodePixel</h4><span class="thumb-year">2026</span></div>
-              <p data-en="A VS Code extension that turns code into high-resolution, share-ready images — themes, glass surfaces, watermarking, live preview." data-ar="إضافة لـ VS Code بتحوّل الكود لصور عالية الدقة جاهزة للمشاركة — ثيمات وخلفيات زجاجية وعلامة مائية ومعاينة مباشرة.">A VS Code extension that turns code into high-resolution, share-ready images — themes, glass surfaces, watermarking, live preview.</p>
-              <div class="link-row">
-                <a class="btn btn-ghost btn-sm" href="https://marketplace.visualstudio.com/items?itemName=mohamed-khairy-5i.codepixel" target="_blank" rel="noopener"><span data-en="Marketplace" data-ar="المتجر">Marketplace</span></a>
-                <span class="thumb-type">Developer tool · VS Code</span>
-              </div>
-            </div>
-          </article>
-          <article class="thumb-card" data-reveal>
-            <a class="thumb-media" href="https://nexluna.netlify.app" target="_blank" rel="noopener" aria-label="Nexluna — live">
-              <img src="assets/work/nexluna.webp" alt="Nexluna" width="800" height="500" loading="lazy" decoding="async">
-            </a>
-            <div class="thumb-body">
-              <div class="thumb-top"><h4>Nexluna</h4><span class="thumb-year">2026</span></div>
-              <p data-en="A precise unit converter built around the Arabic reading experience — 14 categories, 100 units, history, favourites, dark mode." data-ar="محوّل وحدات دقيق صُمّم أولًا لتجربة المستخدم العربي — 14 فئة و100 وحدة وسجل ومفضلة ووضع ليلي.">A precise unit converter built around the Arabic reading experience — 14 categories, 100 units, history, favourites, dark mode.</p>
-              <div class="link-row">
-                <a class="btn btn-ghost btn-sm" href="https://nexluna.netlify.app" target="_blank" rel="noopener"><span data-en="Live" data-ar="زيارة">Live</span></a>
-                <span class="thumb-type">Arabic-first web app</span>
-              </div>
-            </div>
-          </article>
-          <article class="thumb-card" data-reveal>
-            <a class="thumb-media" href="https://calcuzakat.netlify.app" target="_blank" rel="noopener" aria-label="CalcuZakat — live">
-              <img src="assets/work/calcuzakat.webp" alt="CalcuZakat" width="800" height="500" loading="lazy" decoding="async">
-            </a>
-            <div class="thumb-body">
-              <div class="thumb-top"><h4>CalcuZakat</h4><span class="thumb-year">2026</span></div>
-              <p data-en="A Shariah-accurate zakat calculator — 10 zakat types, 10 currencies, printable reports, and live gold &amp; silver prices, computed client-side." data-ar="حاسبة زكاة شرعية شاملة — 10 أنواع زكاة و10 عملات وتقارير قابلة للطباعة وأسعار ذهب وفضة حية، وكل الحسابات داخل المتصفح.">A Shariah-accurate zakat calculator — 10 zakat types, 10 currencies, printable reports, and live gold &amp; silver prices, computed client-side.</p>
-              <div class="link-row">
-                <a class="btn btn-ghost btn-sm" href="https://calcuzakat.netlify.app" target="_blank" rel="noopener"><span data-en="Live" data-ar="زيارة">Live</span></a>
-                <span class="thumb-type">FinTech PWA</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Design & identity -->
-        <h3 class="more-title" data-reveal data-en="Design & identity" data-ar="تصميم وهوية بصرية">Design &amp; identity</h3>
-        <div class="design-grid">
-          <a class="design-card" href="assets/design/burger-taste.webp" target="_blank" rel="noopener" data-reveal>
-            <img src="assets/design/burger-taste.webp" alt="Burger Taste" loading="lazy" decoding="async">
-            <div class="design-meta"><h4>Burger Taste</h4><span data-en="Restaurant identity · Packaging" data-ar="هوية مطعم · تغليف">Restaurant identity · Packaging</span></div>
-          </a>
-          <a class="design-card" href="assets/design/behind-the-screen.webp" target="_blank" rel="noopener" data-reveal>
-            <img src="assets/design/behind-the-screen.webp" alt="Behind the Screen" loading="lazy" decoding="async">
-            <div class="design-meta"><h4>Behind the Screen</h4><span data-en="Podcast poster · Arabic social" data-ar="بوستر بودكاست · سوشيال عربي">Podcast poster · Arabic social</span></div>
-          </a>
-          <a class="design-card" href="assets/design/al-resala-excellence.webp" target="_blank" rel="noopener" data-reveal>
-            <img src="assets/design/al-resala-excellence.webp" alt="Al Resala Excellence Certificate" loading="lazy" decoding="async">
-            <div class="design-meta"><h4>Al Resala Excellence Certificate</h4><span data-en="Certificate design · Print" data-ar="تصميم شهادة · مطبوعات">Certificate design · Print</span></div>
-          </a>
-          <a class="design-card" href="assets/design/dealario.webp" target="_blank" rel="noopener" data-reveal>
-            <img src="assets/design/dealario.webp" alt="Dealario" loading="lazy" decoding="async">
-            <div class="design-meta"><h4>Dealario</h4><span data-en="Logo direction · Brand mark" data-ar="شعار وهوية بصرية">Logo direction · Brand mark</span></div>
-          </a>
-          <a class="design-card" href="assets/design/gaming-channel.webp" target="_blank" rel="noopener" data-reveal>
-            <img src="assets/design/gaming-channel.webp" alt="Dealario Appliance Sale" loading="lazy" decoding="async">
-            <div class="design-meta"><h4>Dealario Appliance Sale</h4><span data-en="Campaign creative" data-ar="تصميم حملة إعلانية">Campaign creative</span></div>
-          </a>
-          <a class="design-card" href="assets/design/al-shahba.webp" target="_blank" rel="noopener" data-reveal>
-            <img src="assets/design/al-shahba.webp" alt="Abu Al-Qasim" loading="lazy" decoding="async">
-            <div class="design-meta"><h4>Abu Al-Qasim</h4><span data-en="Gaming channel banner" data-ar="بانر قناة جيمنج">Gaming channel banner</span></div>
-          </a>
-          <a class="design-card" href="assets/design/service-ads.webp" target="_blank" rel="noopener" data-reveal>
-            <img src="assets/design/service-ads.webp" alt="Water Delivery Campaign" loading="lazy" decoding="async">
-            <div class="design-meta"><h4>Water Delivery Campaign</h4><span data-en="Arabic social ads" data-ar="إعلانات سوشيال عربية">Arabic social ads</span></div>
-          </a>
-          <a class="design-card" href="assets/design/tshirt-brand.webp" target="_blank" rel="noopener" data-reveal>
-            <img src="assets/design/tshirt-brand.webp" alt="Borcelle Printing" loading="lazy" decoding="async">
-            <div class="design-meta"><h4>Borcelle Printing</h4><span data-en="Brand application · Mockups" data-ar="تطبيق هوية · موك أب">Brand application · Mockups</span></div>
-          </a>
-          <a class="design-card" href="assets/design/trimbg.webp" target="_blank" rel="noopener" data-reveal>
-            <img src="assets/design/trimbg.webp" alt="TrimBG product mark" loading="lazy" decoding="async">
-            <div class="design-meta"><h4>TrimBG</h4><span data-en="Product identity · Brand mark" data-ar="هوية منتج · علامة بصرية">Product identity · Brand mark</span></div>
-          </a>
+        <div class="section-more" data-reveal>
+          <a class="btn btn-ghost" href="work.html"><span data-en="View all 20 projects" data-ar="شوف كل الـ 20 مشروع">View all 20 projects</span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </div>
       </div>
     </section>
 
-    <!-- ===== STACK ===== -->
-    <section id="stack" class="section section-alt">
+    <section class="section section-alt">
+      <div class="container">
+        <div class="about-stats" data-reveal>
+          <div class="stat"><b>20</b><span data-en="projects &amp; builds shipped" data-ar="مشروع وبناء اتبعث">projects &amp; builds shipped</span></div>
+          <div class="stat"><b>3</b><span data-en="live products with real users" data-ar="منتجات لايف بمستخدمين حقيقيين">live products with real users</span></div>
+          <div class="stat"><b>2</b><span data-en="npm packages" data-ar="حزم npm">npm packages</span></div>
+          <div class="stat"><b>28</b><span data-en="verified certificates" data-ar="شهادة موثقة">verified certificates</span></div>
+        </div>
+      </div>
+    </section>
+
+<section id="stack" class="section section-alt">
       <div class="container">
         <div class="section-head" data-reveal>
           <h2 data-en="Stack" data-ar="الأدوات">Stack</h2>
@@ -442,25 +301,14 @@
       </div>
     </section>
 
-
-    <!-- ===== CERTIFICATIONS ===== -->
-    <section id="certs" class="section section-alt">
+    <section id="certs" class="section">
       <div class="container">
         <div class="section-head" data-reveal>
           <h2 data-en="Certifications" data-ar="الشهادات">Certifications</h2>
           <p data-en="Documented learning, connected to real work — 28 verified certificates." data-ar="تعلم موثّق ومتصّل بالشغل الحقيقي — 28 شهادة موثقة.">Documented learning, connected to real work — 28 verified certificates.</p>
         </div>
-        <div class="cert-toolbar" data-reveal role="group" aria-label="Filter certifications">
-          <div class="cert-filters">
-            <button type="button" class="cert-chip is-active" data-filter="all" aria-pressed="true"><span data-en="All · 28" data-ar="الكل · 28">All · 28</span></button>
-            <button type="button" class="cert-chip" data-filter="ai" aria-pressed="false"><span data-en="AI · 13" data-ar="ذكاء اصطناعي · 13">AI · 13</span></button>
-            <button type="button" class="cert-chip" data-filter="data" aria-pressed="false"><span data-en="Data · 2" data-ar="بيانات · 2">Data · 2</span></button>
-            <button type="button" class="cert-chip" data-filter="programming" aria-pressed="false"><span data-en="Programming · 9" data-ar="برمجة · 9">Programming · 9</span></button>
-            <button type="button" class="cert-chip" data-filter="marketing" aria-pressed="false"><span data-en="Marketing · 4" data-ar="تسويق · 4">Marketing · 4</span></button>
-          </div>
-        </div>
-        <div class="certs-grid" data-cert-grid="main">
-          <a class="cert-card" href="assets/certs/cisco-modern-ai.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
+        <div class="certs-grid">
+<a class="cert-card" href="assets/certs/cisco-modern-ai.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
             <div class="cert-media"><img src="assets/certs/cisco-modern-ai.webp" data-en="assets/certs/cisco-modern-ai.webp" data-ar="assets/certs/cisco-modern-ai.webp" alt="Introduction to Modern AI — Cisco Networking Academy" loading="lazy" decoding="async"></div>
             <div class="cert-meta">
               <h4 data-en="Introduction to Modern AI" data-ar="مقدمة في الذكاء الاصطناعي الحديث">Introduction to Modern AI</h4>
@@ -468,7 +316,7 @@
               <div class="cert-line"><b data-en="Applied AI" data-ar="ذكاء اصطناعي عملي">Applied AI</b><small>Aug 2025</small></div>
             </div>
           </a>
-          <a class="cert-card" href="assets/certs/ethics-gen-ai.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
+<a class="cert-card" href="assets/certs/ethics-gen-ai.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
             <div class="cert-media"><img src="assets/certs/ethics-gen-ai.webp" data-en="assets/certs/ethics-gen-ai.webp" data-ar="assets/certs/ethics-gen-ai.webp" alt="Ethics in the Age of Generative AI — LinkedIn Learning" loading="lazy" decoding="async"></div>
             <div class="cert-meta">
               <h4 data-en="Ethics in the Age of Generative AI" data-ar="أخلاقيات عصر الذكاء الاصطناعي التوليدي">Ethics in the Age of Generative AI</h4>
@@ -476,7 +324,7 @@
               <div class="cert-line"><b data-en="Responsible AI" data-ar="ذكاء اصطناعي مسؤول">Responsible AI</b><small>Sep 2025</small></div>
             </div>
           </a>
-          <a class="cert-card" href="assets/certs/what-is-gen-ai.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
+<a class="cert-card" href="assets/certs/what-is-gen-ai.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
             <div class="cert-media"><img src="assets/certs/what-is-gen-ai.webp" data-en="assets/certs/what-is-gen-ai.webp" data-ar="assets/certs/what-is-gen-ai.webp" alt="What Is Generative AI? — LinkedIn Learning" loading="lazy" decoding="async"></div>
             <div class="cert-meta">
               <h4 data-en="What Is Generative AI?" data-ar="ما هو الذكاء الاصطناعي التوليدي؟">What Is Generative AI?</h4>
@@ -484,220 +332,19 @@
               <div class="cert-line"><b data-en="Generative AI" data-ar="ذكاء اصطناعي توليدي">Generative AI</b><small>Oct 2025</small></div>
             </div>
           </a>
-          <a class="cert-card" href="assets/certs/intro-to-ai.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
-            <div class="cert-media"><img src="assets/certs/intro-to-ai.webp" data-en="assets/certs/intro-to-ai.webp" data-ar="assets/certs/intro-to-ai.webp" alt="Introduction to AI — LinkedIn Learning" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Introduction to AI" data-ar="مقدمة في الذكاء الاصطناعي">Introduction to AI</h4>
-              <span class="cert-issuer">LinkedIn Learning</span>
-              <div class="cert-line"><b data-en="AI foundations" data-ar="أساسيات الذكاء الاصطناعي">AI foundations</b><small>Dec 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/data-analytics-foundations.webp" target="_blank" rel="noopener" data-group="data" data-reveal>
-            <div class="cert-media"><img src="assets/certs/data-analytics-foundations.webp" data-en="assets/certs/data-analytics-foundations.webp" data-ar="assets/certs/data-analytics-foundations.webp" alt="Learning Data Analytics: 1 Foundations — LinkedIn Learning" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Learning Data Analytics: 1 Foundations" data-ar="أساسيات تحليل البيانات">Learning Data Analytics: 1 Foundations</h4>
-              <span class="cert-issuer">LinkedIn Learning</span>
-              <div class="cert-line"><b data-en="Data analytics" data-ar="تحليل البيانات">Data analytics</b><small>Aug 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/gen-ai-tools.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
-            <div class="cert-media"><img src="assets/certs/gen-ai-tools.webp" data-en="assets/certs/gen-ai-tools.webp" data-ar="assets/certs/gen-ai-tools.webp" alt="Generative AI Tools CSW — Microsoft Egypt / Tawar w Ghayar" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Generative AI Tools CSW" data-ar="أدوات الذكاء الاصطناعي التوليدي">Generative AI Tools CSW</h4>
-              <span class="cert-issuer">Microsoft Egypt / Tawar w Ghayar</span>
-              <div class="cert-line"><b data-en="Generative AI" data-ar="ذكاء اصطناعي توليدي">Generative AI</b><small>Dec 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/microsoft-ai-system-analysis.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
-            <div class="cert-media"><img src="assets/certs/microsoft-ai-system-analysis.webp" data-en="assets/certs/microsoft-ai-system-analysis.webp" data-ar="assets/certs/microsoft-ai-system-analysis.webp" alt="System Analysis using AI — Microsoft Egypt / Tawar w Ghayar" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="System Analysis using AI" data-ar="تحليل النظم باستخدام الذكاء الاصطناعي">System Analysis using AI</h4>
-              <span class="cert-issuer">Microsoft Egypt / Tawar w Ghayar</span>
-              <div class="cert-line"><b data-en="AI system analysis" data-ar="تحليل النظم بـ AI">AI system analysis</b><small>Dec 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/canva-ai-classroom.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
-            <div class="cert-media"><img src="assets/certs/canva-ai-classroom.webp" data-en="assets/certs/canva-ai-classroom.webp" data-ar="assets/certs/canva-ai-classroom.webp" alt="AI in the Classroom — Canva Design School" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="AI in the Classroom" data-ar="الذكاء الاصطناعي في الفصل الدراسي">AI in the Classroom</h4>
-              <span class="cert-issuer">Canva Design School</span>
-              <div class="cert-line"><b data-en="AI for lesson planning" data-ar="تخطيط الدروس بـ AI">AI for lesson planning</b><small>Jun 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/ai-for-beginners.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
-            <div class="cert-media"><img src="assets/certs/ai-for-beginners.webp" data-en="assets/certs/ai-for-beginners.webp" data-ar="assets/certs/ai-for-beginners.webp" alt="AI for Beginners — HP LIFE / HP Foundation" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="AI for Beginners" data-ar="الذكاء الاصطناعي للمبتدئين">AI for Beginners</h4>
-              <span class="cert-issuer">HP LIFE / HP Foundation</span>
-              <div class="cert-line"><b data-en="AI foundations" data-ar="أساسيات الذكاء الاصطناعي">AI foundations</b><small>Sep 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/selling-online.webp" target="_blank" rel="noopener" data-group="marketing" data-reveal>
-            <div class="cert-media"><img src="assets/certs/selling-online.webp" data-en="assets/certs/selling-online.webp" data-ar="assets/certs/selling-online.webp" alt="Selling Online — HP LIFE / HP Foundation" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Selling Online" data-ar="البيع عبر الإنترنت">Selling Online</h4>
-              <span class="cert-issuer">HP LIFE / HP Foundation</span>
-              <div class="cert-line"><b data-en="E-commerce" data-ar="التجارة الإلكترونية">E-commerce</b><small>Jul 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/social-media-marketing.webp" target="_blank" rel="noopener" data-group="marketing" data-reveal>
-            <div class="cert-media"><img src="assets/certs/social-media-marketing.webp" data-en="assets/certs/social-media-marketing.webp" data-ar="assets/certs/social-media-marketing.webp" alt="Social Media Marketing — HP LIFE / HP Foundation" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Social Media Marketing" data-ar="التسويق عبر مواقع التواصل الاجتماعي">Social Media Marketing</h4>
-              <span class="cert-issuer">HP LIFE / HP Foundation</span>
-              <div class="cert-line"><b data-en="Social media marketing" data-ar="التسويق عبر السوشيال">Social media marketing</b><small>Jul 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/one-million-prompters.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
-            <div class="cert-media"><img src="assets/certs/one-million-prompters.webp" data-en="assets/certs/one-million-prompters.webp" data-ar="assets/certs/one-million-prompters-ar.webp" alt="One Million Prompters — Certificate of Completion — Dubai Centre for Artificial Intelligence / Dubai Future Foundation" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="One Million Prompters — Certificate of Completion" data-ar="مبادرة المليون Prompter — شهادة إتمام">One Million Prompters — Certificate of Completion</h4>
-              <span class="cert-issuer">Dubai Centre for Artificial Intelligence / Dubai Future Foundation</span>
-              <div class="cert-line"><b data-en="Prompt engineering" data-ar="هندسة الأوامر">Prompt engineering</b><small>Aug 2026</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/gen-ai-in-action.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
-            <div class="cert-media"><img src="assets/certs/gen-ai-in-action.webp" data-en="assets/certs/gen-ai-in-action.webp" data-ar="assets/certs/gen-ai-in-action.webp" alt="Generative AI in Action — Manara" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Generative AI in Action" data-ar="الذكاء الاصطناعي التوليدي عمليًا">Generative AI in Action</h4>
-              <span class="cert-issuer">Manara</span>
-              <div class="cert-line"><b data-en="Applied generative AI" data-ar="ذكاء اصطناعي توليدي تطبيقي">Applied generative AI</b><small>Aug 2026</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/manara-intro-gen-ai.webp" target="_blank" rel="noopener" data-group="ai" data-reveal>
-            <div class="cert-media"><img src="assets/certs/manara-intro-gen-ai.webp" data-en="assets/certs/manara-intro-gen-ai.webp" data-ar="assets/certs/manara-intro-gen-ai.webp" alt="Intro to Gen AI &amp; Prompt Engineering — Manara" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Intro to Gen AI &amp; Prompt Engineering" data-ar="مقدمة في الذكاء الاصطناعي التوليدي وهندسة الأوامر">Intro to Gen AI &amp; Prompt Engineering</h4>
-              <span class="cert-issuer">Manara</span>
-              <div class="cert-line"><b data-en="Prompt engineering" data-ar="هندسة الأوامر">Prompt engineering</b><small>Aug 2026</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/digital-analytics.webp" target="_blank" rel="noopener" data-group="data" data-reveal>
-            <div class="cert-media"><img src="assets/certs/digital-analytics.webp" data-en="assets/certs/digital-analytics.webp" data-ar="assets/certs/digital-analytics-ar.webp" alt="Digital Analytics — Edraak (إدراك)" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Digital Analytics" data-ar="التحليل الرقمي">Digital Analytics</h4>
-              <span class="cert-issuer">Edraak (إدراك)</span>
-              <div class="cert-line"><b data-en="Data analytics" data-ar="تحليل البيانات">Data analytics</b><small>Jul 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/seo.webp" target="_blank" rel="noopener" data-group="marketing" data-reveal>
-            <div class="cert-media"><img src="assets/certs/seo.webp" data-en="assets/certs/seo.webp" data-ar="assets/certs/seo-ar.webp" alt="Search Engine Optimization (SEO) — Edraak (إدراك)" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Search Engine Optimization (SEO)" data-ar="تحسين محركات البحث (SEO)">Search Engine Optimization (SEO)</h4>
-              <span class="cert-issuer">Edraak (إدراك)</span>
-              <div class="cert-line"><b data-en="SEO" data-ar="تحسين محركات البحث">SEO</b><small>Jul 2026</small></div>
-            </div>
-          </a>
-          <a class="cert-card" href="assets/certs/right-online-presence.webp" target="_blank" rel="noopener" data-group="marketing" data-reveal>
-            <div class="cert-media"><img src="assets/certs/right-online-presence.webp" data-en="assets/certs/right-online-presence.webp" data-ar="assets/certs/right-online-presence-ar.webp" alt="The Right Online Presence — Edraak (إدراك)" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="The Right Online Presence" data-ar="الحضور الرقمي الصحيح">The Right Online Presence</h4>
-              <span class="cert-issuer">Edraak (إدراك)</span>
-              <div class="cert-line"><b data-en="Online presence" data-ar="الحضور الرقمي">Online presence</b><small>Jul 2026</small></div>
-            </div>
-          </a>
         </div>
-        <h3 class="recent-title" data-cert-recent-head data-reveal data-en="Completed recently" data-ar="أكملتها مؤخرًا">Completed recently</h3>
-        <div class="certs-grid" data-cert-grid="recent">
-          <a class="cert-card is-recent" href="assets/certs/programming-fundamentals.webp" target="_blank" rel="noopener" data-group="programming" data-recent="1" data-reveal>
-            <div class="cert-media"><img src="assets/certs/programming-fundamentals.webp" data-en="assets/certs/programming-fundamentals.webp" data-ar="assets/certs/programming-fundamentals.webp" alt="Programming Fundamentals — M3aarf" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Programming Fundamentals" data-ar="تعلم أساسيات البرمجة">Programming Fundamentals</h4>
-              <span class="cert-issuer">M3aarf</span>
-              <div class="cert-line"><b data-en="Programming" data-ar="البرمجة">Programming</b><small>Jan 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card is-recent" href="assets/certs/cs-fundamentals.webp" target="_blank" rel="noopener" data-group="programming" data-recent="1" data-reveal>
-            <div class="cert-media"><img src="assets/certs/cs-fundamentals.webp" data-en="assets/certs/cs-fundamentals.webp" data-ar="assets/certs/cs-fundamentals.webp" alt="Computer Science Fundamentals — Mind Luster" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Computer Science Fundamentals" data-ar="أساسيات علوم الحاسب">Computer Science Fundamentals</h4>
-              <span class="cert-issuer">Mind Luster</span>
-              <div class="cert-line"><b data-en="CS fundamentals" data-ar="أساسيات علوم الحاسب">CS fundamentals</b><small>Sep 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card is-recent" href="assets/certs/ai-fundamentals.webp" target="_blank" rel="noopener" data-group="ai" data-recent="1" data-reveal>
-            <div class="cert-media"><img src="assets/certs/ai-fundamentals.webp" data-en="assets/certs/ai-fundamentals.webp" data-ar="assets/certs/ai-fundamentals.webp" alt="AI Fundamentals for Beginners — Mind Luster" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="AI Fundamentals for Beginners" data-ar="أساسيات الذكاء الاصطناعي للمبتدئين">AI Fundamentals for Beginners</h4>
-              <span class="cert-issuer">Mind Luster</span>
-              <div class="cert-line"><b data-en="AI foundations" data-ar="أساسيات الذكاء الاصطناعي">AI foundations</b><small>Jan 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card is-recent" href="assets/certs/ai-software-testing.webp" target="_blank" rel="noopener" data-group="ai" data-recent="1" data-reveal>
-            <div class="cert-media"><img src="assets/certs/ai-software-testing.webp" data-en="assets/certs/ai-software-testing.webp" data-ar="assets/certs/ai-software-testing.webp" alt="AI Impacts on Software Testing — Mind Luster" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="AI Impacts on Software Testing" data-ar="أثر الذكاء الاصطناعي على اختبارات البرمجيات">AI Impacts on Software Testing</h4>
-              <span class="cert-issuer">Mind Luster</span>
-              <div class="cert-line"><b data-en="AI in testing" data-ar="الذكاء الاصطناعي في الاختبار">AI in testing</b><small>Jan 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card is-recent" href="assets/certs/icdl-basics.webp" target="_blank" rel="noopener" data-group="programming" data-recent="1" data-reveal>
-            <div class="cert-media"><img src="assets/certs/icdl-basics.webp" data-en="assets/certs/icdl-basics.webp" data-ar="assets/certs/icdl-basics-ar.webp" alt="ICDL Basics — Edraak (إدراك)" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="ICDL Basics" data-ar="أساسيات ICDL">ICDL Basics</h4>
-              <span class="cert-issuer">Edraak (إدراك)</span>
-              <div class="cert-line"><b data-en="Digital skills" data-ar="المهارات الرقمية">Digital skills</b><small>Jul 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card is-recent" href="assets/certs/word-processing.webp" target="_blank" rel="noopener" data-group="programming" data-recent="1" data-reveal>
-            <div class="cert-media"><img src="assets/certs/word-processing.webp" data-en="assets/certs/word-processing.webp" data-ar="assets/certs/word-processing-ar.webp" alt="Word Processing — Edraak (إدراك)" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Word Processing" data-ar="معالجة النصوص (Word)">Word Processing</h4>
-              <span class="cert-issuer">Edraak (إدراك)</span>
-              <div class="cert-line"><b data-en="Office productivity" data-ar="إنتاجية المكاتب">Office productivity</b><small>Jul 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card is-recent" href="assets/certs/excel-spreadsheets.webp" target="_blank" rel="noopener" data-group="programming" data-recent="1" data-reveal>
-            <div class="cert-media"><img src="assets/certs/excel-spreadsheets.webp" data-en="assets/certs/excel-spreadsheets.webp" data-ar="assets/certs/excel-spreadsheets-ar.webp" alt="Excel Spreadsheets — Edraak (إدراك)" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Excel Spreadsheets" data-ar="جداول البيانات (Excel)">Excel Spreadsheets</h4>
-              <span class="cert-issuer">Edraak (إدراك)</span>
-              <div class="cert-line"><b data-en="Spreadsheets" data-ar="جداول البيانات">Spreadsheets</b><small>Jul 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card is-recent" href="assets/certs/computer-essentials.webp" target="_blank" rel="noopener" data-group="programming" data-recent="1" data-reveal>
-            <div class="cert-media"><img src="assets/certs/computer-essentials.webp" data-en="assets/certs/computer-essentials.webp" data-ar="assets/certs/computer-essentials-ar.webp" alt="Computer Essentials — Edraak (إدراك)" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Computer Essentials" data-ar="أساسيات الحاسوب">Computer Essentials</h4>
-              <span class="cert-issuer">Edraak (إدراك)</span>
-              <div class="cert-line"><b data-en="Computer basics" data-ar="أساسيات الحاسوب">Computer basics</b><small>Aug 2026</small></div>
-            </div>
-          </a>
-          <a class="cert-card is-recent" href="assets/certs/internet-email.webp" target="_blank" rel="noopener" data-group="programming" data-recent="1" data-reveal>
-            <div class="cert-media"><img src="assets/certs/internet-email.webp" data-en="assets/certs/internet-email.webp" data-ar="assets/certs/internet-email.webp" alt="Internet &amp; Email Essentials — Edraak (إدراك)" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Internet &amp; Email Essentials" data-ar="أساسيات الإنترنت والبريد الإلكتروني">Internet &amp; Email Essentials</h4>
-              <span class="cert-issuer">Edraak (إدراك)</span>
-              <div class="cert-line"><b data-en="Internet &amp; email" data-ar="الإنترنت والبريد">Internet &amp; email</b><small>Aug 2026</small></div>
-            </div>
-          </a>
-          <a class="cert-card is-recent" href="assets/certs/tech-principles.webp" target="_blank" rel="noopener" data-group="programming" data-recent="1" data-reveal>
-            <div class="cert-media"><img src="assets/certs/tech-principles.webp" data-en="assets/certs/tech-principles.webp" data-ar="assets/certs/tech-principles-ar.webp" alt="Tech Principles &amp; Professional Communication — Edraak (إدراك)" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Tech Principles &amp; Professional Communication" data-ar="مبادئ التقنية والتواصل المهني">Tech Principles &amp; Professional Communication</h4>
-              <span class="cert-issuer">Edraak (إدراك)</span>
-              <div class="cert-line"><b data-en="Tech communication" data-ar="التواصل التقني">Tech communication</b><small>Aug 2025</small></div>
-            </div>
-          </a>
-          <a class="cert-card is-recent" href="assets/certs/production-correspondence.webp" target="_blank" rel="noopener" data-group="programming" data-recent="1" data-reveal>
-            <div class="cert-media"><img src="assets/certs/production-correspondence.webp" data-en="assets/certs/production-correspondence.webp" data-ar="assets/certs/production-correspondence.webp" alt="Production Correspondence — Edraak (إدراك)" loading="lazy" decoding="async"></div>
-            <div class="cert-meta">
-              <h4 data-en="Production Correspondence" data-ar="المراسلات الإنتاجية">Production Correspondence</h4>
-              <span class="cert-issuer">Edraak (إدراك)</span>
-              <div class="cert-line"><b data-en="Professional writing" data-ar="الكتابة المهنية">Professional writing</b><small>Jul 2026</small></div>
-            </div>
-          </a>
+        <div class="section-more" data-reveal>
+          <a class="btn btn-ghost" href="certificates.html"><span data-en="View all 28 certificates" data-ar="شوف كل الـ 28 شهادة">View all 28 certificates</span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </div>
       </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="section">
+    <section id="about" class="section section-alt">
       <div class="container about-wrap">
         <div class="section-head" data-reveal>
           <h2 data-en="About" data-ar="عني">About</h2>
         </div>
-        <div class="about-body">
+<div class="about-body">
           <p data-reveal data-en="I'm Mohamed — a frontend developer from Cairo who cares that things actually ship. React and TypeScript by day; Arabic-first products after hours. Waslfy helps Egyptian COD merchants turn WhatsApp messages into printable shipments. TossInbox gives developers — and their AI agents — throwaway inboxes with no sign-ups. trigger-doctor keeps agent skills honest."
              data-ar="أنا محمد — مطور واجهات من القاهرة، الفرق عندي في إن الحاجة توصل للنور فعلًا. React و TypeScript في الشغل، ومنتجات عربية أولًا في الوقت الفاضي. وصلّي بتساعد تجار التحصيل عند الاستلام يحوّلوا رسايل واتساب لإيصالات شحن جاهزة للطباعة. TossInbox بتدي المطورين — ووكلاء الـ AI بتوعهم — إيميلات مؤقتة من غير تسجيل. و trigger-doctor بتحافظ على إن مهارات الـ agents تشتغل زي ما المفروض.">
             I'm Mohamed — a frontend developer from Cairo who cares that things actually ship. React and TypeScript by day; Arabic-first products after hours. Waslfy helps Egyptian COD merchants turn WhatsApp messages into printable shipments. TossInbox gives developers — and their AI agents — throwaway inboxes with no sign-ups. trigger-doctor keeps agent skills honest.
@@ -707,51 +354,19 @@
             Everything I build is open source, and most of it runs on the edge — or fully on your device. This profile and portfolio are maintained with AI pair-programming, and I'm comfortable being upfront about that: the taste, the decisions and the shipping are mine.
           </p>
         </div>
-        <div class="about-stats" data-reveal>
-          <div class="stat"><b>11</b><span data-en="products &amp; builds live" data-ar="منتجات ومشاريع لايف">products &amp; builds live</span></div>
-          <div class="stat"><b>3</b><span data-en="real clients" data-ar="عملاء حقيقيين">real clients</span></div>
-          <div class="stat"><b>9</b><span data-en="identity &amp; design works" data-ar="أعمال هوية وتصميم">identity &amp; design works</span></div>
-          <div class="stat"><b>28</b><span data-en="verified certificates" data-ar="شهادة موثقة">verified certificates</span></div>
-        </div>
-        <div class="cap-grid" data-reveal>
-          <div class="cap">
-            <h4 data-en="Web engineering" data-ar="هندسة ويب">Web engineering</h4>
-            <p data-en="Fast products, thoughtful architecture, and interfaces that hold up under real use." data-ar="منتجات سريعة، وبنية مدروسة، وواجهات تصمد أمام الاستخدام الحقيقي.">Fast products, thoughtful architecture, and interfaces that hold up under real use.</p>
-          </div>
-          <div class="cap">
-            <h4 data-en="Applied AI" data-ar="ذكاء اصطناعي عملي">Applied AI</h4>
-            <p data-en="Practical AI workflows that help teams research, write, test, and move with clarity." data-ar="تدفقات AI عملية بتساعد الفرق في البحث والكتابة والاختبار والمشي بوضوح.">Practical AI workflows that help teams research, write, test, and move with clarity.</p>
-          </div>
-          <div class="cap">
-            <h4 data-en="Visual systems" data-ar="أنظمة بصرية">Visual systems</h4>
-            <p data-en="Identity, UI, and launch-ready creative direction built as one coherent system." data-ar="هوية وواجهات واتجاه إبداعي جاهز للإطلاق — كنظام واحد متماسك.">Identity, UI, and launch-ready creative direction built as one coherent system.</p>
-          </div>
-        </div>
-        <div class="quotes" data-reveal>
-          <figure class="quote">
-            <blockquote data-en="Mohamed delivered an exceptional landing page that far exceeded our expectations. His attention to detail is unmatched." data-ar="قدم محمد صفحة هبوط استثنائية فاقت توقعاتنا. اهتمامه بالتفاصيل لا مثيل له.">Mohamed delivered an exceptional landing page that far exceeded our expectations. His attention to detail is unmatched.</blockquote>
-            <figcaption data-en="E-commerce store owner" data-ar="صاحب متجر إلكتروني">E-commerce store owner</figcaption>
-          </figure>
-          <figure class="quote">
-            <blockquote data-en="Professional, fast, and extremely creative. The brand package he designed gave our startup the professional look we needed." data-ar="محترف، سريع، ومبدع للغاية. باقة الهوية التي صممها منحت شركتنا الناشئة المظهر الاحترافي الذي كنا نحتاجه.">Professional, fast, and extremely creative. The brand package he designed gave our startup the professional look we needed.</blockquote>
-            <figcaption data-en="Startup founder" data-ar="مؤسس شركة ناشئة">Startup founder</figcaption>
-          </figure>
-          <figure class="quote">
-            <blockquote data-en="Great communication and high technical skill. He solved complex UI problems with elegant solutions." data-ar="تواصل رائع ومهارات تقنية عالية. قام بحل مشاكل واجهة المستخدم المعقدة بحلول أنيقة.">Great communication and high technical skill. He solved complex UI problems with elegant solutions.</blockquote>
-            <figcaption data-en="Product manager" data-ar="مدير منتج">Product manager</figcaption>
-          </figure>
+        <div class="section-more" data-reveal>
+          <a class="btn btn-ghost" href="about.html"><span data-en="More about me" data-ar="اكتر عني">More about me</span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </div>
       </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section section-alt">
+    <section id="contact" class="section">
       <div class="container contact-wrap">
         <div class="section-head" data-reveal>
           <h2 data-en="Let's build something real" data-ar="يلا نبني حاجة حقيقية">Let's build something real</h2>
           <p data-en="Open to freelance projects and full-time roles." data-ar="متاح لمشاريع فريلانس ووظايف بدوام كامل.">Open to freelance projects and full-time roles.</p>
         </div>
-        <div class="contact-row" data-reveal>
+<div class="contact-row" data-reveal>
           <a class="btn btn-primary" href="mailto:mohamedkhairy0887@gmail.com">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
             <span>mohamedkhairy0887@gmail.com</span>
@@ -782,10 +397,13 @@
     <div class="container footer-inner">
       <span data-en="© 2026 Mohamed Khairy — built by hand, no template." data-ar="© 2026 محمد خيري — اتبنى بإيد، من غير قوالب جاهزة.">© 2026 Mohamed Khairy — built by hand, no template.</span>
       <span class="footer-links">
+        <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="work.html" data-en="Work" data-ar="الأعمال">Work</a>
+        <a href="certificates.html" data-en="Certificates" data-ar="الشهادات">Certificates</a>
+        <a href="about.html" data-en="About" data-ar="عني">About</a>
+        <a href="contact.html" data-en="Contact" data-ar="تواصل">Contact</a>
         <a href="https://github.com/mohamed-khairy-5i" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/mohamed-khairy-5i/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://waslfy.pages.dev" target="_blank" rel="noopener">Waslfy</a>
-        <a href="https://tossinbox.pages.dev" target="_blank" rel="noopener">TossInbox</a>
       </span>
     </div>
   </footer>

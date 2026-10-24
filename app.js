@@ -1,9 +1,10 @@
-/* MoKhairy 3.0 — theme · language · reveal */
+/* MoKhairy 3.1 — multi-page · theme · language · reveal · filters · brief */
 (function () {
   "use strict";
 
   var root = document.documentElement;
   var $ = function (id) { return document.getElementById(id); };
+  var page = document.body.getAttribute("data-page") || "home";
 
   /* ---------- Theme (dark is the identity; light is the guest) ---------- */
   var iconMoon = $("iconMoon");
@@ -39,9 +40,31 @@
   /* ---------- Language (EN / AR with RTL) ---------- */
   var langLabel = $("langLabel");
   var titles = {
-    en: "Mohamed Khairy — Frontend Developer · Arabic-first products & dev tools",
-    ar: "محمد خيري — مطور واجهات · منتجات عربية أولًا وأدوات للمطورين"
+    home: {
+      en: "Mohamed Khairy — Frontend Developer · Arabic-first products & dev tools",
+      ar: "محمد خيري — مطور واجهات · منتجات عربية أولًا وأدوات للمطورين"
+    },
+    work: { en: "Work — Mohamed Khairy · 20 shipped projects", ar: "الأعمال — محمد خيري · 20 مشروع منشور" },
+    certificates: { en: "Certifications — Mohamed Khairy · 28 verified certificates", ar: "الشهادات — محمد خيري · 28 شهادة موثقة" },
+    about: { en: "About — Mohamed Khairy · Frontend Developer from Cairo", ar: "عني — محمد خيري · مطور واجهات من القاهرة" },
+    contact: { en: "Contact — Mohamed Khairy · Frontend Developer in Cairo", ar: "تواصل — محمد خيري · مطور واجهات في القاهرة" }
   };
+
+  var countLabels = {
+    all: { en: "20 projects", ar: "٢٠ مشروع" },
+    product: { en: "11 web products", ar: "١١ منتج ويب" },
+    design: { en: "9 design works", ar: "٩ أعمال تصميم" }
+  };
+  var workFilter = "all";
+
+  function updateCount() {
+    var out = document.querySelector(".work-count");
+    if (!out) return;
+    var l = countLabels[workFilter] || countLabels.all;
+    out.textContent = root.getAttribute("dir") === "rtl" ? l.ar : l.en;
+  }
+
+  function isRtl() { return root.getAttribute("dir") === "rtl"; }
 
   function applyLang(lang) {
     var nodes = document.querySelectorAll("[data-en]");
@@ -52,10 +75,16 @@
       if (el.tagName === "IMG") { el.setAttribute("src", value); continue; }
       el.innerHTML = value;
     }
+    var ph = document.querySelectorAll("[data-en-placeholder]");
+    for (var p = 0; p < ph.length; p++) {
+      ph[p].setAttribute("placeholder", lang === "ar" ? ph[p].getAttribute("data-ar-placeholder") : ph[p].getAttribute("data-en-placeholder"));
+    }
     root.setAttribute("lang", lang);
     root.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
-    document.title = titles[lang] || titles.en;
+    var t = titles[page] || titles.home;
+    document.title = t[lang] || t.en;
     if (langLabel) langLabel.textContent = lang === "ar" ? "English" : "عربية";
+    updateCount();
   }
 
   var savedLang = null;
@@ -70,6 +99,13 @@
       try { localStorage.setItem("mk3-lang", next); } catch (e) {}
     });
   }
+
+  /* ---------- Nav active state (per page) ---------- */
+  var pageHrefs = { home: "index.html", work: "work.html", certificates: "certificates.html", about: "about.html", contact: "contact.html" };
+  var currentHref = pageHrefs[page];
+  document.querySelectorAll(".nav-links a, .mobile-menu a").forEach(function (a) {
+    if (a.getAttribute("href") === currentHref) a.classList.add("active");
+  });
 
   /* ---------- Reveal on scroll (light elegant motion) ---------- */
   var revealEls = document.querySelectorAll("[data-reveal]");
@@ -112,30 +148,8 @@
     });
   }
 
-  /* ---------- Scrollspy (nav active state) ---------- */
-  var navAnchors = document.querySelectorAll(".nav-links a");
-  var spyPairs = [];
-  navAnchors.forEach(function (a) {
-    var sec = document.getElementById(a.getAttribute("href").slice(1));
-    if (sec) spyPairs.push({ link: a, sec: sec });
-  });
-  if ("IntersectionObserver" in window && spyPairs.length) {
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        for (var k = 0; k < spyPairs.length; k++) {
-          if (spyPairs[k].sec === en.target) {
-            navAnchors.forEach(function (a) { a.classList.remove("active"); });
-            spyPairs[k].link.classList.add("active");
-          }
-        }
-      });
-    }, { rootMargin: "-40% 0px -55% 0px" });
-    spyPairs.forEach(function (o) { spy.observe(o.sec); });
-  }
-
-  /* ---------- Certification filters ---------- */
-  var certChips = document.querySelectorAll(".cert-chip");
+  /* ---------- Certification filters (certificates.html) ---------- */
+  var certChips = document.querySelectorAll(".cert-chip[data-filter]");
   if (certChips.length) {
     var certCards = document.querySelectorAll(".cert-card");
     var recentHead = document.querySelector("[data-cert-recent-head]");
@@ -157,6 +171,54 @@
     });
   }
 
+  /* ---------- Work filters (work.html) ---------- */
+  var workChips = document.querySelectorAll("[data-work-filter]");
+  if (workChips.length) {
+    var workBlocks = document.querySelectorAll("[data-work-block]");
+    workChips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        workChips.forEach(function (c) {
+          c.classList.remove("is-active");
+          c.setAttribute("aria-pressed", "false");
+        });
+        chip.classList.add("is-active");
+        chip.setAttribute("aria-pressed", "true");
+        workFilter = chip.getAttribute("data-work-filter");
+        workBlocks.forEach(function (b) {
+          b.style.display = (workFilter === "all" || b.getAttribute("data-work-block") === workFilter) ? "" : "none";
+        });
+        updateCount();
+      });
+    });
+  }
+
+  /* ---------- Project brief (contact.html) ---------- */
+  var briefForm = $("briefForm");
+  if (briefForm) {
+    var need = $("briefNeed");
+    var timeline = $("briefTimeline");
+    var notes = $("briefNotes");
+    var mailBtn = $("briefMail");
+    var waBtn = $("briefWa");
+    var EMAIL = "mohamedkhairy0887@gmail.com";
+
+    var compose = function () {
+      var ar = isRtl();
+      var type = need ? need.value : "";
+      var time = timeline ? timeline.value : "";
+      var txt = notes && notes.value.trim() ? notes.value.trim() : "—";
+      var msg = ar
+        ? "مرحبًا محمد،\n\nنوع الاحتياج: " + type + "\nالجدول التقريبي: " + time + "\nالتفاصيل: " + txt + "\n\n"
+        : "Hi Mohamed,\n\nProject need: " + type + "\nTimeline: " + time + "\nNotes: " + txt + "\n\n";
+      var subject = ar ? "موجز مشروع جديد" : "New project brief";
+      if (mailBtn) mailBtn.setAttribute("href", "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(msg));
+      if (waBtn) waBtn.setAttribute("href", "https://wa.me/201060487315?text=" + encodeURIComponent(msg));
+    };
+    briefForm.addEventListener("input", compose);
+    briefForm.addEventListener("change", compose);
+    compose();
+  }
+
   /* ---------- Copy email + toast ---------- */
   var copyBtn = $("copyEmail");
   if (copyBtn) {
@@ -165,7 +227,7 @@
       var done = function () {
         var t = $("toast");
         if (t) {
-          t.textContent = root.getAttribute("dir") === "rtl" ? "تم نسخ الإيميل ✓" : "Email copied ✓";
+          t.textContent = isRtl() ? "تم نسخ الإيميل ✓" : "Email copied ✓";
           t.classList.add("show");
           setTimeout(function () { t.classList.remove("show"); }, 2200);
         }
