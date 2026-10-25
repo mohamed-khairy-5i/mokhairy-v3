@@ -30,6 +30,23 @@
   --glass-edge: rgba(190, 215, 255, 0.28);
   --glass-ring: rgba(170, 200, 255, 0.075);
   --nav-shadow: 0 24px 60px -22px rgba(0, 0, 0, 0.9), 0 8px 28px -12px rgba(47, 109, 240, 0.2);
+
+  /* motion tokens — transitions.dev school: one house curve, fast exits, slow enters */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);         /* smooth-out — the default feel */
+  --ease-pop: cubic-bezier(0.34, 1.36, 0.64, 1);  /* restrained pop, one bounce max */
+  --dur-quick: 150ms;   /* exits, hovers, small state flips */
+  --dur-fast: 250ms;    /* opens, menu, icon swaps */
+  --dur-slow: 500ms;    /* staged reveals */
+
+  /* feralui mesh — each glow blends two hues so overlaps feel like a gradient field */
+  --glow-a-core: rgba(85, 161, 255, 0.2);
+  --glow-a-edge: rgba(124, 92, 255, 0.09);
+  --glow-b-core: rgba(167, 139, 250, 0.17);
+  --glow-b-edge: rgba(240, 145, 155, 0.08);
+  --accent-3-soft: #ffd2b0;  /* sunset highlight — end of the iridescent ramp */
+
+  /* image outlines (make-interfaces-feel-better): pure white in dark, never tinted */
+  --img-outline: rgba(255, 255, 255, 0.1);
   --grid-line: rgba(255, 255, 255, 0.032);
   --code-bg: #070c16;
   --shadow-card: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
@@ -67,6 +84,13 @@
   --glass-edge: rgba(255, 255, 255, 0.95);
   --glass-ring: rgba(20, 50, 110, 0.1);
   --nav-shadow: 0 22px 50px -22px rgba(15, 40, 90, 0.45), 0 6px 20px -10px rgba(15, 40, 90, 0.15);
+
+  --glow-a-core: rgba(29, 99, 216, 0.12);
+  --glow-a-edge: rgba(122, 79, 240, 0.06);
+  --glow-b-core: rgba(122, 79, 240, 0.10);
+  --glow-b-edge: rgba(194, 86, 96, 0.05);
+  --accent-3-soft: #b97d0a;
+  --img-outline: rgba(0, 0, 0, 0.1);
   --grid-line: rgba(15, 45, 95, 0.05);
   --code-bg: #0a1120;
   --shadow-card: 0 24px 50px -30px rgba(15, 40, 90, 0.35);
@@ -100,6 +124,12 @@ body {
 ::selection { background: var(--accent-2); color: var(--on-accent); }
 
 img { max-width: 100%; display: block; }
+/* image outlines: neutral 1px depth ring — pure white in dark / black in light,
+   offset -1px so layout is untouched (make-interfaces-feel-better) */
+.feature-media img, .bc-img img, .cert-img img, .portrait-card img {
+  outline: 1px solid var(--img-outline);
+  outline-offset: -1px;
+}
 a { color: inherit; text-decoration: none; }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
@@ -133,15 +163,17 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
   z-index: 0;
 }
+/* feralui mesh: each glow is a two-hue blend — where they overlap the hues mix
+   like a gradient field instead of stacking flat circles */
 .glow-a {
   width: 620px; height: 620px;
   top: -220px; inset-inline-start: -160px;
-  background: radial-gradient(circle, var(--glow), transparent 65%);
+  background: radial-gradient(circle at 40% 40%, var(--glow-a-core), var(--glow-a-edge) 48%, transparent 68%);
 }
 .glow-b {
   width: 520px; height: 520px;
   bottom: -200px; inset-inline-end: -140px;
-  background: radial-gradient(circle, var(--glow-2), transparent 65%);
+  background: radial-gradient(circle at 58% 58%, var(--glow-b-core), var(--glow-b-edge) 50%, transparent 70%);
 }
 
 /* third ambient glow — warm peach counterpoint (feralui-style mesh) */
@@ -174,14 +206,21 @@ body::before {
 
 main { position: relative; z-index: 1; }
 
-/* ---------- Reveal motion ---------- */
+/* ---------- Reveal motion ----------
+   text-reveal recipe: 12px rise + 3px blur + the house curve; app.js assigns
+   --rd per entering batch (60ms steps, capped) so groups cascade */
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal] {
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.65s cubic-bezier(0.2, 0.6, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.6, 0.2, 1);
+    transform: translateY(12px);
+    filter: blur(3px);
+    transition:
+      opacity var(--dur-slow) var(--ease),
+      transform var(--dur-slow) var(--ease),
+      filter var(--dur-slow) var(--ease);
+    transition-delay: var(--rd, 0ms);
   }
-  [data-reveal].in { opacity: 1; transform: none; }
+  [data-reveal].in { opacity: 1; transform: none; filter: none; }
 }
 
 /* ---------- Nav ---------- */
@@ -225,7 +264,8 @@ main { position: relative; z-index: 1; }
   border-radius: 999px;
   font-size: 0.92rem;
   color: var(--muted);
-  transition: color 0.2s, background 0.2s;
+  /* high-frequency hover: minimal, ≤150ms (motion restraint) */
+  transition: color var(--dur-quick) ease-out, background-color var(--dur-quick) ease-out;
 }
 .nav-links a:hover { color: var(--text); background: var(--surface-strong); }
 .nav-links a.active { color: var(--text); background: var(--surface-strong); }
@@ -242,9 +282,10 @@ main { position: relative; z-index: 1; }
   font-family: var(--font-body);
   font-size: 0.88rem;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: background-color var(--dur-quick) ease-out, scale var(--dur-quick) ease-out;
 }
-.chip-btn:hover { background: var(--surface-strong); transform: translateY(-1px); }
+.chip-btn:hover { background: var(--surface-strong); }
+.chip-btn:active { scale: 0.96; }
 .icon-btn { padding: 8px 10px; }
 
 /* burger + mobile menu */
@@ -258,8 +299,9 @@ main { position: relative; z-index: 1; }
   border-radius: 10px;
   background: var(--surface);
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background-color var(--dur-quick) ease-out, scale var(--dur-quick) ease-out;
 }
+.nav-burger:active { scale: 0.96; }
 .nav-burger span {
   display: block;
   height: 2px;
@@ -270,12 +312,15 @@ main { position: relative; z-index: 1; }
 .nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* menu dropdown — transitions.dev recipe: origin-aware scale, open slow /
+   close fast, interruptible (a re-click mid-flight retargets smoothly).
+   Replaces the old one-shot keyframe pop. */
 .mobile-menu {
-  display: none;
   position: absolute;
   top: calc(100% + 8px);
   inset-inline-end: 0; /* hangs under the burger side — flips automatically with RTL/LTR */
   z-index: 49;
+  display: flex;
   flex-direction: column;
   gap: 2px;
   width: min(260px, 100%);
@@ -283,15 +328,31 @@ main { position: relative; z-index: 1; }
   background: var(--nav-glass-solid);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border-radius: 16px;
+  border-radius: 20px; /* concentric: inner links 10px + 10px padding */
   box-shadow: inset 0 1px 0 var(--glass-edge), inset 0 0 0 1px var(--glass-ring), var(--nav-shadow);
+  opacity: 0;
+  transform: translateY(-4px) scale(0.97);
+  transform-origin: top right; /* LTR: burger side */
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity var(--dur-quick) var(--ease),
+    transform var(--dur-quick) var(--ease),
+    visibility 0s linear var(--dur-quick);
 }
-.mobile-menu.open { display: flex; }
-@keyframes menu-pop {
-  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+[dir="rtl"] .mobile-menu { transform-origin: top left; }
+.mobile-menu.open {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  visibility: visible;
+  transition:
+    opacity var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease),
+    visibility 0s;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .mobile-menu.open { animation: menu-pop 0.18s cubic-bezier(0.2, 0.9, 0.3, 1.2); }
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu { transition: none; }
 }
 .mobile-menu a {
   padding: 12px 14px;
@@ -318,7 +379,7 @@ main { position: relative; z-index: 1; }
   box-shadow: var(--shadow-card);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s, transform 0.25s;
+  transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
   z-index: 90;
 }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
@@ -349,8 +410,8 @@ main { position: relative; z-index: 1; }
 }
 .hero-title em {
   font-style: normal;
-  /* feralui-style iridescent composition: blue → violet → peach */
-  background: linear-gradient(115deg, var(--accent) 5%, var(--accent-2) 48%, var(--accent-3) 100%);
+  /* feralui iridescent ramp: blue → violet → peach → sunset highlight */
+  background: linear-gradient(118deg, var(--accent) 2%, var(--accent-2) 42%, var(--accent-3) 78%, var(--accent-3-soft) 104%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -447,10 +508,14 @@ main { position: relative; z-index: 1; }
   font-family: var(--font-body);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, background 0.2s;
+  transition: transform var(--dur-quick) var(--ease), box-shadow var(--dur-quick) var(--ease),
+    border-color var(--dur-quick) var(--ease), background-color var(--dur-quick) var(--ease),
+    scale var(--dur-quick) ease-out;
 }
+.btn:active { scale: 0.96; }
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2-deep));
+  /* sky → deep → orchid: three feralui stops for a richer brand ramp */
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 55%, var(--accent-2-deep) 110%);
   color: var(--on-accent);
   box-shadow: 0 10px 30px -10px var(--glow), inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
@@ -505,7 +570,11 @@ main { position: relative; z-index: 1; }
   letter-spacing: -0.025em;
   line-height: 1.08;
   margin-bottom: 10px;
+  text-wrap: balance;
 }
+
+/* typography details: balance short headings, pretty-wrap paragraphs */
+p, li, figcaption { text-wrap: pretty; }
 .page-head .lede { color: var(--muted); font-size: clamp(1rem, 1.4vw, 1.14rem); max-width: 38em; }
 
 /* ---------- Feature cards ---------- */
@@ -737,8 +806,11 @@ main { position: relative; z-index: 1; }
   font-family: var(--font-mono);
   font-size: 0.82rem;
   cursor: pointer;
-  transition: all 0.2s;
+  /* never transition: all — name the properties */
+  transition: color var(--dur-quick) ease-out, background-color var(--dur-quick) ease-out,
+    border-color var(--dur-quick) ease-out, scale var(--dur-quick) ease-out;
 }
+.cert-filters button:active { scale: 0.96; }
 .cert-filters button:hover { border-color: var(--border-strong); color: var(--text); }
 .cert-filters button.is-active {
   background: var(--accent);

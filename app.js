@@ -165,8 +165,13 @@
     for (var m = 0; m < revealEls.length; m++) revealEls[m].classList.add("in");
   } else {
     var io = new IntersectionObserver(function (entries) {
+      /* stagger: elements entering in the same batch cascade by 60ms steps,
+         capped so late singles don't lag (make-interfaces-feel-better) */
+      var batch = 0;
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
+          entry.target.style.setProperty("--rd", Math.min(batch * 60, 240) + "ms");
+          batch++;
           entry.target.classList.add("in");
           io.unobserve(entry.target);
         }
