@@ -75,6 +75,15 @@
 /* ---------- Base ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* buttons: strip UA chrome (outset borders) — every styled button overrides */
+button {
+  border: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
+
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 
 body {
