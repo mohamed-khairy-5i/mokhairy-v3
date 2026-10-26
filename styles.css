@@ -38,9 +38,10 @@
   --dur-fast: 250ms;    /* opens, menu, icon swaps */
   --dur-slow: 500ms;    /* staged reveals */
 
-  /* feralui mesh — each glow blends two hues so overlaps feel like a gradient field */
-  --glow-a-core: rgba(85, 161, 255, 0.48);
-  --glow-a-edge: rgba(124, 92, 255, 0.2);
+  /* feralui mesh × "Electric tide" (DENCHOU) blend: indigo core + cyan sheen on
+     glow-a; violet stays mid in glow-b; peach rim untouched. Accents/identity unchanged */
+  --glow-a-core: rgba(76, 91, 224, 0.5);
+  --glow-a-edge: rgba(111, 216, 242, 0.22);
   --glow-b-core: rgba(167, 139, 250, 0.42);
   --glow-b-edge: rgba(240, 145, 155, 0.17);
   --accent-3-soft: #ffd2b0;  /* sunset highlight — end of the iridescent ramp */
@@ -386,7 +387,8 @@ main { position: relative; z-index: 1; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; padding: clamp(44px, 7vh, 78px) 0 clamp(36px, 5vh, 56px); }
-/* hero sky — a scroll-away feralui field: sky top-end, orchid low-start, peach afterglow.
+/* hero sky — "Electric tide" field: cyan sheen top-end, indigo tide low-start,
+   ice crest glint near the title, peach afterglow kept as the warm counterpoint.
    insets stay ≥0 on the inline axis: negative % created 31px horizontal overflow in RTL mobile */
 .hero::before {
   content: "";
@@ -395,10 +397,18 @@ main { position: relative; z-index: 1; }
   z-index: -1;
   pointer-events: none;
   background:
+    radial-gradient(780px 480px at 78% 24%, rgba(111, 216, 242, 0.18), transparent 68%),
+    radial-gradient(860px 540px at 12% 76%, rgba(76, 91, 224, 0.24), transparent 70%),
+    radial-gradient(560px 360px at 55% 102%, rgba(240, 145, 155, 0.12), transparent 68%),
+    radial-gradient(460px 320px at 44% 6%, rgba(223, 251, 255, 0.08), transparent 70%);
+  filter: blur(34px);
+}
+/* light theme keeps the approved v13 pastel field — the tide blend is dark-only */
+[data-theme="light"] .hero::before {
+  background:
     radial-gradient(780px 480px at 78% 24%, rgba(85, 161, 255, 0.22), transparent 68%),
     radial-gradient(860px 540px at 12% 76%, rgba(124, 92, 255, 0.18), transparent 70%),
     radial-gradient(560px 360px at 55% 102%, rgba(240, 145, 155, 0.12), transparent 68%);
-  filter: blur(34px);
 }
 .hero-grid {
   display: grid;
