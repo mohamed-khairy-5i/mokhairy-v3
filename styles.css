@@ -399,14 +399,43 @@ main { position: relative; z-index: 1; }
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(620px 380px at 12% 2%, rgba(111, 216, 242, 0.3), transparent 70%),
-    radial-gradient(820px 520px at 84% 6%, rgba(76, 91, 224, 0.34), transparent 72%),
-    radial-gradient(760px 480px at 6% 55%, rgba(223, 251, 255, 0.1), transparent 74%),
-    radial-gradient(720px 440px at 78% 88%, rgba(223, 251, 255, 0.12), transparent 70%),
-    radial-gradient(900px 560px at 45% 45%, rgba(76, 91, 224, 0.2), transparent 75%),
-    radial-gradient(480px 320px at 18% 98%, rgba(240, 145, 155, 0.1), transparent 68%),
+    radial-gradient(closest-side, rgba(111, 216, 242, 0.3), transparent 70%),
+    radial-gradient(closest-side, rgba(76, 91, 224, 0.34), transparent 72%),
+    radial-gradient(closest-side, rgba(223, 251, 255, 0.1), transparent 74%),
+    radial-gradient(closest-side, rgba(223, 251, 255, 0.12), transparent 70%),
+    radial-gradient(closest-side, rgba(76, 91, 224, 0.2), transparent 75%),
+    radial-gradient(closest-side, rgba(240, 145, 155, 0.1), transparent 68%),
     linear-gradient(180deg, rgba(42, 36, 80, 0.55) 0%, rgba(76, 91, 224, 0.3) 34%, rgba(111, 216, 242, 0.14) 66%, rgba(223, 251, 255, 0.09) 88%, transparent 100%);
+  /* tiles = 2x the original ellipse radii so closest-side reproduces the exact
+     same geometry once each blob gets its own background-size/position */
+  background-size:
+    1240px 760px, 1640px 1040px, 1520px 960px, 1440px 880px, 1800px 1120px, 960px 640px, 100% 100%;
+  background-position:
+    12% 2%, 84% 6%, 6% 55%, 78% 88%, 45% 45%, 18% 98%, 0 0;
+  background-repeat: no-repeat;
   filter: blur(34px);
+  animation: mk3-tide 18s ease-in-out infinite alternate;
+}
+/* tide drift — the Electric tide FLOW motion from the reference loop: the
+   connected field turns slowly around the royal core (cyan band sweeps up
+   the right, mist follows, indigo breathes). Background-position only, so
+   the layer never grows past its box → zero RTL/inline overflow risk. */
+@keyframes mk3-tide {
+  0% {
+    background-position:
+      12% 2%, 84% 6%, 6% 55%, 78% 88%, 45% 45%, 18% 98%, 0 0;
+    background-size:
+      1240px 760px, 1640px 1040px, 1520px 960px, 1440px 880px, 1800px 1120px, 960px 640px, 100% 100%;
+  }
+  100% {
+    background-position:
+      30% 16%, 68% 18%, 18% 40%, 60% 70%, 58% 34%, 8% 82%, 0 0;
+    background-size:
+      1360px 830px, 1800px 1140px, 1640px 1030px, 1580px 970px, 2060px 1280px, 1060px 700px, 100% 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::before { animation: none; }
 }
 /* feralui noise 6 — film grain over the field, under the hero content */
 .hero::after {
@@ -425,6 +454,7 @@ main { position: relative; z-index: 1; }
     radial-gradient(780px 480px at 78% 24%, rgba(85, 161, 255, 0.22), transparent 68%),
     radial-gradient(860px 540px at 12% 76%, rgba(124, 92, 255, 0.18), transparent 70%),
     radial-gradient(560px 360px at 55% 102%, rgba(240, 145, 155, 0.12), transparent 68%);
+  animation: none; /* approved v13 pastel field stays frozen */
 }
 [data-theme="light"] .hero::after { display: none; }
 .hero-grid {
