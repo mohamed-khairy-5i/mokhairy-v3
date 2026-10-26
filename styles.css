@@ -387,8 +387,10 @@ main { position: relative; z-index: 1; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; padding: clamp(44px, 7vh, 78px) 0 clamp(36px, 5vh, 56px); }
-/* hero sky — "Electric tide" field: cyan sheen top-end, indigo tide low-start,
-   ice crest glint near the title, peach afterglow kept as the warm counterpoint.
+/* hero sky — "Electric tide" full field, matched to the feralui FLOW render:
+   one connected hazy field (not separate blobs) — night-indigo top, clear-hanada
+   royal mass, pale-lagoon corner glint, misted-sky light band melting into the
+   navy canvas; peach afterglow kept as the warm counterpoint.
    insets stay ≥0 on the inline axis: negative % created 31px horizontal overflow in RTL mobile */
 .hero::before {
   content: "";
@@ -397,11 +399,25 @@ main { position: relative; z-index: 1; }
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(780px 480px at 78% 24%, rgba(111, 216, 242, 0.18), transparent 68%),
-    radial-gradient(860px 540px at 12% 76%, rgba(76, 91, 224, 0.24), transparent 70%),
-    radial-gradient(560px 360px at 55% 102%, rgba(240, 145, 155, 0.12), transparent 68%),
-    radial-gradient(460px 320px at 44% 6%, rgba(223, 251, 255, 0.08), transparent 70%);
+    radial-gradient(620px 380px at 12% 2%, rgba(111, 216, 242, 0.3), transparent 70%),
+    radial-gradient(820px 520px at 84% 6%, rgba(76, 91, 224, 0.34), transparent 72%),
+    radial-gradient(760px 480px at 6% 55%, rgba(223, 251, 255, 0.1), transparent 74%),
+    radial-gradient(720px 440px at 78% 88%, rgba(223, 251, 255, 0.12), transparent 70%),
+    radial-gradient(900px 560px at 45% 45%, rgba(76, 91, 224, 0.2), transparent 75%),
+    radial-gradient(480px 320px at 18% 98%, rgba(240, 145, 155, 0.1), transparent 68%),
+    linear-gradient(180deg, rgba(42, 36, 80, 0.55) 0%, rgba(76, 91, 224, 0.3) 34%, rgba(111, 216, 242, 0.14) 66%, rgba(223, 251, 255, 0.09) 88%, transparent 100%);
   filter: blur(34px);
+}
+/* feralui noise 6 — film grain over the field, under the hero content */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity: 0.05;
 }
 /* light theme keeps the approved v13 pastel field — the tide blend is dark-only */
 [data-theme="light"] .hero::before {
@@ -410,6 +426,7 @@ main { position: relative; z-index: 1; }
     radial-gradient(860px 540px at 12% 76%, rgba(124, 92, 255, 0.18), transparent 70%),
     radial-gradient(560px 360px at 55% 102%, rgba(240, 145, 155, 0.12), transparent 68%);
 }
+[data-theme="light"] .hero::after { display: none; }
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
