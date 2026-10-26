@@ -20,7 +20,20 @@
     '<header class="nav">' +
       '<div class="container nav-inner">' +
         '<a class="brand" href="' + R + 'index.html" aria-label="Mohamed Khairy — home">' +
-          '<span class="brand-mark" aria-hidden="true">MK</span>' +
+          '<span class="brand-mark" aria-hidden="true">' +
+            '<svg viewBox="0 0 48 48" width="34" height="34" focusable="false">' +
+              '<defs>' +
+                '<linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1">' +
+                  '<stop offset="0" stop-color="#4C5BE0"/>' +
+                  '<stop offset="0.52" stop-color="#a78bfa"/>' +
+                  '<stop offset="1" stop-color="#f0919b"/>' +
+                '</linearGradient>' +
+              '</defs>' +
+              '<rect x="1" y="1" width="46" height="46" rx="13" fill="url(#bm-g)"/>' +
+              '<path d="M12 33 V21.5 Q12 15.5 17 17.8 L24 26.5 L31 17.8 Q36 15.5 36 21.5 V33" ' +
+                'fill="none" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>' +
+            '</svg>' +
+          '</span>' +
           '<span class="brand-name" data-en="Mo Khairy" data-ar="مو خيري">Mo Khairy</span>' +
         '</a>' +
         '<nav class="nav-links" aria-label="Primary">' +

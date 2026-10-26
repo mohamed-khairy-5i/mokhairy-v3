@@ -249,15 +249,10 @@ main { position: relative; z-index: 1; }
   display: grid;
   place-items: center;
   width: 34px; height: 34px;
-  border-radius: 9px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2-deep));
-  color: var(--on-accent);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
   box-shadow: 0 4px 18px var(--glow);
 }
+/* wave-M mark: gradient tile + white M, one source in nav.js + favicon.svg */
+.brand-mark svg { display: block; width: 34px; height: 34px; border-radius: 9px; }
 .brand-name { font-family: var(--font-head); font-size: 1rem; }
 .nav-links { display: flex; gap: 4px; margin-inline-start: auto; }
 .nav-links a {
@@ -414,12 +409,13 @@ main { position: relative; z-index: 1; }
     12% 2%, 84% 6%, 6% 55%, 78% 88%, 45% 45%, 18% 98%, 0 0;
   background-repeat: no-repeat;
   filter: blur(34px);
-  animation: mk3-tide 18s ease-in-out infinite alternate;
+  animation: mk3-tide 28s ease-in-out infinite;
 }
-/* tide drift — the Electric tide FLOW motion from the reference loop: the
-   connected field turns slowly around the royal core (cyan band sweeps up
-   the right, mist follows, indigo breathes). Background-position only, so
-   the layer never grows past its box → zero RTL/inline overflow risk. */
+/* tide circulation — the Electric tide FLOW motion, amped: the connected
+   field turns continuously around the royal core (three waypoints instead of
+   a linear slosh, so the blobs travel a circulating path like the reference
+   loop) while each blob swells ~10%. Background-position/size only, so the
+   layer never grows past its box → zero RTL/inline overflow risk. */
 @keyframes mk3-tide {
   0% {
     background-position:
@@ -427,15 +423,27 @@ main { position: relative; z-index: 1; }
     background-size:
       1240px 760px, 1640px 1040px, 1520px 960px, 1440px 880px, 1800px 1120px, 960px 640px, 100% 100%;
   }
+  33% {
+    background-position:
+      34% 18%, 64% 20%, 20% 40%, 58% 70%, 60% 32%, 8% 82%, 0 0;
+    background-size:
+      1380px 850px, 1840px 1160px, 1660px 1050px, 1600px 990px, 2100px 1300px, 1080px 715px, 100% 100%;
+  }
+  66% {
+    background-position:
+      6% 26%, 82% 26%, 26% 68%, 86% 58%, 34% 62%, 20% 72%, 0 0;
+    background-size:
+      1300px 800px, 1720px 1090px, 1580px 990px, 1520px 930px, 1940px 1210px, 1010px 670px, 100% 100%;
+  }
   100% {
     background-position:
-      30% 16%, 68% 18%, 18% 40%, 60% 70%, 58% 34%, 8% 82%, 0 0;
+      12% 2%, 84% 6%, 6% 55%, 78% 88%, 45% 45%, 18% 98%, 0 0;
     background-size:
-      1360px 830px, 1800px 1140px, 1640px 1030px, 1580px 970px, 2060px 1280px, 1060px 700px, 100% 100%;
+      1240px 760px, 1640px 1040px, 1520px 960px, 1440px 880px, 1800px 1120px, 960px 640px, 100% 100%;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero::before { animation: none; }
+  .hero::before, .hero::after { animation: none; }
 }
 /* feralui noise 6 — film grain over the field, under the hero content */
 .hero::after {
@@ -447,7 +455,10 @@ main { position: relative; z-index: 1; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   mix-blend-mode: overlay;
   opacity: 0.05;
+  /* grain crawl — one full 180px tile per cycle = seamless liquid shimmer */
+  animation: mk3-grain 70s linear infinite;
 }
+@keyframes mk3-grain { to { background-position: 180px 180px; } }
 /* light theme keeps the approved v13 pastel field — the tide blend is dark-only */
 [data-theme="light"] .hero::before {
   background:
@@ -1153,8 +1164,11 @@ p, li, figcaption { text-wrap: pretty; }
   .metric-row { grid-template-columns: 1fr 1fr; }
   .metric-row li:last-child { grid-column: 1 / -1; }
   .hero { padding-top: 40px; }
+  .hero-title { font-size: clamp(2.15rem, 8.6vw, 2.7rem); }
   .chips-row { gap: 8px; }
   .btn { width: 100%; justify-content: center; }
-  .hero-cta { flex-direction: column; }
+  /* hero exception: two buttons side-by-side instead of a full-width stack */
+  .hero-cta { flex-direction: row; flex-wrap: nowrap; gap: 10px; }
+  .hero-cta .btn { width: auto; flex: 1 1 0; }
   .link-row .btn, .proj-cta .btn { width: auto; }
 }
