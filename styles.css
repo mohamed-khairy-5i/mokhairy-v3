@@ -156,40 +156,14 @@ a { color: inherit; text-decoration: none; }
 }
 .skip-link:focus { top: 12px; }
 
-/* ---------- Ambient background ---------- */
-.glow {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(90px);
-  pointer-events: none;
-  z-index: 0;
-}
-/* feralui mesh: each glow is a two-hue blend — where they overlap the hues mix
-   like a gradient field instead of stacking flat circles */
-.glow-a {
-  width: 800px; height: 800px;
-  top: -280px; inset-inline-start: -200px;
-  background: radial-gradient(circle at 40% 40%, var(--glow-a-core), var(--glow-a-edge) 48%, transparent 68%);
-}
-.glow-b {
-  width: 700px; height: 700px;
-  bottom: -250px; inset-inline-end: -180px;
-  background: radial-gradient(circle at 58% 58%, var(--glow-b-core), var(--glow-b-edge) 50%, transparent 70%);
-}
-
-/* third ambient glow — warm peach counterpoint (feralui-style mesh) */
-body::after {
-  content: "";
-  position: fixed;
-  width: 680px; height: 680px;
-  bottom: -320px; left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--glow-3), transparent 65%);
-  filter: blur(90px);
-  pointer-events: none;
-  z-index: 0;
-}
+/* ---------- Ambient background ----------
+   v18: the blurred gradient-blob mesh (glow-a / glow-b / peach body::after)
+   is GONE — that blur-blob look is the exact "AI-made" tell we are removing.
+   The divs stay in the markup (harmless), CSS stops painting them. The page
+   identity is now the bathymetric chart field in .hero::before + the
+   structural body::before grid, both crisp line work with no blur. */
+.glow-a, .glow-b { display: none; }
+body::after { display: none; }
 
 body::before {
   content: "";
@@ -382,65 +356,35 @@ main { position: relative; z-index: 1; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; padding: clamp(44px, 7vh, 78px) 0 clamp(36px, 5vh, 56px); }
-/* hero sky — "Electric tide" full field, matched to the feralui FLOW render:
-   one connected hazy field (not separate blobs) — night-indigo top, clear-hanada
-   royal mass, pale-lagoon corner glint, misted-sky light band melting into the
-   navy canvas; peach afterglow kept as the warm counterpoint.
-   insets stay ≥0 on the inline axis: negative % created 31px horizontal overflow in RTL mobile */
+/* hero field — v18 "bathymetric chart": hand-drawn sea-chart line work
+   (contour paths + depth soundings + graticule crosses + buoys) on a faint
+   dot graticule. Zero gradients, zero blur, zero glow — the AI cliché is
+   gone on purpose; this reads like a nautical survey sheet, not a render.
+   Motion = slow counter-current: front tile drifts left 2 tiles/cycle,
+   back tile drifts right 1 tile/cycle (integer multiples of the 1200px
+   tile => seamless loop). background-position only, element is inset:0
+   => zero RTL/inline overflow risk. Soft mask fades the field in/out
+   vertically so no hard tile edges ever show. */
 .hero::before {
   content: "";
   position: absolute;
-  inset: -60px 0 -40px;
+  inset: 0;
   z-index: -1;
   pointer-events: none;
-  background:
-    radial-gradient(closest-side, rgba(111, 216, 242, 0.3), transparent 70%),
-    radial-gradient(closest-side, rgba(76, 91, 224, 0.34), transparent 72%),
-    radial-gradient(closest-side, rgba(223, 251, 255, 0.1), transparent 74%),
-    radial-gradient(closest-side, rgba(223, 251, 255, 0.12), transparent 70%),
-    radial-gradient(closest-side, rgba(76, 91, 224, 0.2), transparent 75%),
-    radial-gradient(closest-side, rgba(240, 145, 155, 0.1), transparent 68%),
-    linear-gradient(180deg, rgba(42, 36, 80, 0.55) 0%, rgba(76, 91, 224, 0.3) 34%, rgba(111, 216, 242, 0.14) 66%, rgba(223, 251, 255, 0.09) 88%, transparent 100%);
-  /* tiles = 2x the original ellipse radii so closest-side reproduces the exact
-     same geometry once each blob gets its own background-size/position */
-  background-size:
-    1240px 760px, 1640px 1040px, 1520px 960px, 1440px 880px, 1800px 1120px, 960px 640px, 100% 100%;
-  background-position:
-    12% 2%, 84% 6%, 6% 55%, 78% 88%, 45% 45%, 18% 98%, 0 0;
-  background-repeat: no-repeat;
-  filter: blur(34px);
-  animation: mk3-tide 28s ease-in-out infinite;
+  background-image:
+    url("assets/waves-a.svg"),
+    url("assets/waves-b.svg"),
+    radial-gradient(rgba(148, 163, 255, 0.07) 1px, transparent 1.4px);
+  background-size: 1200px 1200px, 1200px 1200px, 28px 28px;
+  background-repeat: repeat-x, repeat-x, repeat;
+  background-position: 0 0, 0 0, 0 0;
+  animation: mk3-current 140s linear infinite;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 7%, #000 82%, transparent 100%);
 }
-/* tide circulation — the Electric tide FLOW motion, amped: the connected
-   field turns continuously around the royal core (three waypoints instead of
-   a linear slosh, so the blobs travel a circulating path like the reference
-   loop) while each blob swells ~10%. Background-position/size only, so the
-   layer never grows past its box → zero RTL/inline overflow risk. */
-@keyframes mk3-tide {
-  0% {
-    background-position:
-      12% 2%, 84% 6%, 6% 55%, 78% 88%, 45% 45%, 18% 98%, 0 0;
-    background-size:
-      1240px 760px, 1640px 1040px, 1520px 960px, 1440px 880px, 1800px 1120px, 960px 640px, 100% 100%;
-  }
-  33% {
-    background-position:
-      34% 18%, 64% 20%, 20% 40%, 58% 70%, 60% 32%, 8% 82%, 0 0;
-    background-size:
-      1380px 850px, 1840px 1160px, 1660px 1050px, 1600px 990px, 2100px 1300px, 1080px 715px, 100% 100%;
-  }
-  66% {
-    background-position:
-      6% 26%, 82% 26%, 26% 68%, 86% 58%, 34% 62%, 20% 72%, 0 0;
-    background-size:
-      1300px 800px, 1720px 1090px, 1580px 990px, 1520px 930px, 1940px 1210px, 1010px 670px, 100% 100%;
-  }
-  100% {
-    background-position:
-      12% 2%, 84% 6%, 6% 55%, 78% 88%, 45% 45%, 18% 98%, 0 0;
-    background-size:
-      1240px 760px, 1640px 1040px, 1520px 960px, 1440px 880px, 1800px 1120px, 960px 640px, 100% 100%;
-  }
+@keyframes mk3-current {
+  from { background-position: 0 0, 0 0, 0 0; }
+  to   { background-position: -2400px 0, 1200px 0, 0 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero::before, .hero::after { animation: none; }
@@ -459,13 +403,14 @@ main { position: relative; z-index: 1; }
   animation: mk3-grain 70s linear infinite;
 }
 @keyframes mk3-grain { to { background-position: 180px 180px; } }
-/* light theme keeps the approved v13 pastel field — the tide blend is dark-only */
+/* light theme keeps the same chart language in ink-on-paper form:
+   navy contour lines at lower opacity, frozen (approved pastel stillness) */
 [data-theme="light"] .hero::before {
-  background:
-    radial-gradient(780px 480px at 78% 24%, rgba(85, 161, 255, 0.22), transparent 68%),
-    radial-gradient(860px 540px at 12% 76%, rgba(124, 92, 255, 0.18), transparent 70%),
-    radial-gradient(560px 360px at 55% 102%, rgba(240, 145, 155, 0.12), transparent 68%);
-  animation: none; /* approved v13 pastel field stays frozen */
+  background-image:
+    url("assets/waves-a-light.svg"),
+    url("assets/waves-b-light.svg"),
+    radial-gradient(rgba(30, 42, 110, 0.12) 1px, transparent 1.4px);
+  animation: none; /* the paper chart stays frozen */
 }
 [data-theme="light"] .hero::after { display: none; }
 .hero-grid {
@@ -492,12 +437,12 @@ main { position: relative; z-index: 1; }
 }
 .hero-title em {
   font-style: normal;
-  /* feralui iridescent ramp: blue → violet → peach → sunset highlight */
+  /* v18: keep the brand ramp but drop the violet drop-shadow — glowing
+     gradient text is another AI cliché; the ramp alone is enough */
   background: linear-gradient(118deg, var(--accent) 2%, var(--accent-2) 42%, var(--accent-3) 78%, var(--accent-3-soft) 104%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 22px var(--glow-2));
 }
 .hero-sub {
   color: var(--muted);
