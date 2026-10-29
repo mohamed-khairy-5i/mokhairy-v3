@@ -17,12 +17,15 @@
   --accent-deep: #2f6df0;
   --on-accent: #06122a;
   --glow: rgba(74, 140, 255, 0.26);
-  --glow-2: rgba(139, 109, 255, 0.24);
-  --accent-2: #a78bfa;
-  --accent-2-deep: #7c5cff;
-  --accent-3: #f0919b;
-  --accent-3-deep: #e0656e;
-  --glow-3: rgba(240, 145, 155, 0.2);
+  --glow-2: rgba(85, 161, 255, 0.2);
+  /* v19 "printed chart" ink system: ONE hue family — sky/royal/ice. The old
+     violet (#a78bfa) + peach (#f0919b) ramp is the exact AI-gradient tell;
+     every accent now stays inside the blue family, flat, no ramps */
+  --accent-2: #8fb8ff;
+  --accent-2-deep: #2456c8;
+  --accent-3: #c9dcff;
+  --accent-3-deep: #1e4fae;
+  --glow-3: rgba(143, 184, 255, 0.18);
   /* island glass: LIFTED fill (lighter than the page bg — iOS elevation trick)
      so the island reads on the dark hero, not only on light surfaces */
   --nav-glass: color-mix(in srgb, #14203a 82%, transparent);
@@ -38,13 +41,13 @@
   --dur-fast: 250ms;    /* opens, menu, icon swaps */
   --dur-slow: 500ms;    /* staged reveals */
 
-  /* feralui mesh × "Electric tide" (DENCHOU) blend: indigo core + cyan sheen on
-     glow-a; violet stays mid in glow-b; peach rim untouched. Accents/identity unchanged */
-  --glow-a-core: rgba(76, 91, 224, 0.5);
-  --glow-a-edge: rgba(111, 216, 242, 0.22);
-  --glow-b-core: rgba(167, 139, 250, 0.42);
-  --glow-b-edge: rgba(240, 145, 155, 0.17);
-  --accent-3-soft: #ffd2b0;  /* sunset highlight — end of the iridescent ramp */
+  /* v19: glow tokens kept for compat (glow divs are display:none since v18),
+     values re-pointed into the single blue ink family */
+  --glow-a-core: rgba(47, 109, 240, 0.4);
+  --glow-a-edge: rgba(111, 216, 242, 0.18);
+  --glow-b-core: rgba(36, 86, 200, 0.34);
+  --glow-b-edge: rgba(143, 184, 255, 0.15);
+  --accent-3-soft: #d7e6ff;  /* ice highlight — same ink family */
 
   /* image outlines (make-interfaces-feel-better): pure white in dark, never tinted */
   --img-outline: rgba(255, 255, 255, 0.1);
@@ -74,12 +77,12 @@
   --accent-deep: #174fb0;
   --on-accent: #ffffff;
   --glow: rgba(29, 99, 216, 0.16);
-  --glow-2: rgba(122, 79, 240, 0.15);
-  --accent-2: #7a4ff0;
-  --accent-2-deep: #5f35d6;
-  --accent-3: #c25660;
-  --accent-3-deep: #a83e48;
-  --glow-3: rgba(194, 86, 96, 0.15);
+  --glow-2: rgba(29, 99, 216, 0.13);
+  --accent-2: #2456c8;
+  --accent-2-deep: #1d46a8;
+  --accent-3: #2f5fd0;
+  --accent-3-deep: #163a85;
+  --glow-3: rgba(29, 99, 216, 0.1);
   --nav-glass: color-mix(in srgb, #ffffff 84%, transparent);
   --nav-glass-solid: color-mix(in srgb, #ffffff 94%, transparent);
   --glass-edge: rgba(255, 255, 255, 0.95);
@@ -87,10 +90,10 @@
   --nav-shadow: 0 22px 50px -22px rgba(15, 40, 90, 0.45), 0 6px 20px -10px rgba(15, 40, 90, 0.15);
 
   --glow-a-core: rgba(29, 99, 216, 0.24);
-  --glow-a-edge: rgba(122, 79, 240, 0.1);
-  --glow-b-core: rgba(122, 79, 240, 0.2);
-  --glow-b-edge: rgba(194, 86, 96, 0.08);
-  --accent-3-soft: #b97d0a;
+  --glow-a-edge: rgba(29, 99, 216, 0.1);
+  --glow-b-core: rgba(29, 99, 216, 0.2);
+  --glow-b-edge: rgba(22, 58, 133, 0.08);
+  --accent-3-soft: #1d46a8;
   --img-outline: rgba(0, 0, 0, 0.1);
   --grid-line: rgba(15, 45, 95, 0.07);
   --code-bg: #0a1120;
@@ -437,12 +440,9 @@ main { position: relative; z-index: 1; }
 }
 .hero-title em {
   font-style: normal;
-  /* v18: keep the brand ramp but drop the violet drop-shadow — glowing
-     gradient text is another AI cliché; the ramp alone is enough */
-  background: linear-gradient(118deg, var(--accent) 2%, var(--accent-2) 42%, var(--accent-3) 78%, var(--accent-3-soft) 104%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  /* v19: one solid ink — gradient-clipped text is THE AI cliché; a single
+     confident sky-blue word reads like a cartographer's emphasis */
+  color: var(--accent);
 }
 .hero-sub {
   color: var(--muted);
@@ -499,7 +499,7 @@ main { position: relative; z-index: 1; }
   gap: 7px;
   padding: 12px 16px;
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(90deg, rgba(85, 161, 255, 0.08), rgba(167, 139, 250, 0.06) 55%, rgba(240, 145, 155, 0.05));
+  background: rgba(85, 161, 255, 0.06); /* v19: flat tint, no ramp */
 }
 .dot { width: 11px; height: 11px; border-radius: 50%; background: #2b3547; }
 .dot:nth-child(1) { background: #f16a5d; }
@@ -510,10 +510,10 @@ main { position: relative; z-index: 1; }
 .terminal-body p { white-space: nowrap; overflow: hidden; }
 /* terminal keeps a dark canvas in BOTH themes — lock its text colors */
 .terminal, .mini-terminal { color: #e7eefb; }
-.terminal .t-out, .mini-terminal .t-out { color: #f4a6ac; }
+.terminal .t-out, .mini-terminal .t-out { color: #a9bdd9; }
 .mini-terminal .mt-title { color: #90a0ba; }
 .t-prompt { color: var(--accent); font-weight: 600; }
-.t-pkg { color: #b6a3ff; }
+.t-pkg { color: #8fb8ff; }
 .t-cursor {
   display: inline-block;
   width: 9px; height: 17px;
@@ -541,10 +541,10 @@ main { position: relative; z-index: 1; }
 }
 .btn:active { scale: 0.96; }
 .btn-primary {
-  /* sky → deep → orchid: three feralui stops for a richer brand ramp */
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 55%, var(--accent-2-deep) 110%);
+  /* v19: flat solid ink button — no ramp, no inner bevel; print-chart confidence */
+  background: var(--accent);
   color: var(--on-accent);
-  box-shadow: 0 10px 30px -10px var(--glow), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  box-shadow: 0 10px 30px -12px var(--glow);
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 38px -10px var(--glow); }
 .btn-ghost {
@@ -573,11 +573,8 @@ main { position: relative; z-index: 1; }
   content: "_";
   font-family: var(--font-mono);
   font-weight: 400;
-  /* the underscore carries the full feralui ramp — sky → orchid → peach */
-  background: linear-gradient(115deg, var(--accent) 10%, var(--accent-2) 55%, var(--accent-3) 95%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  /* v19: solid ink underscore */
+  color: var(--accent);
 }
 .section-head p { color: var(--muted); max-width: 44em; }
 
@@ -618,26 +615,23 @@ p, li, figcaption { text-wrap: pretty; }
   padding: clamp(18px, 2.4vw, 30px);
   border: 1px solid var(--border);
   border-radius: calc(var(--radius) + 6px);
-  background:
-    linear-gradient(165deg, rgba(85, 161, 255, 0.055), transparent 40%),
-    var(--surface);
+  background: var(--surface); /* v19: flat surface — no corner wash */
   margin-bottom: 16px;
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
-/* feralui rail: gradient strip riding the card's top edge — sky → orchid → peach */
+/* v19: solid cartographic rule riding the card's top edge — like the depth
+   band printed on a chart's legend; one color, two states */
 .feature-card::before {
   content: "";
   position: absolute;
   top: -1px; inset-inline: -1px;
-  height: 3px;
+  height: 2px;
   border-radius: calc(var(--radius) + 6px) calc(var(--radius) + 6px) 0 0;
-  background: linear-gradient(90deg, var(--accent-deep), var(--accent-2) 48%, var(--accent-3) 96%);
-  opacity: 0.72;
+  background: var(--accent);
+  opacity: 0.45;
   transition: opacity 0.3s;
 }
-.feature-card.flip::before {
-  background: linear-gradient(90deg, var(--accent-3), var(--accent-2) 52%, var(--accent-deep));
-}
+.feature-card.flip::before { background: var(--accent); }
 .feature-card:hover::before { opacity: 1; }
 .feature-card:hover {
   border-color: var(--border-strong);
@@ -700,11 +694,8 @@ p, li, figcaption { text-wrap: pretty; }
   font-family: var(--font-mono);
   font-weight: 600;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
-  /* the numbers carry the brand ramp — sky → orchid */
-  background: linear-gradient(115deg, var(--accent) 15%, var(--accent-2) 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  /* v19: solid ink numbers */
+  color: var(--accent);
   direction: ltr;
   unicode-bidi: isolate;
 }
@@ -746,21 +737,19 @@ p, li, figcaption { text-wrap: pretty; }
   flex-direction: column;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background:
-    linear-gradient(170deg, rgba(167, 139, 250, 0.05), transparent 38%),
-    var(--surface);
+  background: var(--surface); /* v19: flat surface */
   overflow: hidden;
   transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
-/* mini rail — violet-first on the small cards to alternate with feature cards */
+/* v19: same solid rule as feature cards — one system everywhere */
 .build-card::before {
   content: "";
   position: absolute;
   top: 0; inset-inline: 0;
-  height: 3px;
+  height: 2px;
   z-index: 1;
-  background: linear-gradient(90deg, var(--accent-2), var(--accent) 55%, var(--accent-3));
-  opacity: 0.6;
+  background: var(--accent);
+  opacity: 0.4;
   transition: opacity 0.3s;
 }
 .build-card:hover::before { opacity: 1; }
@@ -909,10 +898,10 @@ p, li, figcaption { text-wrap: pretty; }
   content: "";
   position: absolute;
   top: 0; inset-inline: 0;
-  height: 3px;
+  height: 2px;
   z-index: 1;
-  background: linear-gradient(90deg, var(--accent-deep), var(--accent-2) 48%, var(--accent-3) 96%);
-  opacity: 0.6;
+  background: var(--accent);
+  opacity: 0.4;
   transition: opacity 0.3s;
 }
 .cert-card:hover::before { opacity: 1; }
@@ -1029,15 +1018,7 @@ p, li, figcaption { text-wrap: pretty; }
   position: relative;
   z-index: 1;
 }
-/* feralui hairline across the footer's top edge */
-.footer::before {
-  content: "";
-  position: absolute;
-  top: -1px; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent) 22%, var(--accent-2) 52%, var(--accent-3) 82%, transparent);
-  opacity: 0.85;
-}
+/* v19: the gradient hairline is gone — the footer's 1px border is the line */
 .footer-inner {
   display: flex;
   flex-wrap: wrap;

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohamed Khairy — Immersive Portfolio</title>
+  <meta name="description" content="Mohamed Khairy — freelance frontend developer from Cairo. Arabic-first SaaS products and developer tools, shipped and open source.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;900&family=Space+Grotesk:wght@400;500;600&family=Cairo:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-d.css">
+</head>
+<body data-title-en="Mohamed Khairy — Frontend Developer · Cairo" data-title-ar="محمد خيري — مطور واجهات · القاهرة">
+
+  <!-- preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-inner">
+      <span class="pre-logo" dir="ltr">MK—03</span>
+      <span class="pre-count" id="preCount" dir="ltr">0%</span>
+    </div>
+  </div>
+
+  <!-- custom cursor -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- webgl canvas -->
+  <canvas id="webgl" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#home" dir="ltr">MK<span class="brand-x">×</span></a>
+    <nav class="nav-links">
+      <a href="#work" data-en="Work" data-ar="الشغل">Work</a>
+      <a href="#stack" data-en="Stack" data-ar="الأدوات">Stack</a>
+      <a href="#about" data-en="About" data-ar="عني">About</a>
+      <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+    </nav>
+    <button id="langToggle" class="lang-btn" type="button"><span id="langLabel">عربية</span></button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <p class="hero-over" data-split data-en="MOHAMED KHAIRY — FRONTEND DEVELOPER — CAIRO" data-ar="محمد خيري — مطور واجهات — القاهرة">MOHAMED KHAIRY — FRONTEND DEVELOPER — CAIRO</p>
+        <h1 class="hero-title" id="heroTitle" data-split
+            data-en="Arabic-first products &amp; dev tools — <em>shipped</em>, not just designed."
+            data-ar="منتجات عربية أولًا وأدوات للمطورين — <em>بتوصل للنور</em>، مش تصميم بس.">
+          Arabic-first products &amp; dev tools — <em>shipped</em>, not just designed.
+        </h1>
+        <p class="hero-sub" data-reveal data-en="Freelance frontend developer building SaaS and CLI tools for the Arabic ecosystem — real users, real receipts, zero vaporware."
+           data-ar="مطور واجهات فريلانسر، ببني منتجات SaaS وأدوات CLI للمنظومة العربية — مستخدمين حقيقيين، وإيصالات حقيقية، وصفر كلام في الهوا.">
+          Freelance frontend developer building SaaS and CLI tools for the Arabic ecosystem — real users, real receipts, zero vaporware.
+        </p>
+        <div class="hero-cta" data-reveal>
+          <a class="btn btn-neon magnetic" href="#work"><span data-en="Enter the work" data-ar="ادخل على الشغل">Enter the work</span></a>
+          <a class="btn btn-line magnetic" href="https://github.com/mohamed-khairy-5i" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- HERO TERMINAL STRIP -->
+    <section class="term-strip">
+      <div class="terminal" data-reveal dir="ltr" role="img" aria-label="Terminal showing installed packages">
+        <div class="terminal-bar"><span></span><span></span><span></span><em>~/shipped</em></div>
+        <div class="terminal-body">
+          <p><b>$</b> npm i <i>waslfy-parser</i></p>
+          <p class="t-out">✓ zero deps · 13 kB · ESM + CJS</p>
+          <p><b>$</b> npx <i>tossinbox</i></p>
+          <p class="t-out">✓ inbox spawned — waiting for OTP</p>
+          <p><b>$</b> npx skills add <i>trigger-doctor</i></p>
+          <p class="t-out">✓ 79 agents supported</p>
+        </div>
+      </div>
+      <ul class="fact-list" data-reveal>
+        <li><b>3</b><span data-en="live products" data-ar="منتجات لايف">live products</span></li>
+        <li><b>2</b><span data-en="npm packages" data-ar="حزم npm">npm packages</span></li>
+        <li><b>100%</b><span data-en="open source" data-ar="مفتوح المصدر">open source</span></li>
+        <li><b>0</b><span data-en="network calls in core" data-ar="نداءات شبكة في المحرك">network calls in core</span></li>
+      </ul>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="work">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <span class="sec-tag" dir="ltr">[ 01 — WORK ]</span>
+          <h2 data-en="Selected work" data-ar="شغل مختار">Selected work</h2>
+          <p data-en="Real products with real users — click anything, it's live." data-ar="منتجات حقيقية لاستخدام حقيقي — دوس على أي حاجة، هي لايف.">Real products with real users — click anything, it's live.</p>
+        </div>
+
+        <article class="proj tilt" data-reveal>
+          <div class="proj-media"><img src="assets/waslfy-demo.gif" alt="Waslfy demo — pasting a WhatsApp order and saving the extracted shipment" loading="lazy"></div>
+          <div class="proj-body">
+            <span class="proj-no" dir="ltr">01</span>
+            <div class="proj-tags"><span>Web App · PWA</span><span>npm package</span></div>
+            <h3>وصلّي — Waslfy</h3>
+            <p data-en="Paste a messy Egyptian WhatsApp order, get clean shipment data: name, phone, governorate, address and COD amount — printed as an A6 receipt with Code128 barcode. Runs 100% offline on the merchant's device."
+               data-ar="الصق رسالة واتساب مصرية فوضوية، واستلم بيانات شحنة نضيفة: اسم، تليفون، محافظة، عنوان، ومبلغ التحصيل — بتطبع إيصال A6 بباركود Code128. شغالة أوفلاين ١٠٠٪ على جهاز التاجر.">
+              Paste a messy Egyptian WhatsApp order, get clean shipment data: name, phone, governorate, address and COD amount — printed as an A6 receipt with Code128 barcode. Runs 100% offline on the merchant's device.
+            </p>
+            <ul class="proj-metrics" dir="ltr">
+              <li><b>100%</b><span data-en="corpus accuracy" data-ar="دقة الاستخراج">corpus accuracy</span></li>
+              <li><b>0</b><span data-en="network calls" data-ar="نداءات شبكة">network calls</span></li>
+              <li><b>13 kB</b><span data-en="parser core" data-ar="محرك الاستخراج">parser core</span></li>
+            </ul>
+            <div class="proj-links">
+              <a class="btn btn-neon btn-sm magnetic" href="https://waslfy.pages.dev" target="_blank" rel="noopener"><span data-en="Live app" data-ar="التطبيق">Live app</span></a>
+              <a class="btn btn-line btn-sm magnetic" href="https://github.com/mohamed-khairy-5i/waslfy" target="_blank" rel="noopener"><span data-en="Source" data-ar="الكود">Source</span></a>
+              <a class="btn btn-line btn-sm magnetic" href="https://www.npmjs.com/package/waslfy-parser" target="_blank" rel="noopener">npm</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj tilt" data-reveal>
+          <div class="proj-media media-term" dir="ltr">
+            <p class="mt-title">tossinbox — MCP server</p>
+            <p><b>$</b> tossinbox spawn</p>
+            <p class="t-out">inbox: xk42f@tossinbox.dev</p>
+            <p><b>$</b> tossinbox wait --otp</p>
+            <p class="t-out">✓ code 881421 received (12s)</p>
+            <p><b>$</b> tossinbox toss</p>
+            <p class="t-out">✓ inbox destroyed</p>
+          </div>
+          <div class="proj-body">
+            <span class="proj-no" dir="ltr">02</span>
+            <div class="proj-tags"><span>CLI</span><span>MCP Server</span></div>
+            <h3>TossInbox</h3>
+            <p data-en="Disposable email inboxes for humans and AI agents — spawn a throwaway inbox, wait for the verification code, toss it. No sign-up, no API keys, JSON on every command. Installable via npm and Homebrew."
+               data-ar="إيميلات مؤقتة للبشر والـ AI agents — اعمل صندوق مؤقت، استنى كود التفعيل، ارميه. من غير تسجيل ولا API keys، وكل الأوامر بترجع JSON. بتتثبت من npm و Homebrew.">
+              Disposable email inboxes for humans and AI agents — spawn a throwaway inbox, wait for the verification code, toss it. No sign-up, no API keys, JSON on every command. Installable via npm and Homebrew.
+            </p>
+            <ul class="proj-metrics" dir="ltr">
+              <li><b>npm</b><span>+ brew install</span></li>
+              <li><b>MCP</b><span data-en="AI agents ready" data-ar="جاهز للـ agents">AI agents ready</span></li>
+              <li><b>--json</b><span data-en="scriptable I/O" data-ar="مدخل/مخرج برمجي">scriptable I/O</span></li>
+            </ul>
+            <div class="proj-links">
+              <a class="btn btn-neon btn-sm magnetic" href="https://tossinbox.pages.dev" target="_blank" rel="noopener"><span data-en="Docs" data-ar="التوثيق">Docs</span></a>
+              <a class="btn btn-line btn-sm magnetic" href="https://github.com/mohamed-khairy-5i/tossinbox" target="_blank" rel="noopener"><span data-en="Source" data-ar="الكود">Source</span></a>
+              <a class="btn btn-line btn-sm magnetic" href="https://www.npmjs.com/package/tossinbox" target="_blank" rel="noopener">npm</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj tilt" data-reveal>
+          <div class="proj-media media-term" dir="ltr">
+            <p class="mt-title">trigger-doctor — audit</p>
+            <p><b>$</b> trigger-doctor audit ./SKILL.md</p>
+            <p class="t-out">✓ 24/24 prompts triggered</p>
+            <p class="t-warn">! 2 near-miss phrasings</p>
+            <p class="t-out">prescription: description fix applied</p>
+            <p class="t-out">regression suite saved ✓</p>
+          </div>
+          <div class="proj-body">
+            <span class="proj-no" dir="ltr">03</span>
+            <div class="proj-tags"><span>AI Tooling</span><span>Testing</span></div>
+            <h3>trigger-doctor</h3>
+            <p data-en="Behavioral testing for AI agent skill triggers — diagnose why a skill never fires (or fires too often), prescribe a fixed description, and keep a regression suite. One SKILL.md format, 79 agents supported. Listed on the skills.sh directory."
+               data-ar="اختبار سلوكي لـ triggers بتاعة مهارات الـ AI agents — نخّم ليه المهارة مش بتشتغل (أو بتشتغل زيادة)، وصّح الوصف، واحفظ مجموعة اختبارات انحدار. صيغة SKILL.md واحدة، و79 agent مدعوم. وموجود على دليل skills.sh.">
+              Behavioral testing for AI agent skill triggers — diagnose why a skill never fires (or fires too often), prescribe a fixed description, and keep a regression suite. One SKILL.md format, 79 agents supported. Listed on the skills.sh directory.
+            </p>
+            <ul class="proj-metrics" dir="ltr">
+              <li><b>79</b><span>agents</span></li>
+              <li><b>3/3</b><span data-en="skills.sh audits" data-ar="تدقيقات skills.sh">skills.sh audits</span></li>
+              <li><b>npx</b><span data-en="zero install" data-ar="من غير تثبيت">zero install</span></li>
+            </ul>
+            <div class="proj-links">
+              <a class="btn btn-neon btn-sm magnetic" href="https://www.skills.sh/mohamed-khairy-5i/trigger-doctor/trigger-doctor" target="_blank" rel="noopener">skills.sh</a>
+              <a class="btn btn-line btn-sm magnetic" href="https://github.com/mohamed-khairy-5i/trigger-doctor" target="_blank" rel="noopener"><span data-en="Source" data-ar="الكود">Source</span></a>
+            </div>
+          </div>
+        </article>
+
+        <h3 class="more-head" data-reveal><span data-en="More builds" data-ar="مشاريع تانية">More builds</span></h3>
+        <div class="more-grid">
+          <a class="cell tilt" href="https://github.com/mohamed-khairy-5i/TrimBG" target="_blank" rel="noopener" data-reveal>
+            <h4>TrimBG</h4><p data-en="AI background remover — 100% local &amp; private, nothing uploaded." data-ar="إزالة خلفيات بالـ AI — محلي ١٠٠٪ وخاص، ولا صورة بتترفع.">AI background remover — 100% local &amp; private, nothing uploaded.</p><span class="cell-tag">ONNX · WASM</span>
+          </a>
+          <a class="cell tilt" href="https://github.com/mohamed-khairy-5i/codepixel-vscode" target="_blank" rel="noopener" data-reveal>
+            <h4>codepixel</h4><p data-en="VS Code extension for beautiful code screenshots." data-ar="إضافة VS Code لتصوير الكود بشكل جميل.">VS Code extension for beautiful code screenshots.</p><span class="cell-tag">VS Code</span>
+          </a>
+          <a class="cell tilt" href="https://github.com/mohamed-khairy-5i/devsignal" target="_blank" rel="noopener" data-reveal>
+            <h4>devsignal</h4><p data-en="Turn GitHub work into a recruiter-ready developer card." data-ar="بيحوّل شغلك على GitHub لكارت مطور جاهز للـ recruiters.">Turn GitHub work into a recruiter-ready developer card.</p><span class="cell-tag" data-en="Career tool" data-ar="أداة مهنية">Career tool</span>
+          </a>
+          <a class="cell tilt" href="https://github.com/mohamed-khairy-5i/Calcuzakat" target="_blank" rel="noopener" data-reveal>
+            <h4>Calcuzakat</h4><p data-en="Islamic Zakat calculator built with Astro." data-ar="حاسبة الزكاة الإسلامية مبنية بـ Astro.">Islamic Zakat calculator built with Astro.</p><span class="cell-tag">Astro</span>
+          </a>
+          <a class="cell tilt" href="https://github.com/mohamed-khairy-5i/Nexluna" target="_blank" rel="noopener" data-reveal>
+            <h4>Nexluna</h4><p data-en="Arabic unit converter with blog &amp; SEO." data-ar="محول وحدات عربي مع مدونة و SEO.">Arabic unit converter with blog &amp; SEO.</p><span class="cell-tag" data-en="Arabic-first" data-ar="عربي أولًا">Arabic-first</span>
+          </a>
+          <div class="cell cell-soon" data-reveal>
+            <h4>قسطلي</h4><p data-en="Installments manager for small businesses — in the pipeline." data-ar="نظام إدارة أقساط للشركات الصغيرة — تحت التنفيذ.">Installments manager for small businesses — in the pipeline.</p><span class="cell-tag" data-en="Coming soon" data-ar="قريبًا">Coming soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="stack">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <span class="sec-tag" dir="ltr">[ 02 — STACK ]</span>
+          <h2 data-en="Boring tech, sharp results." data-ar="تقنيات مستقرة، ونتايج حادة.">Boring tech, sharp results.</h2>
+        </div>
+        <div class="stack-cols">
+          <div class="stack-col" data-reveal>
+            <h4 data-en="Frontend" data-ar="واجهات">Frontend</h4>
+            <div class="pills"><span>React 19</span><span>Next.js 16</span><span>TypeScript</span><span>Tailwind</span><span>Astro</span></div>
+          </div>
+          <div class="stack-col" data-reveal>
+            <h4 data-en="Mobile" data-ar="موبايل">Mobile</h4>
+            <div class="pills"><span>Flutter</span><span>Dart</span></div>
+            <h4 class="mt" data-en="Backend &amp; data" data-ar="باك إند وبيانات">Backend &amp; data</h4>
+            <div class="pills"><span>Node.js</span><span>Python</span><span>Supabase</span><span>Firebase</span><span>Dexie</span></div>
+          </div>
+          <div class="stack-col" data-reveal>
+            <h4 data-en="AI &amp; edge" data-ar="AI و الطرف">AI &amp; edge</h4>
+            <div class="pills"><span>ONNX</span><span>MediaPipe</span><span>WASM</span><span>Cloudflare Workers</span></div>
+            <h4 class="mt" data-en="Shipping" data-ar="النشر">Shipping</h4>
+            <div class="pills"><span>GitHub Actions</span><span>Netlify</span><span>Cloudflare Pages</span><span>Docker</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <span class="sec-tag" dir="ltr">[ 03 — ABOUT ]</span>
+          <h2 data-en="The person behind the commits." data-ar="اللي واقف ورا الـ commits.">The person behind the commits.</h2>
+        </div>
+        <div class="about-cols">
+          <p data-reveal data-en="I'm Mohamed — a frontend developer from Cairo who cares that things actually ship. React and TypeScript by day; Arabic-first products after hours. Waslfy helps Egyptian COD merchants turn WhatsApp messages into printable shipments. TossInbox gives developers — and their AI agents — throwaway inboxes with no sign-ups. trigger-doctor keeps agent skills honest."
+             data-ar="أنا محمد — مطور واجهات من القاهرة، الفرق عندي في إن الحاجة توصل للنور فعلًا. React و TypeScript في الشغل، ومنتجات عربية أولًا في الوقت الفاضي. وصلّي بتساعد تجار التحصيل عند الاستلام يحوّلوا رسايل واتساب لإيصالات شحن جاهزة للطباعة. TossInbox بتدي المطورين — ووكلاء الـ AI بتوعهم — إيميلات مؤقتة من غير تسجيل. و trigger-doctor بتحافظ على إن مهارات الـ agents تشتغل زي ما المفروض.">
+            I'm Mohamed — a frontend developer from Cairo who cares that things actually ship. React and TypeScript by day; Arabic-first products after hours. Waslfy helps Egyptian COD merchants turn WhatsApp messages into printable shipments. TossInbox gives developers — and their AI agents — throwaway inboxes with no sign-ups. trigger-doctor keeps agent skills honest.
+          </p>
+          <p data-reveal data-en="Everything I build is open source, and most of it runs on the edge — or fully on your device. This profile and portfolio are maintained with AI pair-programming, and I'm comfortable being upfront about that: the taste, the decisions and the shipping are mine."
+             data-ar="كل اللي ببنيه مفتوح المصدر، وأغلابه شغال على الطرف — أو تمامًا على جهازك. البروفايل والبورتفوليو ده بيتراجعوا بمساعدة AI، ومرتاح أقولها بصراحة: الذوق والقرارات والنشر — دي كلها مني.">
+            Everything I build is open source, and most of it runs on the edge — or fully on your device. This profile and portfolio are maintained with AI pair-programming, and I'm comfortable being upfront about that: the taste, the decisions and the shipping are mine.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="wrap" data-reveal>
+        <span class="sec-tag" dir="ltr">[ 04 — CONTACT ]</span>
+        <h2 class="contact-title" data-en="Let's build something real" data-ar="يلا نبني حاجة حقيقية">Let's build something real</h2>
+        <p data-en="Open to freelance projects and full-time roles." data-ar="متاح لمشاريع فريلانس ووظايف بدوام كامل.">Open to freelance projects and full-time roles.</p>
+        <div class="contact-row">
+          <a class="btn btn-neon magnetic" href="mailto:mohamedkhairy0887@gmail.com">mohamedkhairy0887@gmail.com</a>
+          <a class="btn btn-line magnetic" href="https://www.linkedin.com/in/mohamed-khairy-5i/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn btn-line magnetic" href="https://github.com/mohamed-khairy-5i" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+        <p class="contact-note" dir="ltr">+20 106 048 7315 · Cairo, Egypt</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span data-en="© 2026 Mohamed Khairy — built by hand, no template." data-ar="© 2026 محمد خيري — اتبنى بإيد، من غير قوالب جاهزة.">© 2026 Mohamed Khairy — built by hand, no template.</span>
+      <span dir="ltr">MK — CAI — 2026</span>
+    </div>
+  </footer>
+
+  <script src="variants.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js" onerror="window.__noThree=true"></script>
+  <script src="style-d.js"></script>
+</body>
+</html>
