@@ -1,0 +1,1667 @@
+[
+ {
+  "slug": "waslfy",
+  "layout": "story",
+  "title": "وصلّي — Waslfy",
+  "tags": [
+   {
+    "en": "Web App · PWA",
+    "ar": "Web App · PWA"
+   },
+   {
+    "en": "npm package",
+    "ar": "npm package"
+   },
+   {
+    "en": "100% offline",
+    "ar": "أوفلاين ١٠٠٪"
+   }
+  ],
+  "sub": {
+   "en": "",
+   "ar": ""
+  },
+  "ctas": [
+   {
+    "label": {
+     "en": "Open the live app",
+     "ar": "Open the live app"
+    },
+    "href": "https://waslfy.pages.dev"
+   },
+   {
+    "label": {
+     "en": "Source on GitHub",
+     "ar": "Source on GitHub"
+    },
+    "href": "https://github.com/mohamed-khairy-5i/waslfy"
+   },
+   {
+    "label": {
+     "en": "npm · waslfy-parser",
+     "ar": "npm · waslfy-parser"
+    },
+    "href": "https://www.npmjs.com/package/waslfy-parser"
+   }
+  ],
+  "metrics": [
+   {
+    "v": "100%",
+    "label": {
+     "en": "corpus accuracy",
+     "ar": "دقة الاستخراج"
+    }
+   },
+   {
+    "v": "0",
+    "label": {
+     "en": "network calls",
+     "ar": "نداءات شبكة"
+    }
+   },
+   {
+    "v": "13 kB",
+    "label": {
+     "en": "parser core, zero deps",
+     "ar": "محرك الاستخراج، صفر dependencies"
+    }
+   }
+  ],
+  "sections": [
+   {
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "blocks": [
+     {
+      "type": "p",
+      "en": "COD merchants in Egypt take orders on WhatsApp. The messages are written in a hurry: nicknames instead of real names, broken addresses, Arabic and Hindi numerals mixed together, the amount buried somewhere in the middle. Someone has to retype all of it by hand into a shipment — and every typo costs money, time and an annoyed customer.",
+      "ar": "تجار التحصيل عند الاستلام في مصر بيستلموا الطلبات على واتساب. الرسايل مكتوبة على السريع: كني بدل الاسم الحقيقي، عناوين ناقصة، أرقام عربية وهندية خلبطة، والمبلغ مدفون في نص الكلام. حد لازم يعيد كتابة كل ده بإيده في نظام الشحن — وكل غلطة بتكلف فلوس ووقت وعميل زعلان."
+     },
+     {
+      "type": "p",
+      "en": "The existing tools either need a constant internet connection, or expect clean data that simply doesn't exist. I wanted something that reads the message the way a human does — and never sends a single byte anywhere.",
+      "ar": "الأدوات الموجودة يا إما محتاجة نت على طول، يا إما متوقعة داتا نضيفة أصلاً مش موجودة. أنا عايز حاجة بتقرا الرسالة زي البني آدم — ومن تبعت ولا بايت واحد في أي حتة."
+     }
+    ]
+   },
+   {
+    "h": {
+     "en": "The fix — how it works",
+     "ar": "الحل — بيشتغل إزاي"
+    },
+    "blocks": [
+     {
+      "type": "cols",
+      "cols": [
+       {
+        "en": "Open Waslfy, paste the message exactly as it arrived, hit extract. The parser understands Egyptian dialect, both numeral systems, broken spelling and label-less messages — then fills in the five fields that matter: name, phone, governorate, address and COD amount. Hit save and the shipment lands in your local list; hit print and you get an A6 receipt with a real Code128 barcode.",
+        "ar": "تفتح وصلّي، تلصق الرسالة زي ما وصلت، تدوس استخراج. المحرك بيفهم العامية المصرية والنظامين للأرقام والإملاء المكسور والرسايل اللي من غير تسميات — ويملّي الحقول الخمسة المهمة: الاسم، التليفون، المحافظة، العنوان، ومبلغ التحصيل. تدوس حفظ والشحنة تنزل في قائمتك المحلية، وتدوس طباعة يطلعلك إيصال A6 بباركود Code128 حقيقي."
+       },
+       {
+        "en": "Everything lives on the device (Dexie / IndexedDB). Export to Excel with company-ready templates, back up with a smart merge that never duplicates — and it installs as a PWA so it feels like a native app on the merchant's phone.",
+        "ar": "كل حاجة على الجهاز (Dexie / IndexedDB). تصدير Excel بقوالب جاهزة لشركات الشحن، ونسخ احتياطي بدمج ذكي عمره ما يكرر — وبتتثبت كـ PWA فبتحس إنها تطبيق أصلي على موبايل التاجر."
+       },
+       {
+        "en": "waslfy-parser — npm",
+        "ar": "waslfy-parser — npm"
+       },
+       {
+        "en": "$ npm i waslfy-parser",
+        "ar": "$ npm i waslfy-parser"
+       },
+       {
+        "en": "✓ zero deps · 13 kB · ESM + CJS",
+        "ar": "✓ zero deps · 13 kB · ESM + CJS"
+       },
+       {
+        "en": "$ extractShipment(msg)",
+        "ar": "$ extractShipment(msg)"
+       },
+       {
+        "en": "{ name: \"محمود\", gov: \"المنصورة\" }",
+        "ar": "{ name: \"محمود\", gov: \"المنصورة\" }"
+       },
+       {
+        "en": "{ phone: \"01012345678\", cod: 150 }",
+        "ar": "{ phone: \"01012345678\", cod: 150 }"
+       },
+       {
+        "en": "accuracy: 40/40 corpus ✓",
+        "ar": "accuracy: 40/40 corpus ✓"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "h": {
+     "en": "What's inside",
+     "ar": "اللي جواه"
+    },
+    "blocks": [
+     {
+      "type": "list",
+      "items": [
+       {
+        "en": "Offline-first: works with airplane mode on, data never leaves the device",
+        "ar": "أوفلاين أولًا: بيشتغل والطيران مقفول، والداتا عمرها ما تسيب الجهاز"
+       },
+       {
+        "en": "100% accuracy on a corpus of real Egyptian WhatsApp messages",
+        "ar": "دقة ١٠٠٪ على كوربوس رسايل واتساب مصرية حقيقية"
+       },
+       {
+        "en": "A6 receipt printing with a scannable Code128 barcode",
+        "ar": "طباعة إيصال A6 بباركود Code128 بتتقري فعلًا"
+       },
+       {
+        "en": "Excel export with templates for Egyptian courier companies",
+        "ar": "تصدير Excel بقوالب جاهزة لشركات الشحن المصرية"
+       },
+       {
+        "en": "Smart backup merge — restores without duplicating a single shipment",
+        "ar": "نسخ احتياطي بدمج ذكي — بيرجّع من غير ما يكرر ولا شحنة"
+       },
+       {
+        "en": "waslfy-parser on npm: standalone package, zero dependencies, ESM + CJS",
+        "ar": "waslfy-parser على npm: حزمة مستقلة، صفر dependencies، ESM + CJS"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "h": {
+     "en": "Built with",
+     "ar": "مبني بإيه"
+    },
+    "blocks": [
+     {
+      "type": "pills",
+      "items": [
+       "React 19",
+       "Next.js",
+       "TypeScript",
+       "Dexie / IndexedDB",
+       "tsup",
+       "Vitest",
+       "PWA",
+       "Cloudflare Pages"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "tossinbox",
+  "layout": "story",
+  "title": "TossInbox",
+  "tags": [
+   {
+    "en": "CLI",
+    "ar": "CLI"
+   },
+   {
+    "en": "MCP Server",
+    "ar": "MCP Server"
+   },
+   {
+    "en": "npm + Homebrew",
+    "ar": "npm + Homebrew"
+   }
+  ],
+  "sub": {
+   "en": "",
+   "ar": ""
+  },
+  "ctas": [
+   {
+    "label": {
+     "en": "Read the docs",
+     "ar": "Read the docs"
+    },
+    "href": "https://tossinbox.pages.dev"
+   },
+   {
+    "label": {
+     "en": "Source on GitHub",
+     "ar": "Source on GitHub"
+    },
+    "href": "https://github.com/mohamed-khairy-5i/tossinbox"
+   },
+   {
+    "label": {
+     "en": "npm · tossinbox",
+     "ar": "npm · tossinbox"
+    },
+    "href": "https://www.npmjs.com/package/tossinbox"
+   }
+  ],
+  "metrics": [
+   {
+    "v": "3",
+    "label": {
+     "en": "commands: spawn / wait / toss",
+     "ar": "أوامر: spawn / wait / toss"
+    }
+   },
+   {
+    "v": "0",
+    "label": {
+     "en": "sign-ups or API keys",
+     "ar": "تسجيل أو API keys"
+    }
+   },
+   {
+    "v": "MCP",
+    "label": {
+     "en": "agents use it directly",
+     "ar": "الـ agents بتستخدمه مباشرة"
+    }
+   }
+  ],
+  "sections": [
+   {
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "blocks": [
+     {
+      "type": "p",
+      "en": "Every new tool wants an email. Try one thing, and your inbox pays for it with spam for the next six months. And it's not just humans anymore — AI agents now sign up for services, verify accounts and read confirmation codes. Nobody wants to hand a real inbox to a bot, and most disposable-email sites are built for clicking, not for scripts.",
+      "ar": "أي أداة جديدة عايزة إيميل. تجرب حاجة واحدة، وصندوقك بيدفع الثمن سبام لستة شهور. ومش بس البشر — الـ AI agents دلوقتي بتسجل في خدمات وتفعل حسابات وتقرا أكواد تأكيد. محدش عايز يدي روبوت إيميله الحقيقي، ومواقع الإيميل المؤقت الموجودة معمولة للدوس بالإيد، مش للسكريبتات."
+     }
+    ]
+   },
+   {
+    "h": {
+     "en": "The fix — how it works",
+     "ar": "الحل — بيشتغل إزاي"
+    },
+    "blocks": [
+     {
+      "type": "cols",
+      "cols": [
+       {
+        "en": "tossinbox spawn — you get a live inbox in seconds. tossinbox wait --otp — it sits there until the verification code lands, then prints it. tossinbox toss — the inbox and everything in it are gone. Every command returns clean JSON (add --json anywhere), so shell scripts, CI pipelines and AI agents can all use it without scraping a website.",
+        "ar": "tossinbox spawn — يطلعلك صندوق شغال في ثواني. tossinbox wait --otp — يقعد يستنى لحد ما كود التفعيل يوصل ويطبعه. tossinbox toss — الصندوق ومحتواه يتشالوا خالص. كل أمر بيرجع JSON نضيف (ضيف --json في أي حتة)، فالسكريبتات والـ CI والـ agents كلهم يقدروا يستخدموه من غير ما يخربشوا في موقع."
+       },
+       {
+        "en": "It ships as an MCP server too, so agents that speak MCP call it directly as a tool. Install from npm or Homebrew, run it from Node 18+.",
+        "ar": "وبتيجي كمان كـ MCP server، فالـ agents اللي بتتكلم MCP تناديه مباشرة كأداة. بتتثبت من npm أو Homebrew، وتشتغل من Node 18+."
+       },
+       {
+        "en": "tossinbox — terminal",
+        "ar": "tossinbox — terminal"
+       },
+       {
+        "en": "$ npx tossinbox spawn",
+        "ar": "$ npx tossinbox spawn"
+       },
+       {
+        "en": "inbox: xk42f@tossinbox.dev",
+        "ar": "inbox: xk42f@tossinbox.dev"
+       },
+       {
+        "en": "$ tossinbox wait --otp",
+        "ar": "$ tossinbox wait --otp"
+       },
+       {
+        "en": "✓ code 881421 received (12s)",
+        "ar": "✓ code 881421 received (12s)"
+       },
+       {
+        "en": "$ tossinbox toss",
+        "ar": "$ tossinbox toss"
+       },
+       {
+        "en": "✓ inbox destroyed",
+        "ar": "✓ inbox destroyed"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "h": {
+     "en": "What's inside",
+     "ar": "اللي جواه"
+    },
+    "blocks": [
+     {
+      "type": "list",
+      "items": [
+       {
+        "en": "No sign-up, no API keys, no dashboard — it's just a command",
+        "ar": "من غير تسجيل ولا API keys ولا داشبورد — دي مجرد أمر"
+       },
+       {
+        "en": "OTP watcher: waits for the code and prints it the second it lands",
+        "ar": "متابع OTP: يستنى الكود ويطبعه أول ما يوصل"
+       },
+       {
+        "en": "JSON output on every command — scriptable end to end",
+        "ar": "مخرجات JSON في كل أمر — قابل للسكريبتات من الأول للآخر"
+       },
+       {
+        "en": "MCP server built in — AI agents use it as a native tool",
+        "ar": "MCP server مدمج — الـ agents بتستخدمه كأداة أصلية"
+       },
+       {
+        "en": "Installable via npm and Homebrew",
+        "ar": "بتتثبت من npm و Homebrew"
+       },
+       {
+        "en": "Inboxes destroyed on demand — nothing lingers, nothing leaks",
+        "ar": "الصناديق تتدمر بالطلب — مفيش حاجة بتقعد ومفيش حاجة بتنزل"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "h": {
+     "en": "Built with",
+     "ar": "مبني بإيه"
+    },
+    "blocks": [
+     {
+      "type": "pills",
+      "items": [
+       "TypeScript",
+       "Node.js 18+",
+       "MCP",
+       "GitHub Actions",
+       "Homebrew",
+       "Cloudflare Pages"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "trigger-doctor",
+  "layout": "story",
+  "title": "trigger-doctor",
+  "tags": [
+   {
+    "en": "AI Tooling",
+    "ar": "AI Tooling"
+   },
+   {
+    "en": "Testing",
+    "ar": "Testing"
+   },
+   {
+    "en": "Listed on skills.sh",
+    "ar": "موجود على skills.sh"
+   }
+  ],
+  "sub": {
+   "en": "",
+   "ar": ""
+  },
+  "ctas": [
+   {
+    "label": {
+     "en": "View on skills.sh",
+     "ar": "View on skills.sh"
+    },
+    "href": "https://www.skills.sh/mohamed-khairy-5i/trigger-doctor/trigger-doctor"
+   },
+   {
+    "label": {
+     "en": "Source on GitHub",
+     "ar": "Source on GitHub"
+    },
+    "href": "https://github.com/mohamed-khairy-5i/trigger-doctor"
+   }
+  ],
+  "metrics": [
+   {
+    "v": "79",
+    "label": {
+     "en": "agents supported",
+     "ar": "agents supported"
+    }
+   },
+   {
+    "v": "1",
+    "label": {
+     "en": "SKILL.md format",
+     "ar": "صيغة SKILL.md"
+    }
+   },
+   {
+    "v": "npx",
+    "label": {
+     "en": "zero install",
+     "ar": "من غير تثبيت"
+    }
+   }
+  ],
+  "sections": [
+   {
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "blocks": [
+     {
+      "type": "p",
+      "en": "Agent skills live or die by their trigger description. Write it with the wrong wording and your skill never fires — or worse, it fires on everything. Right now people debug this by vibes: they try a prompt, it doesn't work, they tweak a word, try again. No test cases, no evidence, no way to know the fix didn't break something else.",
+      "ar": "مهارات الـ agents عيشتها كله معلق على وصف الـ trigger. اكتبه بصيغة غلط ومهارتك عمرها ما هتتنادى — أو الأسوأ، هتتنادى في كل حاجة. الناس دلوقتي بتصلّح ده بالتخمين: تجرب أمر، مش شغال، تغير كلمة، تجرب تاني. من غير اختبارات ولا دليل، ومفيش طريقة تعرف إن التصليح مكسرش حاجة تانية."
+     }
+    ]
+   },
+   {
+    "h": {
+     "en": "The fix — how it works",
+     "ar": "الحل — بيشتغل إزاي"
+    },
+    "blocks": [
+     {
+      "type": "cols",
+      "cols": [
+       {
+        "en": "trigger-doctor audit points at your SKILL.md and throws a battery of real-world phrasings at it — exact matches, paraphrases, near-misses and wrong-domain prompts. You see exactly which ones trigger your skill and which don't. Then it writes a prescription: a corrected description, with the reasoning shown.",
+        "ar": "trigger-doctor audit بتوجّه على SKILL.md بتاعك وترمي عليه مجموعة صيغ حقيقية — مطابقة تامة، وإعادة صياغة، وصيغ قريبة من الخطأ، وأوامر من نطاق تاني خالص. بتشوف بنفسك أنهي صيغ نادت بمهارتك وأنهي لأ. وبعدين بيكتب الوصفة: وصف متصلح مع سبب كل تغيير."
+       },
+       {
+        "en": "Whatever passed gets saved as a regression suite, so next time you touch the description you re-run and instantly know you didn't break anything. One SKILL.md format, 79 agents — Claude, Cursor, Copilot and friends.",
+        "ar": "اللي عدى بيتحفظ كمجموعة اختبارات انحدار، فالمرة الجاية اللي هتغير فيها الوصف تعيد التشغيل وتعرف فورًا إنك مكسرتش حاجة. صيغة SKILL.md واحدة و79 agent — Claude و Cursor و Copilot وشركاهم."
+       },
+       {
+        "en": "trigger-doctor — audit",
+        "ar": "trigger-doctor — audit"
+       },
+       {
+        "en": "$ npx trigger-doctor audit ./SKILL.md",
+        "ar": "$ npx trigger-doctor audit ./SKILL.md"
+       },
+       {
+        "en": "✓ 24/24 prompts triggered",
+        "ar": "✓ 24/24 prompts triggered"
+       },
+       {
+        "en": "! 2 near-miss phrasings",
+        "ar": "! 2 near-miss phrasings"
+       },
+       {
+        "en": "prescription: description fixed",
+        "ar": "prescription: description fixed"
+       },
+       {
+        "en": "regression suite saved ✓",
+        "ar": "regression suite saved ✓"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "h": {
+     "en": "What's inside",
+     "ar": "اللي جواه"
+    },
+    "blocks": [
+     {
+      "type": "list",
+      "items": [
+       {
+        "en": "Behavioral audit: real phrasings against your SKILL.md, not just the happy path",
+        "ar": "تدقيق سلوكي: صيغ حقيقية على SKILL.md بتاعك، مش الطريق السهل بس"
+       },
+       {
+        "en": "Near-miss detection: catches prompts that almost trigger the skill",
+        "ar": "كشف الصيغ القريبة: بيلاقي الأوامر اللي كادت تنادي المهارة"
+       },
+       {
+        "en": "Prescription output: a fixed description with the reasoning shown",
+        "ar": "مخرجات الوصفة: وصف متصلح مع عرض الأسباب"
+       },
+       {
+        "en": "Regression suite: save what passed, re-run after every change",
+        "ar": "مجموعة انحدار: احفظ اللي عدى، وأعد التشغيل بعد كل تعديل"
+       },
+       {
+        "en": "79 agents, one SKILL.md format",
+        "ar": "79 agent بصيغة SKILL.md واحدة"
+       },
+       {
+        "en": "Runs with npx — no install step",
+        "ar": "بيشتغل بـ npx — من غير خطوة تثبيت"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "h": {
+     "en": "Built with",
+     "ar": "مبني بإيه"
+    },
+    "blocks": [
+     {
+      "type": "pills",
+      "items": [
+       "TypeScript",
+       "CLI",
+       "Testing",
+       "AI Agents",
+       "skills.sh"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "codepixel",
+  "layout": "standard",
+  "title": "CodePixel",
+  "overline": {
+   "en": "Developer tool · 2026 · LIVE",
+   "ar": "Developer tool · 2026 · LIVE"
+  },
+  "sub": {
+   "en": "A VS Code extension for high-resolution, share-ready code visuals.",
+   "ar": "إضافة لـ VS Code لتحويل الكود إلى صور عالية الدقة جاهزة للمشاركة."
+  },
+  "img": "/assets/work/codepixel.webp",
+  "img_alt": "CodePixel",
+  "ctas": [
+   {
+    "label": {
+     "en": "Live app",
+     "ar": "Live app"
+    },
+    "href": "https://marketplace.visualstudio.com/items?itemName=mohamed-khairy-5i.codepixel"
+   }
+  ],
+  "stack": [
+   "TypeScript",
+   "VS Code API",
+   "Shiki",
+   "Sharp"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "Standard code screenshots look flat, inconsistent, and low-resolution. Developers should not have to leave the editor to create something worth sharing.",
+     "ar": "لقطات الكود التقليدية تبدو مسطحة وغير متسقة ومنخفضة الدقة. المبرمج مش محتاج يخرج من المحرر عشان يعمل صورة تستاهل المشاركة."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "A native TypeScript extension using VS Code APIs, Shiki syntax highlighting, Sharp rendering, themes, glass surfaces, watermarking, and a live preview panel.",
+     "ar": "إضافة TypeScript أصلية تستخدم VS Code APIs وShiki لتمييز الصياغة وSharp للرندرة، مع ثيمات وخلفيات زجاجية وعلامة مائية ومعاينة مباشرة."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "Anyone can install it, and one command exports a polished code image without breaking your flow.",
+     "ar": "أي حد يقدر يثبتها، وأمر واحد يطلعلك صورة كود نضيفة من غير ما تقطع شغلك."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "service-ads",
+  "layout": "standard",
+  "title": "Water Delivery Campaign",
+  "overline": {
+   "en": "Arabic social advertisement · 2024 · CLIENT WORK",
+   "ar": "Arabic social advertisement · 2024 · CLIENT WORK"
+  },
+  "sub": {
+   "en": "An Arabic water-tanker delivery promotion combining tanker imagery, a 50% offer, service highlights, and direct WhatsApp and phone contacts.",
+   "ar": "إعلان عربي لخدمة توصيل وايت مياه يجمع صور الصهاريج وخصم 50% وأبرز الخدمات وأرقام واتساب والاتصال المباشر."
+  },
+  "img": "/assets/design/service-ads.webp",
+  "img_alt": "Water Delivery Campaign",
+  "ctas": [],
+  "stack": [
+   "Photoshop",
+   "Arabic Ad Design",
+   "Direct Response",
+   "Campaign Layout"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "The campaign had to explain a limited-time discount and the delivery benefits fast, on a phone screen.",
+     "ar": "الحملة كان لازم توضح الخصم لفترة محدودة ومميزات التوصيل بسرعة، على شاشة موبايل."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "Purple and turquoise circular frames hold the tanker photos, and the Arabic title, discount badge, benefits list and contact strip take the reader straight to calling.",
+     "ar": "إطارات دائرية بنفسجي وتركواز لصور الصهاريج، والعنوان العربي وشارة الخصم وقايمة المميزات وأرقام التواصل بيوصلوا العميل لإنه يتصل."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A direct-response ad that takes the viewer from understanding the service to picking up the phone — all in one frame.",
+     "ar": "إعلان بيع مباشر — من أول ما العميل يفهم الخدمة لحد ما ياخد التليفون يتصل، كله في تصميم واحد."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "dealario",
+  "layout": "standard",
+  "title": "Dealario",
+  "overline": {
+   "en": "Logo direction / Brand mark · 2025 · CLIENT WORK",
+   "ar": "Logo direction / Brand mark · 2025 · CLIENT WORK"
+  },
+  "sub": {
+   "en": "The main Dealario logo direction — an orange D-shaped symbol with an all-caps wordmark.",
+   "ar": "الاتجاه الأساسي لشعار Dealario — رمز برتقالي على شكل حرف D مع اسم بالحروف الكبيرة."
+  },
+  "img": "/assets/design/dealario.webp",
+  "img_alt": "Dealario",
+  "ctas": [],
+  "stack": [
+   "Illustrator",
+   "Logo Design",
+   "Brand Mark",
+   "Presentation"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "The design needed a compact symbol and a straightforward wordmark that says the name clearly in one brand presentation.",
+     "ar": "التصميم كان محتاج رمز بسيط واسم واضح يقول العلامة في عرض واحد من غير لف ودوران."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "A simplified orange letter sits above a high-contrast wordmark on a deep purple background — the mark and the name are the only things you look at.",
+     "ar": "حرف بسيط بالبرتقالي فوق اسم واضح على خلفية بنفسجي غامق — الرمز والاسم هما بس اللي العين تشوفهم."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A focused logo presentation that sets the visual starting point for the Dealario brand.",
+     "ar": "عرض شعار مركز بيحدد نقطة البداية البصرية لهوية Dealario."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "al-shahba",
+  "layout": "standard",
+  "title": "Abu Al-Qasim",
+  "overline": {
+   "en": "Gaming channel banner · 2024 · CLIENT WORK",
+   "ar": "Gaming channel banner · 2024 · CLIENT WORK"
+  },
+  "sub": {
+   "en": "A cinematic gaming banner for Abu Al-Qasim — built around a tactical character, with the YouTube and TikTok handles placed where viewers see them.",
+   "ar": "بانر جيمنج سينمائي لـ Abu Al-Qasim — مبني على شخصية تكتيكية، ولينكات اليوتيوب والتيك توك باينة في مكان واضح."
+  },
+  "img": "/assets/design/al-shahba.webp",
+  "img_alt": "Abu Al-Qasim",
+  "ctas": [],
+  "stack": [
+   "Photoshop",
+   "Gaming Banner",
+   "Social Identity",
+   "Channel Art"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "The channel needed one banner where the creator’s name and social links are easy to spot at a glance.",
+     "ar": "القناة كانت محتاجة بانر واحد، اسم صانع المحتوى ولينكات السوشيال يبانوا فيه من أول نظرة."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "A gold-and-black PUBG-style scene with the character as the main silhouette, the creator’s name on a dark band, and the social handles right underneath.",
+     "ar": "مشهد بروح PUBG بذهبي وأسود، والشخصية هي البطل، واسم صانع المحتوى في شريط غامق، ولينكات السوشيال تحته على طول."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A ready-to-upload banner that gives Abu Al-Qasim one consistent look across video and shorts platforms.",
+     "ar": "بانر جاهز للرفع، بيدي Abu Al-Qasim شكل واحد ثابت على منصات الفيديو والشورتس."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "behind-the-screen",
+  "layout": "standard",
+  "title": "Behind the Screen",
+  "overline": {
+   "en": "Podcast episode poster / Arabic social · 2025 · CLIENT WORK",
+   "ar": "Podcast episode poster / Arabic social · 2025 · CLIENT WORK"
+  },
+  "sub": {
+   "en": "An Arabic podcast-episode poster for Behind the Screen, presenting a discussion about the risks of social media with host Mohamed Khairy and guest Dr. Nader.",
+   "ar": "بوستر حلقة بودكاست عربي لـ خلف الشاشة يقدّم نقاشًا عن خطورة مواقع السوشيال ميديا مع محمد خيري وضيف الحلقة د. نادر."
+  },
+  "img": "/assets/design/behind-the-screen.webp",
+  "img_alt": "Behind the Screen",
+  "ctas": [],
+  "stack": [
+   "Photoshop",
+   "Podcast Poster",
+   "Arabic Typography",
+   "Social Media Creative"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "The announcement had to fit the title, the topic, the host, the guest and the schedule in one design people scroll through fast.",
+     "ar": "الإعلان كان لازم يجمع العنوان والموضوع والمقدم والضيف والموعد في تصميم واحد يتشاف بسرعة وهو بيتسكرول."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "A dark spotlight on the figure holding the phone, social-media icons floating around, and a glowing Arabic title that guides the eye from top to bottom.",
+     "ar": "إضاءة داكنة على الشخصية الماسكة التليفون، وأيقونات السوشيال حواليها، والعنوان العربي منور ويشد العين من فوق لتحت."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A vertical episode announcement that puts the topic, host, guest and timing in one clear social post.",
+     "ar": "إعلان الحلقة بشكل رأسي — الموضوع والمقدم والضيف والموعد في بوست واحد واضح."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "al-resala-excellence",
+  "layout": "standard",
+  "title": "Al Resala Excellence Certificate",
+  "overline": {
+   "en": "Educational certificate / Print design · 2026 · CLIENT WORK",
+   "ar": "Educational certificate / Print design · 2026 · CLIENT WORK"
+  },
+  "sub": {
+   "en": "An Arabic appreciation certificate for Al Resala — celebrates a child’s academic and ethical achievement, with fillable fields for the child’s and teacher’s names.",
+   "ar": "شهادة تقدير عربية لمركز الرسالة — بتكافئ الطفل على تفوقه العلمي وأخلاقه، وفيها خانات جاهزة تتكتب فيها أسماء الطفل والمعلمة."
+  },
+  "img": "/assets/design/al-resala-excellence.webp",
+  "img_alt": "Al Resala Excellence Certificate",
+  "ctas": [],
+  "stack": [
+   "Print Design",
+   "Arabic Typography",
+   "Certificate Layout",
+   "Educational Visuals"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "The school needed a formal but warm certificate that honours the child and stays practical to reprint for every new student.",
+     "ar": "المركز كان محتاج شهادة رسمية وفي نفس الوقت دافية، تكرّم الطفل وتصلح تتطبع لكل طالب جديد من غير تعقيد."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "Navy, gold and green with a manuscript-style border, book and laurel motifs, and a clear appreciation message in the middle. Dotted name lines keep it easy to print and fill in.",
+     "ar": "ألوان كحلي وذهبي وأخضر، وإطار على شكل المخطوطات القديمة، ورموز كتب وأوراق غار، ورسالة تقدير واضحة في النص. وخطوط منقطة للأسماء عشان الطباعة والتعبئة تبقى سهلة."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A reusable certificate that celebrates achievement, learning and character — all on one printable page.",
+     "ar": "شهادة بتتطبع وتتستخدم مرات ومرات — بتكافئ التفوق والتعلم والقيم في ورقة واحدة."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "yasmona",
+  "layout": "standard",
+  "title": "Yasmona Store",
+  "overline": {
+   "en": "Landing / Link-in-bio · 2026 · LIVE",
+   "ar": "Landing / Link-in-bio · 2026 · LIVE"
+  },
+  "sub": {
+   "en": "An elegant branded link hub for a fashion label with one-tap WhatsApp ordering.",
+   "ar": "صفحة روابط أنيقة بهوية علامة أزياء مع طلب فوري عبر واتساب."
+  },
+  "img": "/assets/work/yasmona.webp",
+  "img_alt": "Yasmona Store",
+  "ctas": [
+   {
+    "label": {
+     "en": "Live app",
+     "ar": "Live app"
+    },
+    "href": "https://yasmona.netlify.app"
+   }
+  ],
+  "stack": [
+   "HTML5",
+   "CSS3",
+   "Responsive",
+   "Brand Identity"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "A fashion brand needed one clean branded link across social channels that funnels followers into ordering.",
+     "ar": "علامة أزياء محتاجة لينك واحد نضيف بهويتها على كل السوشيال، يوصل المتابعين للطلب على طول."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "A mobile-first landing page with logo, social buttons, a prominent WhatsApp CTA, and a path toward the full store.",
+     "ar": "صفحة هبوط للجوال تضم الشعار وأزرار التواصل ودعوة بارزة للطلب عبر واتساب وتمهيدًا للمتجر الكامل."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A single professional link that turns social traffic into direct WhatsApp orders.",
+     "ar": "رابط احترافي واحد يحوّل زيارات السوشيال إلى طلبات مباشرة عبر واتساب."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "calcuzakat",
+  "layout": "standard",
+  "title": "CalcuZakat",
+  "overline": {
+   "en": "FinTech PWA · 2026 · LIVE",
+   "ar": "FinTech PWA · 2026 · LIVE"
+  },
+  "sub": {
+   "en": "A zakat calculator that follows Sharia rules — 10 zakat types, 10 currencies, and live gold and silver prices.",
+   "ar": "حاسبة زكاة ملتزمة بالشريعة — 10 أنواع زكاة و10 عملات وأسعار ذهب وفضة محدثة."
+  },
+  "img": "/assets/work/calcuzakat.webp",
+  "img_alt": "CalcuZakat",
+  "ctas": [
+   {
+    "label": {
+     "en": "Live app",
+     "ar": "Live app"
+    },
+    "href": "https://calcuzakat.netlify.app"
+   }
+  ],
+  "stack": [
+   "JavaScript ES6+",
+   "Live Price API",
+   "PWA / Service Worker",
+   "Print Report",
+   "RTL"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "Existing zakat tools use outdated fixed gold prices, only cover cash and gold, and almost never explain the fiqh behind the numbers.",
+     "ar": "حاسبات الزكاة الموجودة بتحسب بأسعار ذهب قديمة ثابتة، ومش بتغطي غير الفلوس والذهب، وقلة اللي بتشرح الفقه."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "An installable PWA with multiple zakat types and currencies, printable reports, fiqh explanations, and live gold and silver prices — all computed inside your browser.",
+     "ar": "تطبيق بتثبته على موبايلك، فيه أنواع زكاة وعملات كتير، وتقارير تتطبع، وشرح فقهي بسيط، وأسعار ذهب وفضة محدثة — وكل الحساب بيحصل في متصفحك."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A complete, private, offline-capable Arabic zakat calculator that turns a sensitive question into a clear educational flow.",
+     "ar": "حاسبة زكاة عربية متكاملة وخاصة وتعمل دون إنترنت، تحوّل السؤال الحساس إلى تجربة واضحة وتعليمية."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "hesasy",
+  "layout": "standard",
+  "title": "Hesasy",
+  "overline": {
+   "en": "EdTech web product / Arabic RTL · 2026 · LIVE",
+   "ar": "EdTech web product / Arabic RTL · 2026 · LIVE"
+  },
+  "sub": {
+   "en": "An Arabic RTL digital lesson notebook that brings attendance, student points, and parent-ready progress reports into one lesson flow.",
+   "ar": "دفتر حصة رقمي بالعربي: حضور ونقاط وتقارير جاهزة لولي الأمر — كل حصة في شاشة واحدة."
+  },
+  "img": "/assets/work/hesasy.webp",
+  "img_alt": "Hesasy",
+  "ctas": [
+   {
+    "label": {
+     "en": "Live app",
+     "ar": "Live app"
+    },
+    "href": "https://hesasy.netlify.app"
+   }
+  ],
+  "stack": [
+   "Arabic RTL",
+   "EdTech UX",
+   "Teacher Workflow",
+   "Parent Reports"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "Teachers need to keep attendance, lesson notes, student points, and family updates clear without moving between paper records and disconnected screens.",
+     "ar": "المعلم محتاج يحفظ الحضور والملاحظات والنقاط ويبلغ أولياء الأمور — من غير دفاتر ورق ولا شاشات متفرقة."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "An Arabic workflow for teachers: set up the class, take attendance and give points during the lesson, and send parents private report links. Each step focuses on one thing.",
+     "ar": "طريقة شغل مصممة للمعلم بالعربي: بتجهز الفصل، وتسجل الحضور والنقاط وسط الحصة، وتبعت لولي الأمر لينك تقرير خاص بتلميذه. كل خطوة ليها حاجة واحدة بس."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A lesson-centred product surface that separates teacher control from parent visibility while keeping each student report private.",
+     "ar": "واجهة كلها حوالين الحصة: شاشة للمعلم وشاشة لولي الأمر، وتقرير كل تلميذ يفضل خاص."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "nexluna",
+  "layout": "standard",
+  "title": "Nexluna",
+  "overline": {
+   "en": "Arabic-first web app · 2026 · LIVE",
+   "ar": "Arabic-first web app · 2026 · LIVE"
+  },
+  "sub": {
+   "en": "A precise unit converter built around the Arabic reading experience.",
+   "ar": "محوّل وحدات دقيق صُمّم أولًا لتجربة المستخدم العربي."
+  },
+  "img": "/assets/work/nexluna.webp",
+  "img_alt": "Nexluna",
+  "ctas": [
+   {
+    "label": {
+     "en": "Live app",
+     "ar": "Live app"
+    },
+    "href": "https://nexluna.netlify.app"
+   }
+  ],
+  "stack": [
+   "JavaScript",
+   "PWA",
+   "SEO architecture",
+   "Dark mode"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "Most converters treat RTL as an afterthought and hide the answer behind an extra click.",
+     "ar": "معظم المحولات مش بتبدأ بالعربي، وبتخبي النتيجة ورا نقرة زيادة."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "A fully RTL PWA with instant conversion, 14 categories, 100 units, history, favourites, dark mode, and SEO-ready category pages.",
+     "ar": "تطبيق PWA عربي بالكامل مع تحويل فوري و14 فئة و100 وحدة وسجل ومفضلة ووضع ليلي وصفحات SEO لكل فئة."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A fast, privacy-first tool that Arabic users feel at home in — and it answers instantly.",
+     "ar": "أداة سريعة بتحترم خصوصيتك، والمستخدم العربي يحس إنها معمولة ليه — وبترد في نفس اللحظة."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "devsignal",
+  "layout": "standard",
+  "title": "devsignal",
+  "overline": {
+   "en": "Career tool · Open source · 2026 · OPEN SOURCE",
+   "ar": "Career tool · Open source · 2026 · OPEN SOURCE"
+  },
+  "sub": {
+   "en": "Turn your GitHub work into a recruiter-ready developer card — one link that shows what you actually shipped.",
+   "ar": "بيحوّل شغلك على GitHub لكارت مطور جاهز للـ recruiters — لينك واحد بيورّي اللي أنت نشرته فعلًا."
+  },
+  "img": "",
+  "img_alt": "devsignal",
+  "ctas": [
+   {
+    "label": {
+     "en": "Source",
+     "ar": "Source"
+    },
+    "href": "https://github.com/mohamed-khairy-5i/devsignal"
+   }
+  ],
+  "stack": [],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "A GitHub profile is a wall of repositories. Recruiters spend minutes and still miss the signal — what you built, for whom, and how active you really are.",
+     "ar": "بروفايل GitHub حيطة من الريبويات. الـ recruiter يضيّع دقايق وبرضه يفوّت الإشارة — بنت إيه، لمين، ومدى نشاطك الحقيقي."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "An open-source tool that reads your public GitHub activity and composes a single shareable card focused on shipped work, not vanity metrics.",
+     "ar": "أداة مفتوحة المصدر بتقرأ نشاطك العام على GitHub وبتكوّن كارت واحد قابل للمشاركة بيركّز على الشغل المنشور، مش أرقام الشكل."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "Open source and free to use — the repo is the product.",
+     "ar": "مفتوح المصدر ومجاني — الريبو هو المنتج نفسه."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "tshirt-brand",
+  "layout": "standard",
+  "title": "Borcelle Printing",
+  "overline": {
+   "en": "Brand application mockups · 2024 · CLIENT WORK",
+   "ar": "Brand application mockups · 2024 · CLIENT WORK"
+  },
+  "sub": {
+   "en": "A Borcelle Printing presentation board showing how a printing brand can appear across apparel, packaging, cups, and merchandise.",
+   "ar": "لوحة عرض لـ Borcelle Printing توضح كيف يمكن أن تظهر علامة طباعة عبر الملابس والتغليف والأكواب والمنتجات الدعائية."
+  },
+  "img": "/assets/design/tshirt-brand.webp",
+  "img_alt": "Borcelle Printing",
+  "ctas": [],
+  "stack": [
+   "Photoshop",
+   "Mockup Composition",
+   "Print Applications",
+   "Merchandise Presentation"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "The concept had to show the printing and merchandising context through several real applications on one board.",
+     "ar": "الفكرة كان لازم توضح إزاي الهوية تنزل على منتجات حقيقية — كل ده في لوحة واحدة."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "A monochrome palette keeps the board neutral, while T-shirts, a hoodie, cups and bags show the full range of printable surfaces.",
+     "ar": "ألوان واحدة محايدة في اللوحة كلها، والتيشيرتات والهودي والأكواب والشنط بتوري مدى الأسطح اللي ينفع تتطبع."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A hands-on application board showing what the brand could look like on merch and print — not a finished apparel label.",
+     "ar": "لوحة تطبيقات حقيقية بتوري شكل البراند على المنتجات والمطبوعات — مش علامة ملابس جاهزة، دي فكرة تطبيق."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "milano-yemen",
+  "layout": "standard",
+  "title": "Milano",
+  "overline": {
+   "en": "E-commerce / Custom domain · 2026 · LIVE",
+   "ar": "E-commerce / Custom domain · 2026 · LIVE"
+  },
+  "sub": {
+   "en": "A full sportswear online store for the Yemeni market on its own .com domain.",
+   "ar": "متجر رياضي إلكتروني متكامل للسوق اليمني على نطاق .com خاص."
+  },
+  "img": "/assets/work/milano.webp",
+  "img_alt": "Milano",
+  "ctas": [
+   {
+    "label": {
+     "en": "Live app",
+     "ar": "Live app"
+    },
+    "href": "https://milano2.netlify.app"
+   }
+  ],
+  "stack": [
+   "JavaScript",
+   "E-commerce UI",
+   "Product Catalogue",
+   "Custom Domain",
+   "Responsive"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "A local sportswear seller needed a real storefront with categories, prices in Yemeni rial and discount badges — instead of selling one item at a time over chat.",
+     "ar": "تاجر ملابس رياضية كان محتاج متجر حقيقي بفئات وأسعار بالريال اليمني وخصومات معلنة — بدل ما يبيع قطعة قطعة على المحادثة."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "A categorized catalogue for boots, jerseys, socks, caps, bags, and slippers with pricing, discount badges, and a custom .com deployment.",
+     "ar": "كتالوج مصنف للبواتي والفنايل والشرابات والكوافي والشنط والشباشب مع الأسعار وشارات الخصم ونشر على نطاق .com مخصص."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A branded e-commerce site that turns a chat-based hustle into a proper online shop.",
+     "ar": "موقع تجارة إلكترونية بعلامة خاصة يحوّل البيع عبر المحادثة إلى متجر إلكتروني حقيقي."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "burger-taste",
+  "layout": "standard",
+  "title": "Burger Taste",
+  "overline": {
+   "en": "Restaurant identity / Packaging · 2026 · CLIENT WORK",
+   "ar": "Restaurant identity / Packaging · 2026 · CLIENT WORK"
+  },
+  "sub": {
+   "en": "A black-and-gold identity for Burger Taste — a bilingual name plus a burger-and-cutlery emblem, applied on the takeaway packaging.",
+   "ar": "هوية مطعم Burger Taste بالأسود والذهبي — الاسم بالعربي والإنجليزي، ورمز برجر وأدوات أكل، مطبقين على تغليف السفري."
+  },
+  "img": "/assets/design/burger-taste.webp",
+  "img_alt": "Burger Taste",
+  "ctas": [],
+  "stack": [
+   "Logo Design",
+   "Arabic Typography",
+   "Packaging Application",
+   "Brand Identity"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "The restaurant needed a recognisable identity that stays clear on compact takeaway materials while carrying both Arabic and English naming.",
+     "ar": "المطعم كان عايز هوية حد يشوفها مرة يفتكرها، تبان واضحة على أصغر علبة تغليف، وتشتغل بالعربي والإنجليزي مع بعض."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "Deep black with high-contrast golden yellow around a shield-shaped burger-and-cutlery emblem, and the bilingual name carefully laid out on the brand cover and packaging sleeve.",
+     "ar": "أسود عميق وأصفر ذهبي حوالين حوّلة على شكل درع فيها البرجر وأدوات الأكل — والاسم بالعربي والإنجليزي مرتب بعناية على غلاف الهوية وجراب التغليف."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A packaging-ready identity that gives Burger Taste a clear, memorable takeaway look.",
+     "ar": "هوية جاهزة للتغليف بتدي Burger Taste شكل سفري واضح حد يشوفه يفتكره."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "gaming-channel",
+  "layout": "standard",
+  "title": "Dealario Appliance Sale",
+  "overline": {
+   "en": "E-commerce campaign creative · 2025 · CLIENT WORK",
+   "ar": "E-commerce campaign creative · 2025 · CLIENT WORK"
+  },
+  "sub": {
+   "en": "A Dealario sale creative for office-room appliance products, featuring product imagery, a 30% offer, and a clear shopping action.",
+   "ar": "تصميم عرض بيع لـ Dealario لمنتجات أجهزة وديكور المكتب، يضم صور المنتجات وخصم 30% ودعوة شراء واضحة."
+  },
+  "img": "/assets/design/gaming-channel.webp",
+  "img_alt": "Dealario Appliance Sale",
+  "ctas": [],
+  "stack": [
+   "Photoshop",
+   "E-commerce Creative",
+   "Offer Hierarchy",
+   "Product Compositing"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "The promo had to show the discount, the products and the buy action together, without losing the Dealario brand look.",
+     "ar": "الإعلان كان لازم يبين الخصم والمنتجات وخطوة الشراء كلهم مع بعض، ومن غير ما يضيع شكل البراند بتاع Dealario."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "Product photos sit inside teal and yellow circular frames, with oversized category text, a 30% badge and the buy button guiding the eye in order.",
+     "ar": "المنتجات جوه إطارات دائرية تركواز وأصفر، وكتابة كبيرة لفئة المنتج وشارة الخصم 30% وزرار الشراء بيوصلوا العين بالترتيب."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "One complete promo post — offer, products and Dealario branding together in a single screen.",
+     "ar": "بوست إعلاني كامل — العرض والمنتجات وهوية Dealario كلهم في شاشة واحدة."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "trimbg",
+  "layout": "standard",
+  "title": "TrimBG",
+  "overline": {
+   "en": "Product identity / Background removal · 2026 · OPEN SOURCE",
+   "ar": "Product identity / Background removal · 2026 · OPEN SOURCE"
+  },
+  "sub": {
+   "en": "A product mark for TrimBG, a background-removal tool — built around a cutout silhouette, scissors and transform nodes.",
+   "ar": "علامة بصرية لـ TrimBG، أداة شيل الخلفيات — مبنية على شكل صورة مقصوصة ومقص ونقط تحويل."
+  },
+  "img": "/assets/design/trimbg.webp",
+  "img_alt": "TrimBG",
+  "ctas": [
+   {
+    "label": {
+     "en": "Source",
+     "ar": "Source"
+    },
+    "href": "https://github.com/mohamed-khairy-5i/TrimBG"
+   }
+  ],
+  "stack": [
+   "Logo Design",
+   "Product Icon",
+   "Visual Metaphor",
+   "Brand Mark"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "The product needed a symbol you recognise instantly — one that says “cut out and isolate” without any explanation.",
+     "ar": "المنتج كان محتاج رمز حد يفهمه من أول نظرة — يقول «قص وعزل» من غير شرح."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "A dark charcoal scissor cuts across a warm cream profile, and paired circular nodes give a before/after feel. Black, cream and terracotta keep the mark product-ready.",
+     "ar": "مقص غامق بيقطع صورة كريمي دافية، ونقط دائرية جنب بعض بيديوا إحساس قبل وبعد. أسود وكريمي وطوبي يخلي العلامة جاهزة كمنتج."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A compact icon that makes TrimBG’s job obvious at a glance.",
+     "ar": "أيقونة بسيطة حد يفهم منها شغل TrimBG من أول نظرة."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "water-jeddah",
+  "layout": "standard",
+  "title": "Water Jeddah",
+  "overline": {
+   "en": "Service Website / Arabic RTL · 2025 · LIVE",
+   "ar": "Service Website / Arabic RTL · 2025 · LIVE"
+  },
+  "sub": {
+   "en": "An Arabic-first service website that directs Jeddah water-tanker enquiries into immediate phone and WhatsApp actions.",
+   "ar": "موقع خدمة عربي يوجّه طلبات صهاريج المياه في جدة إلى الاتصال وواتساب مباشرة."
+  },
+  "img": "/assets/work/water-jeddah.webp",
+  "img_alt": "Water Jeddah",
+  "ctas": [
+   {
+    "label": {
+     "en": "Live app",
+     "ar": "Live app"
+    },
+    "href": "https://water-jeddah.netlify.app"
+   }
+  ],
+  "stack": [
+   "React",
+   "Netlify",
+   "Arabic RTL",
+   "Conversion Design"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "A local water delivery service needed a clear way to explain its 19-ton tanker offer and move customers from the screen to a booking chat.",
+     "ar": "خدمة توصيل مياه كانت محتاجة طريقة واضحة تشرح بيها عرض الصهريج 19 طن، وتخلي العميل من الموبايل يوصل لمحادثة حجز على طول."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "An Arabic-first RTL conversion flow built around call and WhatsApp actions, a 19-ton service explainer, equipment visuals, a covered-neighbourhood search, and FAQ context.",
+     "ar": "موقع عربي بيحوّل الزائر على واتساب من أول ثانية، بشرح واضح لخدمة الصهاريج (19 طن)، صور للمعدات، بحث بالحي، وأسئلة شائعة تجهز العميل قبل ما يسأل."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A focused live service page — booking buttons, service details, equipment and coverage info in one flow that ends with a decision.",
+     "ar": "صفحة خدمة مركزة — زراير الحجز وتفاصيل الخدمة وصور المعدات ومناطق التغطية، كلها في تدفق واحد يخلص بقرار الحجز."
+    }
+   }
+  ]
+ },
+ {
+  "slug": "dhikra",
+  "layout": "standard",
+  "title": "Dhikra",
+  "overline": {
+   "en": "PWA / Product · 2026 · LIVE",
+   "ar": "PWA / Product · 2026 · LIVE"
+  },
+  "sub": {
+   "en": "A calm, offline-first adhkar companion with a digital tasbih.",
+   "ar": "رفيق أذكار هادئ يعمل دون إنترنت مع مسبحة رقمية."
+  },
+  "img": "/assets/work/dhikra.webp",
+  "img_alt": "Dhikra",
+  "ctas": [
+   {
+    "label": {
+     "en": "Live app",
+     "ar": "Live app"
+    },
+    "href": "https://dhikra.netlify.app"
+   }
+  ],
+  "stack": [
+   "JavaScript",
+   "PWA",
+   "Service Worker",
+   "RTL"
+  ],
+  "story": [
+   {
+    "n": "01",
+    "h": {
+     "en": "The problem",
+     "ar": "المشكلة"
+    },
+    "p": {
+     "en": "Spiritual tools should feel quiet and trustworthy, not crowded with ads, tracking, or broken offline experiences.",
+     "ar": "أدوات الذكر محتاجة تكون هادية وتثق فيها — مش مليانة إعلانات وتتبع، ولا النت يفصل وتضيع تجربتك."
+    }
+   },
+   {
+    "n": "02",
+    "h": {
+     "en": "How I built it",
+     "ar": "بنيته إزاي"
+    },
+    "p": {
+     "en": "An installable PWA with service worker support, local persistence, haptic-friendly tasbih interactions, and source-linked adhkar organized by time of day.",
+     "ar": "تطبيق PWA قابل للتثبيت مع service worker وحفظ محلي ومسبحة بتحس إنك بتلمسها فعلًا وأذكار موثقة مرتبة حسب وقت اليوم."
+    }
+   },
+   {
+    "n": "03",
+    "h": {
+     "en": "The outcome",
+     "ar": "النتيجة"
+    },
+    "p": {
+     "en": "A calm daily companion — opens instantly and remembers your progress anywhere.",
+     "ar": "رفيق يومي من غير تشتيت — بيفتح فورًا وبيحفظ عدادك في أي مكان."
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,509 @@
+{
+ "page": {
+  "overline": {
+   "en": "WORK · 20 PROJECTS",
+   "ar": "الأعمال · 20 مشروع"
+  },
+  "title": {
+   "en": "Everything I've built so far.",
+   "ar": "كل اللي بنيته لحد دلوقتي."
+  },
+  "sub": {
+   "en": "Web products, Arabic apps, brand identities and design work — every card here is real work, and most of it is live online.",
+   "ar": "منتجات ويب وتطبيقات عربية وهوية بصرية وشغل تصميم — كل كارت هنا شغل حقيقي، وأغلبهم لايف على النت."
+  }
+ },
+ "filters": [
+  {
+   "id": "all",
+   "label": {
+    "en": "All · 20",
+    "ar": "الكل · 20"
+   }
+  },
+  {
+   "id": "product",
+   "label": {
+    "en": "Web products · 11",
+    "ar": "منتجات ويب · 11"
+   }
+  },
+  {
+   "id": "design",
+   "label": {
+    "en": "Design & identity · 9",
+    "ar": "تصميم وهوية · 9"
+   }
+  }
+ ],
+ "products": [
+  {
+   "img": "/assets/work/dhikra.webp",
+   "alt": "Dhikra",
+   "type": {
+    "en": "PWA / Product",
+    "ar": "PWA / Product"
+   },
+   "year": "2026",
+   "title": "Dhikra",
+   "p": {
+    "en": "A calm, offline-first adhkar companion with a digital tasbih.",
+    "ar": "رفيق أذكار هادئ يعمل دون إنترنت مع مسبحة رقمية."
+   },
+   "href": "https://dhikra.netlify.app",
+   "links": [
+    {
+     "label": {
+      "en": "Live",
+      "ar": "Live"
+     },
+     "href": "https://dhikra.netlify.app"
+    },
+    {
+     "label": {
+      "en": "Details",
+      "ar": "التفاصيل"
+     },
+     "href": "project-dhikra.html"
+    }
+   ]
+  },
+  {
+   "img": "/assets/work/milano.webp",
+   "alt": "Milano",
+   "type": {
+    "en": "E-commerce / Custom domain",
+    "ar": "E-commerce / Custom domain"
+   },
+   "year": "2026",
+   "title": "Milano",
+   "p": {
+    "en": "A full sportswear online store for the Yemeni market on its own .com domain.",
+    "ar": "متجر رياضي إلكتروني متكامل للسوق اليمني على نطاق .com خاص."
+   },
+   "href": "https://milano2.netlify.app",
+   "links": [
+    {
+     "label": {
+      "en": "Live",
+      "ar": "Live"
+     },
+     "href": "https://milano2.netlify.app"
+    },
+    {
+     "label": {
+      "en": "Details",
+      "ar": "التفاصيل"
+     },
+     "href": "project-milano-yemen.html"
+    }
+   ]
+  },
+  {
+   "img": "/assets/work/yasmona.webp",
+   "alt": "Yasmona Store",
+   "type": {
+    "en": "Landing / Link-in-bio",
+    "ar": "Landing / Link-in-bio"
+   },
+   "year": "2026",
+   "title": "Yasmona Store",
+   "p": {
+    "en": "An elegant branded link hub for a fashion label with one-tap WhatsApp ordering.",
+    "ar": "صفحة روابط أنيقة بهوية علامة أزياء مع طلب فوري عبر واتساب."
+   },
+   "href": "https://yasmona.netlify.app",
+   "links": [
+    {
+     "label": {
+      "en": "Live",
+      "ar": "Live"
+     },
+     "href": "https://yasmona.netlify.app"
+    },
+    {
+     "label": {
+      "en": "Details",
+      "ar": "التفاصيل"
+     },
+     "href": "project-yasmona.html"
+    }
+   ]
+  },
+  {
+   "img": "/assets/work/water-jeddah.webp",
+   "alt": "Water Jeddah",
+   "type": {
+    "en": "Service Website / Arabic RTL",
+    "ar": "Service Website / Arabic RTL"
+   },
+   "year": "2025",
+   "title": "Water Jeddah",
+   "p": {
+    "en": "An Arabic-first service website that directs Jeddah water-tanker enquiries into immediate phone and WhatsApp actions.",
+    "ar": "موقع خدمة عربي يوجّه طلبات صهاريج المياه في جدة إلى الاتصال وواتساب مباشرة."
+   },
+   "href": "https://water-jeddah.netlify.app",
+   "links": [
+    {
+     "label": {
+      "en": "Live",
+      "ar": "Live"
+     },
+     "href": "https://water-jeddah.netlify.app"
+    },
+    {
+     "label": {
+      "en": "Details",
+      "ar": "التفاصيل"
+     },
+     "href": "project-water-jeddah.html"
+    }
+   ]
+  },
+  {
+   "img": "/assets/work/hesasy.webp",
+   "alt": "Hesasy",
+   "type": {
+    "en": "EdTech web product / Arabic RTL",
+    "ar": "EdTech web product / Arabic RTL"
+   },
+   "year": "2026",
+   "title": "Hesasy",
+   "p": {
+    "en": "An Arabic RTL digital lesson notebook that brings attendance, student points, and parent-ready progress reports into one lesson flow.",
+    "ar": "دفتر حصة رقمي بالعربي: حضور ونقاط وتقارير جاهزة لولي الأمر — كل حصة في شاشة واحدة."
+   },
+   "href": "https://hesasy.netlify.app",
+   "links": [
+    {
+     "label": {
+      "en": "Live",
+      "ar": "Live"
+     },
+     "href": "https://hesasy.netlify.app"
+    },
+    {
+     "label": {
+      "en": "Details",
+      "ar": "التفاصيل"
+     },
+     "href": "project-hesasy.html"
+    }
+   ]
+  },
+  {
+   "img": "/assets/work/codepixel.webp",
+   "alt": "CodePixel",
+   "type": {
+    "en": "Developer tool · VS Code",
+    "ar": "Developer tool · VS Code"
+   },
+   "year": "2026",
+   "title": "CodePixel",
+   "p": {
+    "en": "A VS Code extension that turns code into high-resolution, share-ready images — themes, glass surfaces, watermarking, live preview.",
+    "ar": "إضافة لـ VS Code بتحوّل الكود لصور عالية الدقة جاهزة للمشاركة — ثيمات وخلفيات زجاجية وعلامة مائية ومعاينة مباشرة."
+   },
+   "href": "https://marketplace.visualstudio.com/items?itemName=mohamed-khairy-5i.codepixel",
+   "links": [
+    {
+     "label": {
+      "en": "Marketplace",
+      "ar": "Marketplace"
+     },
+     "href": "https://marketplace.visualstudio.com/items?itemName=mohamed-khairy-5i.codepixel"
+    },
+    {
+     "label": {
+      "en": "Details",
+      "ar": "التفاصيل"
+     },
+     "href": "project-codepixel.html"
+    }
+   ]
+  },
+  {
+   "img": "/assets/work/nexluna.webp",
+   "alt": "Nexluna",
+   "type": {
+    "en": "Arabic-first web app",
+    "ar": "Arabic-first web app"
+   },
+   "year": "2026",
+   "title": "Nexluna",
+   "p": {
+    "en": "A precise unit converter built around the Arabic reading experience — 14 categories, 100 units, history, favourites, dark mode.",
+    "ar": "محوّل وحدات دقيق صُمّم أولًا لتجربة المستخدم العربي — 14 فئة و100 وحدة وسجل ومفضلة ووضع ليلي."
+   },
+   "href": "https://nexluna.netlify.app",
+   "links": [
+    {
+     "label": {
+      "en": "Live",
+      "ar": "Live"
+     },
+     "href": "https://nexluna.netlify.app"
+    },
+    {
+     "label": {
+      "en": "Details",
+      "ar": "التفاصيل"
+     },
+     "href": "project-nexluna.html"
+    }
+   ]
+  },
+  {
+   "img": "/assets/work/calcuzakat.webp",
+   "alt": "CalcuZakat",
+   "type": {
+    "en": "FinTech PWA",
+    "ar": "FinTech PWA"
+   },
+   "year": "2026",
+   "title": "CalcuZakat",
+   "p": {
+    "en": "A Shariah-accurate zakat calculator — 10 zakat types, 10 currencies, printable reports, and live gold & silver prices, computed client-side.",
+    "ar": "حاسبة زكاة شرعية شاملة — 10 أنواع زكاة و10 عملات وتقارير قابلة للطباعة وأسعار ذهب وفضة حية، وكل الحسابات داخل المتصفح."
+   },
+   "href": "https://calcuzakat.netlify.app",
+   "links": [
+    {
+     "label": {
+      "en": "Live",
+      "ar": "Live"
+     },
+     "href": "https://calcuzakat.netlify.app"
+    },
+    {
+     "label": {
+      "en": "Details",
+      "ar": "التفاصيل"
+     },
+     "href": "project-calcuzakat.html"
+    }
+   ]
+  },
+  {
+   "img": "/assets/waslfy-demo.gif",
+   "alt": "Waslfy demo — pasting a WhatsApp order and saving the extracted shipment",
+   "type": {
+    "en": "",
+    "ar": ""
+   },
+   "year": "",
+   "title": "وصلّي — Waslfy",
+   "p": {
+    "en": "Paste the WhatsApp order as it is — Waslfy pulls out the name, phone, governorate, address and COD amount, then prints an A6 receipt with a barcode. Works fully offline on the merchant's phone.",
+    "ar": "الصق رسالة الطلب على واتساب زي ما هي — والتطبيق يطلعلك الاسم والتليفون والمحافظة والعنوان ومبلغ التحصيل، ويطبعهم إيصال A6 بباركود. شغال أوفلاين خالص على موبايل التاجر."
+   },
+   "href": "",
+   "terminal": [],
+   "links": [
+    {
+     "label": {
+      "en": "Live app",
+      "ar": "Live app"
+     },
+     "href": "https://waslfy.pages.dev"
+    },
+    {
+     "label": {
+      "en": "Details",
+      "ar": "التفاصيل"
+     },
+     "href": "project-waslfy.html"
+    },
+    {
+     "label": {
+      "en": "Source",
+      "ar": "Source"
+     },
+     "href": "https://github.com/mohamed-khairy-5i/waslfy"
+    },
+    {
+     "label": {
+      "en": "npm",
+      "ar": "npm"
+     },
+     "href": "https://www.npmjs.com/package/waslfy-parser"
+    }
+   ]
+  },
+  {
+   "img": "",
+   "alt": "",
+   "type": {
+    "en": "",
+    "ar": ""
+   },
+   "year": "",
+   "title": "TossInbox",
+   "p": {
+    "en": "Temporary email inboxes for developers and AI agents: create an inbox, grab the verification code, throw it away. No sign-up, no API keys — every command returns JSON. Install with npm or brew.",
+    "ar": "إيميلات مؤقتة للمطورين ووكلاء الـ AI: اعمل صندوق، خد كود التفعيل، وارميه. من غير تسجيل ولا API keys، وكل أمر بيرجع JSON. بتثبتها بـ npm أو brew."
+   },
+   "href": "",
+   "terminal": [
+    "tossinbox — MCP server",
+    "$ tossinbox spawn",
+    "inbox: xk42f@tossinbox.dev",
+    "$ tossinbox wait --otp",
+    "✓ code 881421 received (12s)",
+    "$ tossinbox toss",
+    "✓ inbox destroyed"
+   ],
+   "links": [
+    {
+     "label": {
+      "en": "Docs",
+      "ar": "Docs"
+     },
+     "href": "https://tossinbox.pages.dev"
+    },
+    {
+     "label": {
+      "en": "Details",
+      "ar": "التفاصيل"
+     },
+     "href": "project-tossinbox.html"
+    },
+    {
+     "label": {
+      "en": "Source",
+      "ar": "Source"
+     },
+     "href": "https://github.com/mohamed-khairy-5i/tossinbox"
+    },
+    {
+     "label": {
+      "en": "npm",
+      "ar": "npm"
+     },
+     "href": "https://www.npmjs.com/package/tossinbox"
+    }
+   ]
+  },
+  {
+   "img": "",
+   "alt": "",
+   "type": {
+    "en": "",
+    "ar": ""
+   },
+   "year": "",
+   "title": "trigger-doctor",
+   "p": {
+    "en": "Testing for AI agent skills: it tells you why a skill isn’t triggering (or fires too often), suggests a fixed description, and saves a test suite. One SKILL.md format, 79 agents supported, listed on skills.sh.",
+    "ar": "أداة بتختبر مهارات الـ AI agents: بتقولك ليه المهارة مش بتشتغل (أو بتشتغل زيادة)، وبترشح وصلة الكلام، وبتحفظ اختبارات عشان متبوظش بعدين. صيغة SKILL.md واحدة، وبيشتغل مع 79 agent. وموجود على skills.sh."
+   },
+   "href": "",
+   "terminal": [
+    "trigger-doctor — audit",
+    "$ trigger-doctor audit ./SKILL.md",
+    "✓ 24/24 prompts triggered",
+    "! 2 near-miss phrasings",
+    "prescription: description fix applied",
+    "regression suite saved ✓"
+   ],
+   "links": [
+    {
+     "label": {
+      "en": "skills.sh",
+      "ar": "skills.sh"
+     },
+     "href": "https://www.skills.sh/mohamed-khairy-5i/trigger-doctor/trigger-doctor"
+    },
+    {
+     "label": {
+      "en": "Details",
+      "ar": "التفاصيل"
+     },
+     "href": "project-trigger-doctor.html"
+    },
+    {
+     "label": {
+      "en": "Source",
+      "ar": "Source"
+     },
+     "href": "https://github.com/mohamed-khairy-5i/trigger-doctor"
+    }
+   ]
+  }
+ ],
+ "design": [
+  {
+   "img": "/assets/design/burger-taste.webp",
+   "alt": "Burger Taste",
+   "meta": [
+    "Burger Taste",
+    "Restaurant identity · Packaging"
+   ]
+  },
+  {
+   "img": "/assets/design/behind-the-screen.webp",
+   "alt": "Behind the Screen",
+   "meta": [
+    "Behind the Screen",
+    "Podcast poster · Arabic social"
+   ]
+  },
+  {
+   "img": "/assets/design/al-resala-excellence.webp",
+   "alt": "Al Resala Excellence Certificate",
+   "meta": [
+    "Al Resala Excellence Certificate",
+    "Certificate design · Print"
+   ]
+  },
+  {
+   "img": "/assets/design/dealario.webp",
+   "alt": "Dealario",
+   "meta": [
+    "Dealario",
+    "Logo direction · Brand mark"
+   ]
+  },
+  {
+   "img": "/assets/design/gaming-channel.webp",
+   "alt": "Dealario Appliance Sale",
+   "meta": [
+    "Dealario Appliance Sale",
+    "Campaign creative"
+   ]
+  },
+  {
+   "img": "/assets/design/al-shahba.webp",
+   "alt": "Abu Al-Qasim",
+   "meta": [
+    "Abu Al-Qasim",
+    "Gaming channel banner"
+   ]
+  },
+  {
+   "img": "/assets/design/service-ads.webp",
+   "alt": "Water Delivery Campaign",
+   "meta": [
+    "Water Delivery Campaign",
+    "Arabic social ads"
+   ]
+  },
+  {
+   "img": "/assets/design/tshirt-brand.webp",
+   "alt": "Borcelle Printing",
+   "meta": [
+    "Borcelle Printing",
+    "Brand application · Mockups"
+   ]
+  },
+  {
+   "img": "/assets/design/trimbg.webp",
+   "alt": "TrimBG product mark",
+   "meta": [
+    "TrimBG",
+    "Product identity · Brand mark"
+   ]
+  }
+ ]
+}

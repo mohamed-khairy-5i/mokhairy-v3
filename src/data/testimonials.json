@@ -1,0 +1,92 @@
+{
+ "page": {
+  "overline": {
+   "en": "TESTIMONIALS · 3 CLIENTS",
+   "ar": "TESTIMONIALS · 3 CLIENTS"
+  },
+  "title": {
+   "en": "What my clients said.",
+   "ar": "اللي قالوه العملاء."
+  },
+  "sub": {
+   "en": "Three clients, three delivered projects — this is what they said after handover.",
+   "ar": "تلاتة عملاء وتلات مشاريع اتسلمت — دي كلامهم بعد التسليم."
+  }
+ },
+ "blocks": [
+  {
+   "h": {
+    "en": "01 Written scope",
+    "ar": "01 Written scope"
+   },
+   "p": {
+    "en": "Exactly what I will build, what I will not, and the delivery date — in writing before we start.",
+    "ar": "إيه اللي هعمله بالظبط، إيه اللي مش هعمله، وميعاد التسليم — مكتوب قبل ما نبدأ."
+   }
+  },
+  {
+   "h": {
+    "en": "02 Weekly builds",
+    "ar": "02 Weekly builds"
+   },
+   "p": {
+    "en": "Every week you see a working version — your feedback lands in its week, not at the end.",
+    "ar": "كل أسبوع بتشوف نسخة شغالة بتتطور — ملاحظاتك بتتنفذ في أسبوعها مش في الآخر."
+   }
+  },
+  {
+   "h": {
+    "en": "03 30 days on me",
+    "ar": "03 30 days on me"
+   },
+   "p": {
+    "en": "Any first-month fix after handover is on me — no invoices, no fine print.",
+    "ar": "أي ملاحظة في أول شهر بعد التسليم بتتحل ببلاش — من غير فواتير ولا شروط مخفية."
+   }
+  }
+ ],
+ "quotes": [
+  {
+   "text": {
+    "en": "Mohamed delivered a landing page way beyond what we expected. He pays attention to details like nobody I've worked with.",
+    "ar": "محمد سلم صفحة هبوط أحسن بكتير من اللي كنا متخيلين. الدقة في التفاصيل عنده حاجة مش شايفها عند حد تاني."
+   },
+   "ctx": {
+    "en": "Landing page project",
+    "ar": "مشروع صفحة هبوط"
+   },
+   "who": {
+    "en": "E-commerce store owner",
+    "ar": "صاحب متجر إلكتروني"
+   }
+  },
+  {
+   "text": {
+    "en": "Professional, fast and very creative. The brand package he designed gave our startup the professional look we were missing.",
+    "ar": "محترف وسريع وشغل مبدع بجد. باقة الهوية اللي صممها هي لشركتنا شكل احترافي كنا محتاجينه من زمان."
+   },
+   "ctx": {
+    "en": "Brand identity package — startup",
+    "ar": "باقة هوية بصرية — شركة ناشئة"
+   },
+   "who": {
+    "en": "Startup founder",
+    "ar": "مؤسس شركة ناشئة"
+   }
+  },
+  {
+   "text": {
+    "en": "Great communication and solid technical skills. He untangled tricky UI problems with clean solutions.",
+    "ar": "تواصل حلو ومهارة تقنية عالية. فض المشاكل المعقدة في الواجهة بحلول نضيفة."
+   },
+   "ctx": {
+    "en": "UI fixes — product work",
+    "ar": "إصلاحات واجهة — شغل منتج"
+   },
+   "who": {
+    "en": "Product manager",
+    "ar": "مدير منتج"
+   }
+  }
+ ]
+}

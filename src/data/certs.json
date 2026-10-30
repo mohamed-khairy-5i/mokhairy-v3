@@ -1,0 +1,559 @@
+{
+ "page": {
+  "overline": {
+   "en": "CREDENTIAL ARCHIVE · 28 CERTIFICATES",
+   "ar": "أرشيف الاعتمادات · ٢٨ شهادة"
+  },
+  "title": {
+   "en": "Proof that I keep learning.",
+   "ar": "دليل إني بتعلم على طول."
+  },
+  "sub": {
+   "en": "From Cisco, Microsoft Egypt, LinkedIn Learning, Edraak, HP LIFE, Manara and Dubai's AI centre. They don't prove I know everything — they prove I never stopped.",
+   "ar": "من Cisco و Microsoft مصر و LinkedIn Learning وإدراك و HP LIFE و Manara ومركز دبي للذكاء الاصطناعي. مش بتثبت إني عارف كل حاجة — بتثبت إني عمري ما وقفت."
+  }
+ },
+ "groups": [
+  {
+   "id": "all",
+   "label": {
+    "en": "All",
+    "ar": "الكل"
+   }
+  },
+  {
+   "id": "ai",
+   "label": {
+    "en": "AI",
+    "ar": "الذكاء الاصطناعي"
+   }
+  },
+  {
+   "id": "data",
+   "label": {
+    "en": "Data",
+    "ar": "البيانات"
+   }
+  },
+  {
+   "id": "programming",
+   "label": {
+    "en": "Programming",
+    "ar": "البرمجة"
+   }
+  },
+  {
+   "id": "marketing",
+   "label": {
+    "en": "Marketing",
+    "ar": "التسويق"
+   }
+  }
+ ],
+ "certs": [
+  {
+   "slug": "cisco-modern-ai",
+   "group": "ai",
+   "href": "/assets/certs/cisco-modern-ai.webp",
+   "img": "/assets/certs/cisco-modern-ai.webp",
+   "img_en": "/assets/certs/cisco-modern-ai.webp",
+   "img_ar": null,
+   "issuer": "Cisco Networking Academy",
+   "title": {
+    "en": "Introduction to Modern AI",
+    "ar": "مقدمة في الذكاء الاصطناعي الحديث"
+   },
+   "category": {
+    "en": "Applied AI",
+    "ar": "ذكاء اصطناعي عملي"
+   },
+   "date": "Aug 2025"
+  },
+  {
+   "slug": "ethics-gen-ai",
+   "group": "ai",
+   "href": "/assets/certs/ethics-gen-ai.webp",
+   "img": "/assets/certs/ethics-gen-ai.webp",
+   "img_en": "/assets/certs/ethics-gen-ai.webp",
+   "img_ar": null,
+   "issuer": "LinkedIn Learning",
+   "title": {
+    "en": "Ethics in the Age of Generative AI",
+    "ar": "أخلاقيات عصر الذكاء الاصطناعي التوليدي"
+   },
+   "category": {
+    "en": "Responsible AI",
+    "ar": "ذكاء اصطناعي مسؤول"
+   },
+   "date": "Sep 2025"
+  },
+  {
+   "slug": "what-is-gen-ai",
+   "group": "ai",
+   "href": "/assets/certs/what-is-gen-ai.webp",
+   "img": "/assets/certs/what-is-gen-ai.webp",
+   "img_en": "/assets/certs/what-is-gen-ai.webp",
+   "img_ar": null,
+   "issuer": "LinkedIn Learning",
+   "title": {
+    "en": "What Is Generative AI?",
+    "ar": "ما هو الذكاء الاصطناعي التوليدي؟"
+   },
+   "category": {
+    "en": "Generative AI",
+    "ar": "ذكاء اصطناعي توليدي"
+   },
+   "date": "Oct 2025"
+  },
+  {
+   "slug": "intro-to-ai",
+   "group": "ai",
+   "href": "/assets/certs/intro-to-ai.webp",
+   "img": "/assets/certs/intro-to-ai.webp",
+   "img_en": "/assets/certs/intro-to-ai.webp",
+   "img_ar": null,
+   "issuer": "LinkedIn Learning",
+   "title": {
+    "en": "Introduction to AI",
+    "ar": "مقدمة في الذكاء الاصطناعي"
+   },
+   "category": {
+    "en": "AI foundations",
+    "ar": "أساسيات الذكاء الاصطناعي"
+   },
+   "date": "Dec 2025"
+  },
+  {
+   "slug": "data-analytics-foundations",
+   "group": "data",
+   "href": "/assets/certs/data-analytics-foundations.webp",
+   "img": "/assets/certs/data-analytics-foundations.webp",
+   "img_en": "/assets/certs/data-analytics-foundations.webp",
+   "img_ar": null,
+   "issuer": "LinkedIn Learning",
+   "title": {
+    "en": "Learning Data Analytics: 1 Foundations",
+    "ar": "أساسيات تحليل البيانات"
+   },
+   "category": {
+    "en": "Data analytics",
+    "ar": "تحليل البيانات"
+   },
+   "date": "Aug 2025"
+  },
+  {
+   "slug": "gen-ai-tools",
+   "group": "ai",
+   "href": "/assets/certs/gen-ai-tools.webp",
+   "img": "/assets/certs/gen-ai-tools.webp",
+   "img_en": "/assets/certs/gen-ai-tools.webp",
+   "img_ar": null,
+   "issuer": "Microsoft Egypt / Tawar w Ghayar",
+   "title": {
+    "en": "Generative AI Tools CSW",
+    "ar": "أدوات الذكاء الاصطناعي التوليدي"
+   },
+   "category": {
+    "en": "Generative AI",
+    "ar": "ذكاء اصطناعي توليدي"
+   },
+   "date": "Dec 2025"
+  },
+  {
+   "slug": "microsoft-ai-system-analysis",
+   "group": "ai",
+   "href": "/assets/certs/microsoft-ai-system-analysis.webp",
+   "img": "/assets/certs/microsoft-ai-system-analysis.webp",
+   "img_en": "/assets/certs/microsoft-ai-system-analysis.webp",
+   "img_ar": null,
+   "issuer": "Microsoft Egypt / Tawar w Ghayar",
+   "title": {
+    "en": "System Analysis using AI",
+    "ar": "تحليل النظم باستخدام الذكاء الاصطناعي"
+   },
+   "category": {
+    "en": "AI system analysis",
+    "ar": "تحليل نظم بـ AI"
+   },
+   "date": "Dec 2025"
+  },
+  {
+   "slug": "canva-ai-classroom",
+   "group": "ai",
+   "href": "/assets/certs/canva-ai-classroom.webp",
+   "img": "/assets/certs/canva-ai-classroom.webp",
+   "img_en": "/assets/certs/canva-ai-classroom.webp",
+   "img_ar": null,
+   "issuer": "Canva Design School",
+   "title": {
+    "en": "AI in the Classroom",
+    "ar": "الذكاء الاصطناعي في الفصل الدراسي"
+   },
+   "category": {
+    "en": "AI for planning",
+    "ar": "تخطيط بـ AI"
+   },
+   "date": "Jun 2025"
+  },
+  {
+   "slug": "ai-for-beginners",
+   "group": "ai",
+   "href": "/assets/certs/ai-for-beginners.webp",
+   "img": "/assets/certs/ai-for-beginners.webp",
+   "img_en": "/assets/certs/ai-for-beginners.webp",
+   "img_ar": null,
+   "issuer": "HP LIFE / HP Foundation",
+   "title": {
+    "en": "AI for Beginners",
+    "ar": "الذكاء الاصطناعي للمبتدئين"
+   },
+   "category": {
+    "en": "AI foundations",
+    "ar": "أساسيات الذكاء الاصطناعي"
+   },
+   "date": "Sep 2025"
+  },
+  {
+   "slug": "selling-online",
+   "group": "marketing",
+   "href": "/assets/certs/selling-online.webp",
+   "img": "/assets/certs/selling-online.webp",
+   "img_en": "/assets/certs/selling-online.webp",
+   "img_ar": null,
+   "issuer": "HP LIFE / HP Foundation",
+   "title": {
+    "en": "Selling Online",
+    "ar": "البيع عبر الإنترنت"
+   },
+   "category": {
+    "en": "E-commerce",
+    "ar": "تجارة إلكترونية"
+   },
+   "date": "Jul 2025"
+  },
+  {
+   "slug": "social-media-marketing",
+   "group": "marketing",
+   "href": "/assets/certs/social-media-marketing.webp",
+   "img": "/assets/certs/social-media-marketing.webp",
+   "img_en": "/assets/certs/social-media-marketing.webp",
+   "img_ar": null,
+   "issuer": "HP LIFE / HP Foundation",
+   "title": {
+    "en": "Social Media Marketing",
+    "ar": "التسويق عبر مواقع التواصل"
+   },
+   "category": {
+    "en": "Social media",
+    "ar": "سوشيال ميديا"
+   },
+   "date": "Jul 2025"
+  },
+  {
+   "slug": "one-million-prompters",
+   "group": "ai",
+   "href": "/assets/certs/one-million-prompters.webp",
+   "img": "/assets/certs/one-million-prompters.webp",
+   "img_en": "/assets/certs/one-million-prompters.webp",
+   "img_ar": "/assets/certs/one-million-prompters-ar.webp",
+   "issuer": "Dubai Centre for AI / Dubai Future Foundation",
+   "title": {
+    "en": "One Million Prompters — Completion",
+    "ar": "مبادرة المليون Prompter — إتمام"
+   },
+   "category": {
+    "en": "Prompt engineering",
+    "ar": "هندسة الأوامر"
+   },
+   "date": "Aug 2026"
+  },
+  {
+   "slug": "gen-ai-in-action",
+   "group": "ai",
+   "href": "/assets/certs/gen-ai-in-action.webp",
+   "img": "/assets/certs/gen-ai-in-action.webp",
+   "img_en": "/assets/certs/gen-ai-in-action.webp",
+   "img_ar": null,
+   "issuer": "Manara",
+   "title": {
+    "en": "Generative AI in Action",
+    "ar": "الذكاء الاصطناعي التوليدي عمليًا"
+   },
+   "category": {
+    "en": "Applied Gen AI",
+    "ar": "توليدي تطبيقي"
+   },
+   "date": "Aug 2026"
+  },
+  {
+   "slug": "manara-intro-gen-ai",
+   "group": "ai",
+   "href": "/assets/certs/manara-intro-gen-ai.webp",
+   "img": "/assets/certs/manara-intro-gen-ai.webp",
+   "img_en": "/assets/certs/manara-intro-gen-ai.webp",
+   "img_ar": null,
+   "issuer": "Manara",
+   "title": {
+    "en": "Intro to Gen AI & Prompt Engineering",
+    "ar": "مقدمة في التوليدي وهندسة الأوامر"
+   },
+   "category": {
+    "en": "Prompt engineering",
+    "ar": "هندسة الأوامر"
+   },
+   "date": "Aug 2026"
+  },
+  {
+   "slug": "digital-analytics-en",
+   "group": "data",
+   "href": "/assets/certs/digital-analytics-en.webp",
+   "img": "/assets/certs/digital-analytics-en.webp",
+   "img_en": "/assets/certs/digital-analytics-en.webp",
+   "img_ar": "/assets/certs/digital-analytics-ar.webp",
+   "issuer": "Edraak (إدراك)",
+   "title": {
+    "en": "Digital Analytics",
+    "ar": "التحليل الرقمي"
+   },
+   "category": {
+    "en": "Data analytics",
+    "ar": "تحليل البيانات"
+   },
+   "date": "Jul 2025"
+  },
+  {
+   "slug": "seo-en",
+   "group": "marketing",
+   "href": "/assets/certs/seo-en.webp",
+   "img": "/assets/certs/seo-en.webp",
+   "img_en": "/assets/certs/seo-en.webp",
+   "img_ar": "/assets/certs/seo-ar.webp",
+   "issuer": "Edraak (إدراك)",
+   "title": {
+    "en": "Search Engine Optimization (SEO)",
+    "ar": "تحسين محركات البحث (SEO)"
+   },
+   "category": {
+    "en": "SEO",
+    "ar": "SEO"
+   },
+   "date": "Jul 2026"
+  },
+  {
+   "slug": "right-online-presence-en",
+   "group": "marketing",
+   "href": "/assets/certs/right-online-presence-en.webp",
+   "img": "/assets/certs/right-online-presence-en.webp",
+   "img_en": "/assets/certs/right-online-presence-en.webp",
+   "img_ar": "/assets/certs/right-online-presence-ar.webp",
+   "issuer": "Edraak (إدراك)",
+   "title": {
+    "en": "The Right Online Presence",
+    "ar": "الحضور الرقمي الصحيح"
+   },
+   "category": {
+    "en": "Online presence",
+    "ar": "الحضور الرقمي"
+   },
+   "date": "Jul 2026"
+  },
+  {
+   "slug": "programming-fundamentals",
+   "group": "programming",
+   "href": "/assets/certs/programming-fundamentals.webp",
+   "img": "/assets/certs/programming-fundamentals.webp",
+   "img_en": "/assets/certs/programming-fundamentals.webp",
+   "img_ar": null,
+   "issuer": "M3aarf",
+   "title": {
+    "en": "Programming Fundamentals",
+    "ar": "أساسيات البرمجة"
+   },
+   "category": {
+    "en": "Programming",
+    "ar": "البرمجة"
+   },
+   "date": "Jan 2025"
+  },
+  {
+   "slug": "cs-fundamentals",
+   "group": "programming",
+   "href": "/assets/certs/cs-fundamentals.webp",
+   "img": "/assets/certs/cs-fundamentals.webp",
+   "img_en": "/assets/certs/cs-fundamentals.webp",
+   "img_ar": null,
+   "issuer": "Mind Luster",
+   "title": {
+    "en": "Computer Science Fundamentals",
+    "ar": "أساسيات علوم الحاسب"
+   },
+   "category": {
+    "en": "CS",
+    "ar": "CS"
+   },
+   "date": "Sep 2025"
+  },
+  {
+   "slug": "ai-fundamentals",
+   "group": "ai",
+   "href": "/assets/certs/ai-fundamentals.webp",
+   "img": "/assets/certs/ai-fundamentals.webp",
+   "img_en": "/assets/certs/ai-fundamentals.webp",
+   "img_ar": null,
+   "issuer": "Mind Luster",
+   "title": {
+    "en": "AI Fundamentals for Beginners",
+    "ar": "أساسيات الذكاء الاصطناعي للمبتدئين"
+   },
+   "category": {
+    "en": "AI foundations",
+    "ar": "أساسيات AI"
+   },
+   "date": "Jan 2025"
+  },
+  {
+   "slug": "ai-software-testing",
+   "group": "ai",
+   "href": "/assets/certs/ai-software-testing.webp",
+   "img": "/assets/certs/ai-software-testing.webp",
+   "img_en": "/assets/certs/ai-software-testing.webp",
+   "img_ar": null,
+   "issuer": "Mind Luster",
+   "title": {
+    "en": "AI Impacts on Software Testing",
+    "ar": "أثر الذكاء الاصطناعي على اختبار البرمجيات"
+   },
+   "category": {
+    "en": "AI in testing",
+    "ar": "AI في الاختبار"
+   },
+   "date": "Jan 2025"
+  },
+  {
+   "slug": "icdl-basics-en",
+   "group": "programming",
+   "href": "/assets/certs/icdl-basics-en.webp",
+   "img": "/assets/certs/icdl-basics-en.webp",
+   "img_en": "/assets/certs/icdl-basics-en.webp",
+   "img_ar": "/assets/certs/icdl-basics-ar.webp",
+   "issuer": "Edraak (إدراك)",
+   "title": {
+    "en": "ICDL Basics",
+    "ar": "أساسيات ICDL"
+   },
+   "category": {
+    "en": "Digital skills",
+    "ar": "مهارات رقمية"
+   },
+   "date": "Jul 2025"
+  },
+  {
+   "slug": "word-processing-en",
+   "group": "programming",
+   "href": "/assets/certs/word-processing-en.webp",
+   "img": "/assets/certs/word-processing-en.webp",
+   "img_en": "/assets/certs/word-processing-en.webp",
+   "img_ar": "/assets/certs/word-processing-ar.webp",
+   "issuer": "Edraak (إدراك)",
+   "title": {
+    "en": "Word Processing",
+    "ar": "معالجة النصوص (Word)"
+   },
+   "category": {
+    "en": "Office",
+    "ar": "أوفيس"
+   },
+   "date": "Jul 2025"
+  },
+  {
+   "slug": "excel-spreadsheets-en",
+   "group": "programming",
+   "href": "/assets/certs/excel-spreadsheets-en.webp",
+   "img": "/assets/certs/excel-spreadsheets-en.webp",
+   "img_en": "/assets/certs/excel-spreadsheets-en.webp",
+   "img_ar": "/assets/certs/excel-spreadsheets-ar.webp",
+   "issuer": "Edraak (إدراك)",
+   "title": {
+    "en": "Excel Spreadsheets",
+    "ar": "جداول البيانات (Excel)"
+   },
+   "category": {
+    "en": "Excel",
+    "ar": "Excel"
+   },
+   "date": "Jul 2025"
+  },
+  {
+   "slug": "computer-essentials-en",
+   "group": "programming",
+   "href": "/assets/certs/computer-essentials-en.webp",
+   "img": "/assets/certs/computer-essentials-en.webp",
+   "img_en": "/assets/certs/computer-essentials-en.webp",
+   "img_ar": "/assets/certs/computer-essentials-ar.webp",
+   "issuer": "Edraak (إدراك)",
+   "title": {
+    "en": "Computer Essentials",
+    "ar": "أساسيات الحاسوب"
+   },
+   "category": {
+    "en": "Computer basics",
+    "ar": "أساسيات الحاسوب"
+   },
+   "date": "Aug 2026"
+  },
+  {
+   "slug": "internet-email",
+   "group": "programming",
+   "href": "/assets/certs/internet-email.webp",
+   "img": "/assets/certs/internet-email.webp",
+   "img_en": "/assets/certs/internet-email.webp",
+   "img_ar": null,
+   "issuer": "Edraak (إدراك)",
+   "title": {
+    "en": "Internet & Email Essentials",
+    "ar": "أساسيات الإنترنت والبريد"
+   },
+   "category": {
+    "en": "Internet",
+    "ar": "الإنترنت"
+   },
+   "date": "Aug 2026"
+  },
+  {
+   "slug": "tech-principles-en",
+   "group": "programming",
+   "href": "/assets/certs/tech-principles-en.webp",
+   "img": "/assets/certs/tech-principles-en.webp",
+   "img_en": "/assets/certs/tech-principles-en.webp",
+   "img_ar": "/assets/certs/tech-principles-ar.webp",
+   "issuer": "Edraak (إدراك)",
+   "title": {
+    "en": "Tech Principles & Professional Communication",
+    "ar": "مبادئ التقنية والتواصل المهني"
+   },
+   "category": {
+    "en": "Communication",
+    "ar": "التواصل"
+   },
+   "date": "Aug 2025"
+  },
+  {
+   "slug": "production-correspondence",
+   "group": "programming",
+   "href": "/assets/certs/production-correspondence.webp",
+   "img": "/assets/certs/production-correspondence.webp",
+   "img_en": "/assets/certs/production-correspondence.webp",
+   "img_ar": null,
+   "issuer": "Edraak (إدراك)",
+   "title": {
+    "en": "Production Correspondence",
+    "ar": "المراسلات الإنتاجية"
+   },
+   "category": {
+    "en": "Writing",
+    "ar": "الكتابة"
+   },
+   "date": "Jul 2026"
+  }
+ ]
+}

@@ -1,0 +1,124 @@
+{
+ "page": {
+  "overline": {
+   "en": "CONTACT · EGYPT",
+   "ar": "تواصل · مصر"
+  },
+  "title": {
+   "en": "Got an idea? Let's talk it through.",
+   "ar": "عندك فكرة؟ تعالى نتكلم فيها."
+  },
+  "sub": {
+   "en": "Open to freelance projects and full-time roles — the fastest way to reach me is WhatsApp.",
+   "ar": "متاح لمشاريع فريلانس ووظايف بدوام كامل — أسرع طريقة توصلني واتساب."
+  }
+ },
+ "fields": [
+  {
+   "label": {
+    "en": "What do you need?",
+    "ar": "محتاج إيه؟"
+   },
+   "type": "select",
+   "name": "briefNeed",
+   "placeholder_en": "",
+   "placeholder_ar": "",
+   "options": [
+    {
+     "en": "Web product",
+     "ar": "منتج ويب"
+    },
+    {
+     "en": "AI workflow",
+     "ar": "تدفق ذكاء اصطناعي"
+    },
+    {
+     "en": "Identity or visual system",
+     "ar": "هوية أو نظام بصري"
+    }
+   ]
+  },
+  {
+   "label": {
+    "en": "Approximate timeline",
+    "ar": "الجدول التقريبي"
+   },
+   "type": "select",
+   "name": "briefTimeline",
+   "placeholder_en": "",
+   "placeholder_ar": "",
+   "options": [
+    {
+     "en": "Within two weeks",
+     "ar": "خلال أسبوعين"
+    },
+    {
+     "en": "Within one month",
+     "ar": "خلال شهر"
+    },
+    {
+     "en": "Timeline is flexible",
+     "ar": "الجدول مرن"
+    }
+   ]
+  },
+  {
+   "label": {
+    "en": "What are you building?",
+    "ar": "عايز تبني إيه؟"
+   },
+   "type": "textarea",
+   "name": "briefNotes",
+   "placeholder_en": "Example: I need an Arabic service site with a focused landing page and WhatsApp bookings.",
+   "placeholder_ar": "مثال: محتاج موقع خدمة عربي بصفحة هبوط وواتساب للحجوزات.",
+   "options": []
+  }
+ ],
+ "buttons": [
+  {
+   "label": {
+    "en": "Open email draft",
+    "ar": "Open email draft"
+   },
+   "href": "mailto:mohamedkhairy0887@gmail.com"
+  },
+  {
+   "label": {
+    "en": "Continue on WhatsApp",
+    "ar": "Continue on WhatsApp"
+   },
+   "href": "https://wa.me/201060487315?text=Hi%20Mohamed%2C%20I%20would%20like%20to%20discuss%20a%20project."
+  }
+ ],
+ "links": [
+  {
+   "label": {
+    "en": "mohamedkhairy0887@gmail.com",
+    "ar": "mohamedkhairy0887@gmail.com"
+   },
+   "href": "mailto:mohamedkhairy0887@gmail.com"
+  },
+  {
+   "label": {
+    "en": "LinkedIn",
+    "ar": "LinkedIn"
+   },
+   "href": "https://www.linkedin.com/in/mohamed-khairy-5i/"
+  },
+  {
+   "label": {
+    "en": "GitHub",
+    "ar": "GitHub"
+   },
+   "href": "https://github.com/mohamed-khairy-5i"
+  },
+  {
+   "label": {
+    "en": "WhatsApp",
+    "ar": "WhatsApp"
+   },
+   "href": "https://wa.me/201060487315"
+  }
+ ],
+ "note": "+20 106 048 7315 · Egypt"
+}
