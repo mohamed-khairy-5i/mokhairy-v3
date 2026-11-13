@@ -130,6 +130,15 @@ const stack: { h4: { en: string; ar: string }; pills: string[]; mt?: boolean }[]
 export default function HomePage() {
   const { t, setPageTitle } = useLang();
 
+  const tickerItems = [
+    t("Waslfy", "وصلّي"), t("TossInbox", "TossInbox"), t("trigger-doctor", "trigger-doctor"),
+    t("CodePixel", "CodePixel"), t("CalcuZakat", "CalcuZakat"), t("Dhikra", "Dhikra"),
+    t("Hesasy", "حسابي"), t("Nexluna", "Nexluna"), t("Next.js 16", "Next.js 16"),
+    t("React 19", "React 19"), t("TypeScript", "TypeScript"), t("GSAP", "GSAP"),
+    t("Flutter", "Flutter"), t("Cloudflare Workers", "Cloudflare Workers"),
+    t("npm", "npm"), t("Arabic-first RTL", "عربي أولًا"),
+  ];
+
   useEffect(() => {
     setPageTitle({
       en: "Mohamed Khairy — Frontend Developer · Arabic-first products & dev tools",
@@ -216,6 +225,24 @@ export default function HomePage() {
               <li>
                 <span>{t("100% open source", "مفتوح المصدر ١٠٠٪")}</span>
               </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TOOL TICKER ===== */}
+      <section className="ticker" aria-label={t("Tools, products and stack", "أدوات ومنتجات وتقنيات")}>
+        <div className="marquee">
+          <div className="marquee-track">
+            <ul>
+              {tickerItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <ul aria-hidden="true">
+              {tickerItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </div>
         </div>
