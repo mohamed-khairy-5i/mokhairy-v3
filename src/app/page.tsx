@@ -214,16 +214,18 @@ export default function HomePage() {
                 <span>GitHub</span>
               </a>
             </div>
-            <ul className="chips-row" data-reveal>
-              <li className="chip-dot">
-                <span className="pulse" aria-hidden="true" />
-                <span>{t("3 live products", "٣ منتجات لايف")}</span>
+            <ul className="hero-stats" data-reveal>
+              <li>
+                <span className="hs-num">3+</span>
+                <span className="hs-label">{t("live products", "منتجات لايف")}</span>
               </li>
               <li>
-                <span>{t("2 npm packages", "حزمتي npm")}</span>
+                <span className="hs-num">2</span>
+                <span className="hs-label">{t("npm packages", "حزم npm")}</span>
               </li>
               <li>
-                <span>{t("100% open source", "مفتوح المصدر ١٠٠٪")}</span>
+                <span className="hs-num">100%</span>
+                <span className="hs-label">{t("open source", "مفتوح المصدر")}</span>
               </li>
             </ul>
           </div>
