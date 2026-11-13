@@ -1,15 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Inter, IBM_Plex_Sans_Arabic, IBM_Plex_Mono } from "next/font/google";
+import { Orbitron, Inter, IBM_Plex_Sans_Arabic, Fira_Code } from "next/font/google";
 import { LangProvider } from "@/lib/lang";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import RevealRoot from "@/components/RevealRoot";
 import "./globals.css";
 
-const head = Space_Grotesk({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--f-head" });
+const head = Orbitron({ subsets: ["latin"], weight: ["500", "600", "700", "800"], variable: "--f-head" }); /* mk: Orbitron */
 const body = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--f-body" });
 const arabic = IBM_Plex_Sans_Arabic({ subsets: ["arabic"], weight: ["400", "500", "700"], variable: "--f-arabic" });
-const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "600"], variable: "--f-mono" });
+const mono = Fira_Code({ subsets: ["latin"], weight: ["400", "600"], variable: "--f-mono" }); /* mk: Fira Code */
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mokhairy-v3.pages.dev"),
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#070b18",
+  themeColor: "#0a0a0a", /* mk: terminal black */
 };
 
 const noFlash = `(function(){try{var t=localStorage.getItem('mk-theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t}else{document.documentElement.dataset.theme='dark'}var l=localStorage.getItem('mk-lang');if(l==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl'}}catch(e){document.documentElement.dataset.theme='dark'}})();`;
