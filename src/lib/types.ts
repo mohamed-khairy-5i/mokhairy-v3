@@ -30,8 +30,11 @@ export type StoryBlock =
   | { type: "pills"; items: string[] }
   | { type: "term"; lines: string[] };
 
+export type WorkCat = "personal" | "open-source" | "clients" | "graphic" | "uni";
+
 export type Project = {
   slug: string;
+  cat?: WorkCat;
   layout: "story" | "standard";
   title: string;
   overline?: Bi;

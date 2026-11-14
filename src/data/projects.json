@@ -1,6 +1,7 @@
 [
  {
   "slug": "waslfy",
+  "cat": "personal",
   "layout": "story",
   "title": "وصلّي — Waslfy",
   "tags": [
@@ -197,6 +198,7 @@
  },
  {
   "slug": "tossinbox",
+  "cat": "open-source",
   "layout": "story",
   "title": "TossInbox",
   "tags": [
@@ -386,6 +388,7 @@
  },
  {
   "slug": "trigger-doctor",
+  "cat": "open-source",
   "layout": "story",
   "title": "trigger-doctor",
   "tags": [
@@ -563,6 +566,7 @@
  },
  {
   "slug": "codepixel",
+  "cat": "open-source",
   "layout": "standard",
   "title": "CodePixel",
   "overline": {
@@ -628,6 +632,7 @@
  },
  {
   "slug": "service-ads",
+  "cat": "graphic",
   "layout": "standard",
   "title": "Water Delivery Campaign",
   "overline": {
@@ -685,6 +690,7 @@
  },
  {
   "slug": "dealario",
+  "cat": "graphic",
   "layout": "standard",
   "title": "Dealario",
   "overline": {
@@ -742,6 +748,7 @@
  },
  {
   "slug": "al-shahba",
+  "cat": "graphic",
   "layout": "standard",
   "title": "Abu Al-Qasim",
   "overline": {
@@ -799,6 +806,7 @@
  },
  {
   "slug": "behind-the-screen",
+  "cat": "graphic",
   "layout": "standard",
   "title": "Behind the Screen",
   "overline": {
@@ -856,6 +864,7 @@
  },
  {
   "slug": "al-resala-excellence",
+  "cat": "graphic",
   "layout": "standard",
   "title": "Al Resala Excellence Certificate",
   "overline": {
@@ -913,6 +922,7 @@
  },
  {
   "slug": "yasmona",
+  "cat": "clients",
   "layout": "standard",
   "title": "Yasmona Store",
   "overline": {
@@ -978,6 +988,7 @@
  },
  {
   "slug": "calcuzakat",
+  "cat": "personal",
   "layout": "standard",
   "title": "CalcuZakat",
   "overline": {
@@ -1044,6 +1055,7 @@
  },
  {
   "slug": "hesasy",
+  "cat": "personal",
   "layout": "standard",
   "title": "Hesasy",
   "overline": {
@@ -1109,6 +1121,7 @@
  },
  {
   "slug": "nexluna",
+  "cat": "personal",
   "layout": "standard",
   "title": "Nexluna",
   "overline": {
@@ -1174,6 +1187,7 @@
  },
  {
   "slug": "devsignal",
+  "cat": "open-source",
   "layout": "standard",
   "title": "devsignal",
   "overline": {
@@ -1234,6 +1248,7 @@
  },
  {
   "slug": "tshirt-brand",
+  "cat": "graphic",
   "layout": "standard",
   "title": "Borcelle Printing",
   "overline": {
@@ -1291,6 +1306,7 @@
  },
  {
   "slug": "milano-yemen",
+  "cat": "clients",
   "layout": "standard",
   "title": "Milano",
   "overline": {
@@ -1357,6 +1373,7 @@
  },
  {
   "slug": "burger-taste",
+  "cat": "graphic",
   "layout": "standard",
   "title": "Burger Taste",
   "overline": {
@@ -1414,6 +1431,7 @@
  },
  {
   "slug": "gaming-channel",
+  "cat": "graphic",
   "layout": "standard",
   "title": "Dealario Appliance Sale",
   "overline": {
@@ -1471,6 +1489,7 @@
  },
  {
   "slug": "trimbg",
+  "cat": "graphic",
   "layout": "standard",
   "title": "TrimBG",
   "overline": {
@@ -1536,6 +1555,7 @@
  },
  {
   "slug": "water-jeddah",
+  "cat": "clients",
   "layout": "standard",
   "title": "Water Jeddah",
   "overline": {
@@ -1601,6 +1621,7 @@
  },
  {
   "slug": "dhikra",
+  "cat": "personal",
   "layout": "standard",
   "title": "Dhikra",
   "overline": {
